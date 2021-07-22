@@ -79,7 +79,7 @@
         <ul class="list-group align-item-center">
           <li class="list-group-item d-flex justify-content-between align-items-center">
             <b>METODE PEMBAYARAN</b>
-            <span class="badge badge-pill"><img src="{{ asset('/img/payment/') }}/{{ $expiration['method'] }}.png" width="60"></span>
+            <span class="badge badge-pill"><img src="{{ asset('/img/payment/') }}/{{ strtoupper($expiration['method']) }}.png" width="60"></span>
           </li>
         </ul>
           <div class="card text-center">
@@ -112,7 +112,7 @@
         <ul class="list-group align-item-center">
           <li class="list-group-item d-flex justify-content-between align-items-center">
             <b>METODE PEMBAYARAN</b>
-            <span class="badge badge-pill"><img src="{{ asset('/img/payment/') }}/{{ $expiration['method'] }}.png" width="50"></span>
+            <span class="badge badge-pill"><img src="{{ asset('/img/payment/') }}/{{ strtoupper($expiration['method']) }}.png" width="50"></span>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
             <span>
@@ -135,7 +135,7 @@
     <ul class="list-group align-item-center">
       <li class="list-group-item d-flex justify-content-between align-items-center">
         <b>{{ strtoupper($expiration['method']) }} VIRTUAL ACCOUNT</b>
-        <span class="badge badge-pill"><img src="{{ asset('/img/payment/') }}/{{ $expiration['method'] }}.png" width="40"></span>
+        <span class="badge badge-pill"><img src="{{ asset('/img/payment/') }}/{{ strtoupper($expiration['method']) }}.png" width="40"></span>
       </li>
       <li class="list-group-item d-flex justify-content-between align-items-center">
         <span>
