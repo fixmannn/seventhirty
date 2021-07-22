@@ -1,0 +1,150 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Breadcrumb */
+.breadcrumb {
+    background-color: transparent;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Billing Details */
+.billing {
+    margin-bottom: 50px;
+}
+
+.billing h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.billing label {
+    text-align: left !important;
+}
+
+.billing form {
+    margin: 50px 20px;
+}
+
+/* Order Summary */
+.order-summary {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-summary table {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #efefef;
+}
+
+.order-summary .summary {
+    border-bottom: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
+    background-color: #efefef;
+}
+
+.order-summary th {
+    text-align: left;
+    padding: 20px 20px;
+}
+
+.order-summary td {
+    text-align: right;
+    padding: 20px 20px;
+}
+
+.order-summary table tr:nth-child(2) {
+    margin-left: 20px;
+}
+
+.order-summary th {
+    font-weight: 200;
+}
+
+.summary {
+    font-size: 20px !important;
+}
+
+.order-summary button {
+    width: 100%;
+    padding: 20px;
+}
+
+.order-summary .total-summary {
+    margin-top: 50px;
+}
+
+.cart-summary {
+    margin: 0 !important;
+}   
+
+.btn-success {
+    background-color: #92b6b1 !important;
+    border: 1px solid #92b6b1 !important;
+}
+
+.btn-success:hover {
+    color: black;
+}
+
+.btn-success:focus, .btn-success:active {
+    border: 1px solid #92b6b1 !important;
+    box-shadow: #92b6b1 !important;
+}
+
+
+@media (max-width: 320px) {
+    .cart-table {
+        font-size: 0.6em;
+    }
+
+    .order-summary {
+        font-size: 0.7em;
+    }
+
+    .order-summary button {
+        width: 80% !important;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .pc-only {
+        display: table-cell;
+    }
+}
+
+
+@media (min-width: 992px) { 
+    .breadcrumb {
+        margin-top: 120px;
+    }
+    
+
+    /* Cart */
+    .billing {
+        min-height: 800px;
+    }
+
+    .billing form {
+        margin: 50px 50px;
+    }
+
+    /* Order Summary */
+    /* .order-summary {
+        margin-right: 30px;
+    } */
+
+    .order-summary th, 
+    .order-summary td {
+        padding: 20px 30px;
+    }
+
+}

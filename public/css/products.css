@@ -1,0 +1,266 @@
+body {
+    background-color: #efefef !important;
+}
+
+.fadeIn {
+    animation: fadeIn 800ms;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+    from {
+        opacity: 0;
+    }
+}
+
+
+/* Cart */
+.cart {
+    position: relative;
+}
+
+#cart-btn {
+    border: 1px solid #92b6b1 !important;
+}
+
+
+/* Breadcrumb */
+.breadcrumb {
+    background-color: transparent;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Products */
+.products-desc {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+    }
+
+
+/* Thumbnail */
+.thumbnail {
+    order: 2;
+    margin: 0 auto;
+}
+
+.thumbnail img{
+    width: 120px;
+    border: 1px solid #a3a2a2;
+}
+
+/* Preview  */
+.preview {
+    order: 1;
+}
+
+/* Description */
+.description {
+    order: 3;
+    margin-left: 10px;
+}
+
+.description h2 {
+    margin-top: 50px;
+    font-size: 24px;
+}
+
+.description h5 {
+    font-weight: 100;
+    color: #494747
+}
+
+.description p {
+    font-weight: 200;
+    font-size: 20px;
+}
+
+.price {
+    font-weight: 700 !important;
+}
+
+.btn-outline-dark:hover {
+    background-color:#92b6b1 !important;
+}
+
+
+/* Size */
+.size-group {
+    display: flex;
+    flex: wrap;
+}
+
+.input-container {
+    position: relative;
+    height: 1em;
+    width: 1em;
+    margin-right: 1.5em;
+}
+
+.radio-button {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+
+.size-label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 0;
+    cursor: pointer;
+}
+
+.radio-box {
+    display: flex;
+    border: 2px solid #92b6b1;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1em;
+    transition: 200ms ease-in;
+}
+
+.radio-button:checked + .radio-box {
+    background-color: #92b6b1;
+    color: white;
+}
+
+/* Button */
+
+
+/* Desc Product*/
+.desc-all {
+    background-color: white;
+    padding-top: 50px;
+}
+
+.desc-all .container {
+    margin-bottom: 0;
+}
+
+.desc h2 {
+    font-weight: 200;
+}
+
+
+/* Related Products */
+.related {
+    background-color: white;
+    text-align: center;
+}
+.related img {
+    max-width: 225px;
+}
+
+.related-title {
+    padding: 50px 0;
+}
+
+.related-title h2 {
+    font-weight: 200;
+}
+
+.related h5 {
+    margin: 20px 0;
+    font-size: 15px;
+}
+
+
+/* Modal Button */
+
+/* .modal {
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: .3s;
+    text-align: center;
+}
+
+.modal img {
+    width: 70%;
+    padding-top: 100px;
+    line-height: 100%;
+} */
+
+
+@media (min-width: 992px) { 
+    /* Breadcrumb */
+    .breadcrumb {
+        margin-top: 130px;
+    }  
+    
+    /* Products */
+    .products-desc {
+        margin: 0 170px;
+        display: flex;
+    }
+
+    /* Thumbnail */
+    .thumbnail {
+        order: 1 !important;
+        margin: 0 !important;
+    }
+
+    .thumbnail a{
+    display: block;
+    }
+
+    .thumbnail img{
+        width: 120px;
+    }
+
+    /* Preview */
+    .preview {
+        order: 2 !important;
+    }
+
+    .preview img {
+    width: 600px;
+    margin: 0 50px;
+    }
+
+    /* Description */
+    .description {
+        order: 3 !important;
+    }
+
+    .description h2 {
+        font-size: 30px;
+    }
+
+    /* Desc */
+    .desc p {
+        margin-left: 10px;
+        font-size: 18px;
+    }
+
+    /* Related Products */
+    .related .row {
+        margin: 0 300px;
+    }
+
+
+}

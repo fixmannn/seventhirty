@@ -1,0 +1,44 @@
+
+/* Main content */
+.payment {
+  min-height: 1000px;
+}
+
+.payment-success {
+  min-height: 750px;
+}
+
+.payment-title {
+  margin-top: 50px;
+}
+
+.paymentimg {
+  margin-top : 160px;
+}
+
+.account_number, .expected_amount, select:focus{
+  border: none;
+  color: white;
+  outline: none;
+}
+
+.btn-success {
+  background-color: #92b6b1 !important;
+  border: 1px solid #92b6b1 !important;
+}
+
+.btn-success:hover {
+  color: black;
+}
+
+.btn-success:focus, .btn-success:active {
+  border: 1px solid #92b6b1 !important;
+  box-shadow: #92b6b1 !important;
+}
+
+
+@media (min-width: 992px) {
+  .payment-title {
+    margin-top: 150px;
+  }
+}
