@@ -74,9 +74,6 @@ class PaymentsController extends Controller
 
                 return redirect('payment-success');
             } else {
-                // Sending Email
-                $ordermail = new MailController();
-                $ordermail->paymentMail();
                 return redirect('payment');
             }
         } else {
