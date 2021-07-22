@@ -26,7 +26,7 @@
           <li class="list-group-item">
             <input type="radio" id="bni" name="payment" value="BNI" title="va">
             <label for="bni">
-              <img src="{{asset('/img/payment/bni.png')}}" alt="" width="50" class="mr-2">
+              <img src="{{asset('/img/payment/BNI.png')}}" alt="" width="50" class="mr-2">
               Bank BNI Virtual Account
             </label>
           </li>
