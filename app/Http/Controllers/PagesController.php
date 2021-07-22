@@ -16,7 +16,7 @@ class PagesController extends Controller
   public function home()
   {
     $users = User::all();
-
+	
     return view('home', compact('users'));
   }
 
@@ -25,10 +25,11 @@ class PagesController extends Controller
     $users = User::all();
     $products = Product::all();
 
-    return view('pages.shop', [
+	return view('pages.shop', [
       'users' => $users,
       'products' => $products
     ]);
+
   }
 
   public function gallery()
@@ -69,4 +70,11 @@ class PagesController extends Controller
 
     return view('layouts.pages', compact('users'));
   }
+
+	public function test()
+	{
+		return 'test aja gan';
+	}	
+
+
 }
