@@ -10,7 +10,14 @@ class ProductsController extends Controller
 {
   public function friendship(Product $id)
   {
-    return 'hello';
+    $products = Product::find($id);
+
+    $info = ProductInfo::where('product_id', '202101')->get();
+
+    return view('products.friendship', [
+      'products' => $products,
+      'info' => $info
+    ]);
   }
 
   public function anxiety(Product $id)
