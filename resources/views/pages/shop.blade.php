@@ -34,6 +34,21 @@
 <div class="shop">
     <div class="row new-catalog">
         <div class="col">
+            <a href="{{url('products/friendship/202101')}}"><img src="{{asset('img/friendship.jpg')}}" alt="" class="catalog"></a>
+            <h5>Friendship T-shirt</h5>
+            <p>Rp. 85.500,-</p> 
+        </div>
+        <div class="col">
+            <a href="{{url('products/anxiety/202102')}}"><img src="{{asset('img/anxiety.jpg')}}" alt="" class="catalog"></a>
+            <h5>Anxiety Complex T-shirt</h5>
+            <p>Rp. 85.500,-</p> 
+        </div>
+        <div class="col">
+            <a href="{{url('products/forgiving/202103')}}"><img src="{{asset('img/forgiving.jpg')}}" alt="" class="catalog"></a>
+            <h5>Forgiving Ain't Forgetting T-shirt</h5>
+            <p>Rp. 85.500,-</p> 
+        </div>
+        <div class="col">
             <a href="{{url('products/paramore/202118')}}"><img src="{{asset('img/paramore.jpg')}}" alt="" class="catalog"></a>
             <h5>Paramore Vintage T-shirt</h5>
             <p>Rp. 109.920,-</p> 
