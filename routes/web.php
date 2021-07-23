@@ -33,6 +33,9 @@ Route::get('account-details', [PagesController::class, 'accountDetails']);
 Route::get('test', [PagesController::class, 'test']);
 
 // Products Controller 
+Route::get('/products/friendship/{id}', [ProductsController::class, 'friendship']);
+Route::get('/products/anxiety/{id}', [ProductsController::class, 'anxiety']);
+Route::get('/products/forgiving/{id}', [ProductsController::class, 'forgiving']);
 Route::get('/products/paramore/{id}', [ProductsController::class, 'paramore']);
 Route::get('/products/beerbongs/{id}', [ProductsController::class, 'beerbongs']);
 Route::post('/products/beerbongs/{id}', [ProductsController::class, 'beerbongs']);
