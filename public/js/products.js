@@ -8,20 +8,20 @@ let product = page.split("/").shift();
 
 catalogs.forEach((val, index) => {
     val.addEventListener('mouseover', function () {
-        val.src = <? php echo asset('img/') ?> + catPics[index] + "-zoomed.jpg";
+        val.src = "{{ asset('img/') }}" + catPics[index] + "-zoomed.jpg";
         val.classList.add('fadeIn');
     })
 });
 
 catalogs.forEach((val, index) => {
     val.addEventListener('mouseout', function () {
-        val.src = <? php echo asset('img/') ?> + catPics[index] + ".jpg";
+        val.src = "{{ asset('img/') }}" + catPics[index] + ".jpg";
         val.classList.remove('fadeIn');
     })
 });
 
 thumb2.addEventListener('click', function () {
-    previewImg.src = <? php echo asset('img/') ?> + product + "-zoomed.jpg";
+    previewImg.src = "{{ asset('img/') }}" + product + "-zoomed.jpg";
     event.preventDefault();
     previewImg.classList.add('fadeIn');
     setTimeout(function () {
@@ -30,7 +30,7 @@ thumb2.addEventListener('click', function () {
 });
 
 thumb1.addEventListener('click', function () {
-    previewImg.src = <? php echo asset('img/') ?> + product + ".jpg";
+    previewImg.src = "{{ asset('img/') }}" + product + ".jpg";
     event.preventDefault();
     previewImg.classList.add('fadeIn');
     setTimeout(function () {
