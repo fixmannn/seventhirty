@@ -6,14 +6,14 @@ let catPics = ['paramore', 'blackpink', 'hayley', 'purpose', 'zayn', 'travis', '
 
 catalogs.forEach((val, index) => {
     val.addEventListener('mouseover', function () {
-        val.src = "{{ asset('img/') }}" + catPics[index] + "-zoomed.jpg";
+        val.src = "https://seventhirty-id.com/img/" + catPics[index] + "-zoomed.jpg";
         val.classList.add('fadeIn');
     })
 })
 
 catalogs.forEach((val, index) => {
     val.addEventListener('mouseout', function () {
-        val.src = "{{ asset('img/') }}" + catPics[index] + ".jpg";
+        val.src = "https://seventhirty-id.com/img/" + catPics[index] + ".jpg";
         val.classList.remove('fadeIn');
     })
 
