@@ -22,7 +22,7 @@
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item text-light" href="/account-details">Account Details</a>
-        <a class="dropdown-item text-light" href="/account-details">Your order</a>
+        <a class="dropdown-item text-light" href="/my-order">My order</a>
         <a class="dropdown-item text-light" href="/logout">Log out</a>
       </div>
     </div>

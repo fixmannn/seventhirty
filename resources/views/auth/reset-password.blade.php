@@ -42,7 +42,7 @@
                     <input type="hidden" name="token" value="{{ $request->route('token') }}">
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" autocomplete="off" value="{{old('email', $request->email)}}">
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" autocomplete="off" value="{{old('email', $request->email)}}" readonly>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>

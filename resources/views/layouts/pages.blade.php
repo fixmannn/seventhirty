@@ -16,6 +16,7 @@
   @yield('productscss')
   @yield('checkoutcss')
   @yield('paymentcss')
+  @yield('orders')
 
   <link rel="stylesheet" href="{{asset('css/index.css')}}">
 
