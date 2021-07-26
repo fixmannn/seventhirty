@@ -1,3 +1,9 @@
 .details {
   min-height: 1080px;
+  margin-top: 350px;
+}
+
+.iconify {
+  width: 24px;
+  height: 24px;
 }
