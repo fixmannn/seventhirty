@@ -49,7 +49,7 @@ class PagesController extends Controller
   public function accountDetails()
   {
     $users = User::all();
-    return view('pages.account-details', compact('users'));
+    return view('account.details', compact('users'));
   }
 
   public function logout()
