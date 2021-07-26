@@ -9,7 +9,7 @@
 @include('layouts/nav')
 
 {{-- Order Details --}}
-<div class="container">
+<div class="container details">
     <div class="row">
         <div class="col-xl-3">
             <h3 class="font-weight-bold">Account Details</h3>
