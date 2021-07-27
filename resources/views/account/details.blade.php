@@ -29,7 +29,7 @@
         <div class="col-xl-9">
         <div class="heading d-flex justify-content-between">
           <h5 class="font-weight-bold title">Edit Profile</h5>
-          <span class="font-weight bold">Edit</span>
+          <span class="font-weight-bold">Edit</span>
         </div>
           <form action="/account-details" method="post">
             @csrf
