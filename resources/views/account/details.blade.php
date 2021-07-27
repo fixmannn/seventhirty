@@ -70,7 +70,7 @@
                     <input type="number" class="form-control" name="phonenumber" id="phonenumber" data-form="form">
                 </div>
             </div>
-            <div class="buttons d-flex align-items-end">
+            <div class="buttons d-flex justify-content-end">
                 <button class="btn btn-secondary" type="button">Discard</button>
                 <button class="btn btn-success" type="submit">Save Changes</button>
             </div>
