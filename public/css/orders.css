@@ -19,8 +19,17 @@
 
 .btn-success {
   background-color: #b2c9ab;
+  border: 1px solid #b2c9ab;
 } 
+
+.btn-success:hover {
+  background-color: #99ad93;
+}
 
 .btn {
   text-shadow: 1px 1px 2px rgb(207, 207, 207);
+}
+
+.text-menu {
+  color: #999;
 }

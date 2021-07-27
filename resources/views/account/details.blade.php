@@ -18,12 +18,12 @@
                 <span class="iconify text-muted active" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
             <div class="d-flex justify-content-between btn mt-1">
-                <p class="text-white-50 font-weight-bold">Change Password</p>
-                <span class="iconify text-white-50" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
+                <p class="text-menu font-weight-bold">Change Password</p>
+                <span class="iconify text-menu" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
             <div class="d-flex justify-content-between btn mt-1">
-                <p class="text-white-50 font-weight-bold">Orders</p>
-                <span class="iconify text-white-50" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
+                <p class="text-menu font-weight-bold">Orders</p>
+                <span class="iconify text-menu" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
         </div>
         <div class="col-xl-9">
@@ -70,8 +70,10 @@
                     <input type="number" class="form-control" name="phonenumber" id="phonenumber" data-form="form">
                 </div>
             </div>
-            <button class="btn btn-secondary" type="button">Discard</button>
-            <button class="btn btn-success" type="submit">Save Changes</button>
+            <div class="buttons d-flex align-items-end">
+                <button class="btn btn-secondary" type="button">Discard</button>
+                <button class="btn btn-success" type="submit">Save Changes</button>
+            </div>
           </form>
         </div>
     </div>
