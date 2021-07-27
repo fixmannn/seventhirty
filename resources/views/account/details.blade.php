@@ -13,15 +13,15 @@
     <div class="row">
         <div class="col-xl-3">
             <h3 class="font-weight-bold title">Account Details</h3>
-            <div class="d-flex justify-content-between btn mt-2">
+            <div class="d-flex justify-content-between btn mt-3">
                 <p class="text-muted font-weight-bold active">Edit Profile</p>
                 <span class="iconify text-muted active" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
-            <div class="d-flex justify-content-between btn mt-2">
+            <div class="d-flex justify-content-between btn mt-1">
                 <p class="text-muted font-weight-bold">Change Password</p>
                 <span class="iconify text-muted" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
-            <div class="d-flex justify-content-between btn mt-2">
+            <div class="d-flex justify-content-between btn mt-1">
                 <p class="text-muted font-weight-bold">Orders</p>
                 <span class="iconify text-muted" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
