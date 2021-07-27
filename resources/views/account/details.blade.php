@@ -17,11 +17,11 @@
                 <p class="text-muted font-weight-bold active">Edit Profile</p>
                 <span class="iconify text-muted active" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
-            <div class="d-flex justify-content-between btn mt-1">
+            <div class="d-flex justify-content-between btn mt-1 list-menu">
                 <p class="text-list font-weight-bold">Change Password</p>
                 <span class="iconify text-list" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
-            <div class="d-flex justify-content-between btn mt-1">
+            <div class="d-flex justify-content-between btn mt-1 list-menu">
                 <p class="text-list font-weight-bold">Orders</p>
                 <span class="iconify text-list" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
@@ -71,8 +71,8 @@
                 </div>
             </div>
             <div class="buttons d-flex justify-content-end">
-                <button class="btn btn-secondary mr-5" type="button">Discard</button>
-                <button class="btn btn-success" type="submit">Save Changes</button>
+                <button class="btn btn-secondary mr-3" type="button">Discard</button>
+                <button class="btn btn-save" type="submit">Save Changes</button>
             </div>
           </form>
         </div>
