@@ -48,8 +48,8 @@ class PagesController extends Controller
 
   public function accountDetails()
   {
-    $users = User::all();
-    return view('account.details', compact('users'));
+    $user = User::where('id', session('LoggedUser'))->first();
+    return view('account.details', compact('user'));
   }
 
   public function logout()
