@@ -89,11 +89,15 @@
 @include('layouts/footer')
 
 <script>
+    var dataForm = $(elem).data('form');
+
     $('.edit-form').click(function() {
-        $('data-form:form').prop('readonly', false);
+        dataForm.prop('readonly', false);
+        console.log('ok');
     });
 
     $('.btn-save').click(function() {
-        $('data-form:form').prop('readonly', true);
+        dataForm.prop('readonly', true);
+        console.log('ok');
     });
 </script>
