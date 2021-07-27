@@ -92,12 +92,12 @@
     var dataForm = $('input').data('form');
 
     $('.edit-form').click(function() {
-        dataForm.attr('readonly', false);
-        console.log('ok');
+        // dataForm.attr('readonly', false);
+        console.log(dataForm);
     });
 
     $('.btn-save').click(function() {
-        dataForm.attr('readonly', true);
+        // dataForm.attr('readonly', true);
         console.log('ok');
     });
 </script>
