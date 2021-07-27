@@ -27,6 +27,10 @@
   border: 1px solid #b2c9ab !important;
 } 
 
+.buttons {
+  display: none;
+}
+
 .btn-save:hover, .btn-save:focus {
   background-color: #99ad93 !important;
 }
@@ -36,5 +40,5 @@
 }
 
 .text-list {
-  color: rgb(201, 201, 201) !important;
+  color: #999 !important;
 }

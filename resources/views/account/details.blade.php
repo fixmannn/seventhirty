@@ -78,7 +78,7 @@
                     <input type="number" class="form-control" name="phonenumber" id="phonenumber" data-form="form" value="{{ $user->nomor_handphone }}" readonly>
                 </div>
             </div>
-            <div class="buttons d-flex justify-content-end">
+            <div class="buttons justify-content-end">
                 <button class="btn btn-secondary mr-3 discard" type="button">Discard</button>
                 <button class="btn btn-save text-white" type="submit">Save Changes</button>
             </div>
@@ -99,18 +99,18 @@
 
     $('.edit-form').click(function() {
         dataForm.attr('readonly', false);
-        buttons.css('display', 'none');
+        buttons.css('display', 'flex');
         // console.log(dataForm);
     });
 
     $('.btn-save').click(function() {
         dataForm.attr('readonly', true);
-        buttons.css('display', 'flex');
+        buttons.css('display', 'none');
         // console.log('ok');
     });
 
     $('.discard').click(function() {
         dataForm.attr('readonly', true);
-        buttons.css('display', 'flex');
+        buttons.css('display', 'none');
     });
 </script>
