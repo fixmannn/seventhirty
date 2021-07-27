@@ -31,6 +31,11 @@
           <h5 class="font-weight-bold title">Edit Profile</h5>
           <span class="font-weight-bold edit-form">Edit</span>
         </div>
+        @if(Session::get('success'))
+        <div class="alert alert-success" role="alert">
+            {{ Session::get('success') }}
+        </div>
+        @endif
           <form action="/account-details" method="post">
             @csrf
             <div class="form-row mt-3">
@@ -74,7 +79,7 @@
                 </div>
             </div>
             <div class="buttons d-flex justify-content-end">
-                <button class="btn btn-secondary mr-3" type="button">Discard</button>
+                <button class="btn btn-secondary mr-3 discard" type="button">Discard</button>
                 <button class="btn btn-save text-white" type="submit">Save Changes</button>
             </div>
           </form>
@@ -99,5 +104,9 @@
     $('.btn-save').click(function() {
         dataForm.attr('readonly', true);
         // console.log('ok');
+    });
+
+    $('.discard').click(function() {
+        dataForm.attr('readonly', true);
     });
 </script>
