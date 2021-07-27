@@ -27,10 +27,13 @@
             </div>
         </div>
         <div class="col-xl-9">
+        <div class="heading d-flex justify-content-between">
           <h5 class="font-weight-bold title">Edit Profile</h5>
+          <span class="font-weight bold">Edit</span>
+        </div>
           <form action="/account-details" method="post">
             @csrf
-            <div class="form-row mt-5">
+            <div class="form-row mt-3">
               <div class="form-group col-md-6">
                 <label for="first-name">Nama Depan</label>
                 <input type="text" class="form-control" id="first-name" name="first_name" data-form="form" value="{{ $user->nama_depan }}" readonly>
