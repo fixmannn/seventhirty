@@ -18,33 +18,60 @@
                 <span class="iconify text-muted active" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
             <div class="d-flex justify-content-between btn mt-1">
-                <p class="text-black-50 font-weight-bold">Change Password</p>
-                <span class="iconify text-black-50" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
+                <p class="text-white-50 font-weight-bold">Change Password</p>
+                <span class="iconify text-white-50" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
             <div class="d-flex justify-content-between btn mt-1">
-                <p class="text-black-50 font-weight-bold">Orders</p>
-                <span class="iconify text-black-50" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
+                <p class="text-white-50 font-weight-bold">Orders</p>
+                <span class="iconify text-white-50" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
         </div>
         <div class="col-xl-9">
           <h5 class="font-weight-bold title">Edit Profile</h5>
-          <form>
-            <div class="form-row">
+          <form action="/account-details" method="post">
+            @csrf
+            <div class="form-row mt-2">
               <div class="form-group col-md-6">
                 <label for="first-name">Nama Depan</label>
-                <input type="text" class="form-control" id="first-name" name="first_name">
+                <input type="text" class="form-control" id="first-name" name="first_name" data-form="form">
               </div>
               <div class="form-group col-md-6">
                 <label for="last-name">Nama Belakang</label>
-                <input type="text" class="form-control" id="last-name" name="last_name">
+                <input type="text" class="form-control" id="last-name" name="last_name" data-form="form">
               </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="address">Alamat</label>
-                    <input type="text" class="form-control" id="address" name="address">
+                    <input type="text" class="form-control" id="address" name="address" height="130px" data-form="form">
                 </div>
             </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="province_destination">Provinsi</label>
+                    <input type="text" class="form-control" id="province_destination" name="province_destination" data-form="form">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="city_destination">Kota</label>
+                    <input type="text" class="form-control" id="city_destionation" name="city_destination" data-form="form">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="district">Kecamatan</label>
+                    <input type="text" class="form-control" id="district" name="district" data-form="form">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="phonenumber">No. Handphone / Whatsapp</label>
+                    <input type="number" class="form-control" name="phonenumber" id="phonenumber" data-form="form">
+                </div>
+            </div>
+            <button class="btn btn-secondary" type="button">Discard</button>
+            <button class="btn btn-success" type="submit">Save Changes</button>
           </form>
         </div>
     </div>

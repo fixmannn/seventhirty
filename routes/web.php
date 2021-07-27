@@ -53,21 +53,22 @@ Route::get('/products/starboy/{id}', [ProductsController::class, 'starboy']);
 Route::get('/products/travis/{id}', [ProductsController::class, 'travis']);
 Route::get('/products/zayn/{id}', [ProductsController::class, 'zayn']);
 
+// Checkout Routes
 Route::get('checkout', [CheckoutController::class, 'index']);
 Route::get('/province/{id}', [CheckoutController::class, 'getCities']);
 Route::get('/shipping/{id}', [CheckoutController::class, 'shipping']);
-
-
 Route::post('checkout', [UsersController::class, 'show']);
+
+// Payment Routes
 Route::post('payment', [UsersController::class, 'store']);
 Route::patch('payment', [UsersController::class, 'update']);
-
-// Route::patch('payment', [MailController::class, 'sendEmail']);
-
 Route::get('payment', [PaymentsController::class, 'index']);
 Route::get('payment-success', [PaymentsController::class, 'status']);
 
-
+// Cart Routes
 Route::post('add-to-cart/{id}', [CartsController::class, 'addToCart']);
 Route::get('cart', [CartsController::class, 'index']);
 Route::delete('cart', [CartsController::class, 'remove']);
+
+// Account Details Routes
+Route::post('account-details', [UsersController::class, 'edit']);

@@ -136,9 +136,21 @@ class UsersController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Request $request, User $user)
     {
-        //
+        if (session('LoggedUser')) {
+            $update = User::where('id', session('LoggedUser'))
+                ->update([
+                    'nama_depan' => $request->first_name,
+                    'nama_belakang' => $request->last_name,
+                    'alamat' => $request->address,
+                    'kecamatan' => $request->district,
+                    'kota' => $request->city_destination,
+                    'provinsi' => $request->province_destination,
+                    'nomor_handphone' => $request->phonenumber
+                ]);
+
+        return back()->with('success', 'Data berhasil diupdate.');
     }
 
     /**
