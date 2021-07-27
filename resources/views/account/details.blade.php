@@ -11,7 +11,7 @@
 {{-- Order Details --}}
 <div class="details">
     <div class="row">
-        <div class="col-xl-3">
+        <div class="col-xl-3 side-bar">
             <h5 class="font-weight-bold title">Account Details</h5>
             <div class="d-flex justify-content-between btn mt-3">
                 <p class="text-muted font-weight-bold active">Edit Profile</p>

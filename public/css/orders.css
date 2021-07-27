@@ -1,11 +1,15 @@
 .details {
-  min-height: 1080px;
+  min-height: 900px;
   margin-left: 40px;
   margin-right: 40px;
 }
 
+.side-bar {
+  display: none;
+}
+
 .details .row {
-  margin-top: 150px;
+  margin-top: 30px;
 }
 
 .heading span {
@@ -29,16 +33,27 @@
 
 .buttons {
   display: none;
+  text-shadow: 1px 1px 2px #999;
 }
 
 .btn-save:hover, .btn-save:focus {
   background-color: #99ad93 !important;
 }
 
-.btn {
+.title {
   text-shadow: 1px 1px 2px rgb(207, 207, 207);
 }
 
 .text-list {
   color: #999 !important;
+}
+
+@media(min-width: 992px) {
+  .details .row {
+    margin-top: 120px;
+  }
+
+  .side-bar {
+    display: flex;
+  }
 }
