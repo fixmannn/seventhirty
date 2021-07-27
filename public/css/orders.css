@@ -1,6 +1,9 @@
 .details {
   min-height: 1080px;
-  margin-top: 350px;
+}
+
+.details .row {
+  margin-top: 500px;
 }
 
 .iconify {

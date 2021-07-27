@@ -15,7 +15,7 @@
             <h3 class="font-weight-bold">Account Details</h3>
             <div>
                 <p class="text-muted font-weight-bold">Edit Profile</p>
-                <span class="iconify" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
+                <span class="iconify text-muted" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
         </div>
         <div class="col-xl-9">
