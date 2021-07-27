@@ -95,18 +95,22 @@
 
 <script>
     var dataForm = $('input[data-form=form]');
+    var buttons = $('.buttons');
 
     $('.edit-form').click(function() {
         dataForm.attr('readonly', false);
+        buttons.css('display', 'none');
         // console.log(dataForm);
     });
 
     $('.btn-save').click(function() {
         dataForm.attr('readonly', true);
+        buttons.css('display', 'flex');
         // console.log('ok');
     });
 
     $('.discard').click(function() {
         dataForm.attr('readonly', true);
+        buttons.css('display', 'flex');
     });
 </script>

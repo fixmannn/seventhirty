@@ -9,8 +9,12 @@
 }
 
 .heading span {
-  color: #b2c9ab;
+  color: #e4350a;
   cursor: pointer;
+}
+
+.heading span:hover {
+  text-decoration: underline;
 }
 
 .iconify {
@@ -32,5 +36,5 @@
 }
 
 .text-list {
-  color: #999 !important;
+  color: rgb(201, 201, 201) !important;
 }
