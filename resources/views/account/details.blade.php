@@ -89,7 +89,7 @@
 @include('layouts/footer')
 
 <script>
-    var dataForm = $('input').data('form');
+    var dataForm = $(':input').data('form');
 
     $('.edit-form').click(function() {
         // dataForm.attr('readonly', false);
