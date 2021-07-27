@@ -88,16 +88,11 @@
 @include('layouts/footer')
 
 <script>
-    const edit = document.querySelector('.edit-form');
-    const save = document.querySelector('.btn-save');
-
-    edit.addEventListener('click', function() {
+    $('.edit-form').click(function() {
         $('data-form:form').prop('readonly', false);
     });
 
-    save.addEventListener('click', function() {
+    $('.btn-save').click(function() {
         $('data-form:form').prop('readonly', true);
     });
-
-
 </script>
