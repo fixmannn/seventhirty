@@ -9,17 +9,26 @@
 @include('layouts/nav')
 
 {{-- Order Details --}}
-<div class="container details">
+<div class="details">
     <div class="row">
         <div class="col-xl-3">
-            <h3 class="font-weight-bold">Account Details</h3>
-            <div class="d-flex justify-content-between">
-                <p class="text-muted font-weight-bold">Edit Profile</p>
+            <h3 class="font-weight-bold shadow">Account Details</h3>
+            <div class="d-flex justify-content-between btn mt-3">
+                <p class="text-muted font-weight-bold active">Edit Profile</p>
+                <span class="iconify text-muted active" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
+            </div>
+            <div class="d-flex justify-content-between btn mt-3">
+                <p class="text-muted font-weight-bold">Change Password</p>
+                <span class="iconify text-muted" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
+            </div>
+            <div class="d-flex justify-content-between btn mt-3">
+                <p class="text-muted font-weight-bold">Orders</p>
                 <span class="iconify text-muted" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
         </div>
         <div class="col-xl-9">
-          <h3 class="font-weight-bold">Edit Profile</h3>
+          <h3 class="font-weight-bold shadow">Edit Profile</h3>
+          
         </div>
     </div>
 </div>
