@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-xl-3">
             <h3 class="font-weight-bold">Account Details</h3>
-            <div>
+            <div class="d-flex justify-content-between">
                 <p class="text-muted font-weight-bold">Edit Profile</p>
                 <span class="iconify text-muted" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
