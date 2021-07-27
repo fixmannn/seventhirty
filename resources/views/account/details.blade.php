@@ -18,19 +18,19 @@
                 <span class="iconify text-muted active" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
             <div class="d-flex justify-content-between btn mt-1">
-                <p class="text-menu font-weight-bold">Change Password</p>
-                <span class="iconify text-menu" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
+                <p class="text-list font-weight-bold">Change Password</p>
+                <span class="iconify text-list" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
             <div class="d-flex justify-content-between btn mt-1">
-                <p class="text-menu font-weight-bold">Orders</p>
-                <span class="iconify text-menu" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
+                <p class="text-list font-weight-bold">Orders</p>
+                <span class="iconify text-list" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div>
         </div>
         <div class="col-xl-9">
           <h5 class="font-weight-bold title">Edit Profile</h5>
           <form action="/account-details" method="post">
             @csrf
-            <div class="form-row mt-2">
+            <div class="form-row mt-5">
               <div class="form-group col-md-6">
                 <label for="first-name">Nama Depan</label>
                 <input type="text" class="form-control" id="first-name" name="first_name" data-form="form">
@@ -71,7 +71,7 @@
                 </div>
             </div>
             <div class="buttons d-flex justify-content-end">
-                <button class="btn btn-secondary" type="button">Discard</button>
+                <button class="btn btn-secondary mr-5" type="button">Discard</button>
                 <button class="btn btn-success" type="submit">Save Changes</button>
             </div>
           </form>
