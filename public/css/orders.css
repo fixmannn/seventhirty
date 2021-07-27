@@ -12,9 +12,6 @@
   text-shadow: 1px 1px 2px rgb(207, 207, 207);
 }
 
-.list-menu .text-list:hover {
-  color: #999;
-}
 
 .iconify {
   width: 24px;
@@ -35,5 +32,5 @@
 }
 
 .text-list {
-  color: rgb(207, 207, 207) !important;
+  color: #999 !important;
 }

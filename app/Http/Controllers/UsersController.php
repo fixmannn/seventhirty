@@ -149,6 +149,7 @@ class UsersController extends Controller
                     'provinsi' => $request->province_destination,
                     'nomor_handphone' => $request->phonenumber
                 ]);
+            }
 
         return back()->with('success', 'Data berhasil diupdate.');
     }
