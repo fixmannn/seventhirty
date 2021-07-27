@@ -29,7 +29,7 @@
         <div class="col-xl-9">
         <div class="heading d-flex justify-content-between">
           <h5 class="font-weight-bold title">Edit Profile</h5>
-          <span class="font-weight-bold">Edit</span>
+          <span class="font-weight-bold edit-form">Edit</span>
         </div>
           <form action="/account-details" method="post">
             @csrf
@@ -84,4 +84,20 @@
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
+
 @include('layouts/footer')
+
+<script>
+    const edit = document.querySelector('.edit-form');
+    const save = document.querySelector('.btn-save');
+
+    edit.addEventListener('click', function() {
+        $('data-form:form').prop('readonly', false);
+    });
+
+    save.addEventListener('click', function() {
+        $('data-form:form').prop('readonly', true);
+    });
+
+
+</script>
