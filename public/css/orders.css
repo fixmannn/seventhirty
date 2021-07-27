@@ -9,7 +9,7 @@
 }
 
 .details .row {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .heading span {
@@ -50,10 +50,10 @@
 
 @media(min-width: 992px) {
   .details .row {
-    margin-top: 120px;
+    margin-top: 150px;
   }
 
   .side-bar {
-    display: flex;
+    display: inline-block;
   }
 }
