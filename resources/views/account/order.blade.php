@@ -29,16 +29,16 @@
         <div class="col-xl-9">
           <div class="heading d-flex justify-content-between">
             <h5 class="font-weight-bold title">Order Detail</h5>
-            <p class="text-muted font-weight-bold">Order Number : 2021928904F</p>
+            <p class="text-muted font-weight-bold mb-0">Order Number : 2021928904F</p>
           </div>
-            <p class="text-muted d-flex justify-content-end font-weight bold mt-0">Tracking Number : 920581085102</p>
-            <a href="https://cekresi.com/" class="text-primary d-flex justify-content-end font-weight-bold mt-0">Track your package</a>
+            <p class="text-muted d-flex justify-content-end font-weight-bold mt-0 mb-0">Tracking Number : 920581085102</p>
+            <a href="https://cekresi.com/" class="text-primary d-flex justify-content-end font-weight-bold mt-0 mb-0">Track your package</a>
 
           <h5 class="font-weight-bold title">Order Status</h5>
-          <div class="progress mt-2" style="height: 10px;">
-          <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress mt-3" style="height: 10px;">
+          <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
-          <div class="progress-text d-flex justify-content-between mt-2">
+          <div class="progress-text d-flex justify-content-between mt-3">
             <p class="text-muted font-weight-bold">Order Placed</p>
             <p class="text-muted font-weight-bold">Waiting for Payment</p>
             <p class="text-muted font-weight-bold">Preparing to Ship</p>
