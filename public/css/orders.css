@@ -50,13 +50,11 @@
 
 .order-row {
   cursor: pointer;
-  background-color: rgb(207, 207, 207);
-  opacity: 0;
   transition: 0.3s;
 }
 
 .order-row:hover {
-  opacity: 1;
+  background-color: rgb(207, 207, 207);
 }
 
 @media(min-width: 992px) {
