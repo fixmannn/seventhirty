@@ -59,7 +59,7 @@
                 </tr> --}}
             @foreach($order as $id => $orders)
               <tr>
-                <th>$orders->order_number</th>
+                <th>{{ $orders->order_number }}</th>
                 <td>
                     @if($orders->order_status == 0)
                     Menunggu Pembayaran
@@ -73,8 +73,8 @@
                     Order gagal (Pembayaran tidak diselesaikan)
                     @endif
                 </td>
-                <td>$orders->created_at</td>
-                <td>$orders->amount</td>
+                <td>{{ $orders->created_at }}</td>
+                <td>{{ $orders->amount }}</td>
               </tr>
               @endforeach
             </tbody>
