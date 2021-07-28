@@ -29,21 +29,21 @@
         <div class="col-xl-9">
         <div class="heading d-flex justify-content-between">
           <h5 class="font-weight-bold title">Order Detail</h5>
+          <p class="text-muted">Order Number : 2021928904F</p>
         </div>
-        <p class="text-muted d-flex justify-content-end">Order Number : 2021928904F</p>
-        <p class="text-muted d-flex justify-content-end">Tracking Number : 920581085102</p>
-        <a href="https://cekresi.com/" class="text-primary d-flex justify-content-end">Track your package</a>
+          <p class="text-muted d-flex justify-content-end">Tracking Number : 920581085102</p>
+          <a href="https://cekresi.com/" class="text-primary d-flex justify-content-end">Track your package</a>
         </div>
 
         <h5 class="font-weight-bold title">Order Status</h5>
         <div class="progress" style="height: 10px;">
           <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          <div class="progress-text d-flex justify-content between">
+          {{-- <div class="progress-text d-flex justify-content between">
             <p class="text-muted">Menunggu Pembayaran</p>
             <p class="text-muted">Paket Siap Dikirim</p>
             <p class="text-muted">Paket Sedang Menuju Lokasi Anda</p>
             <p class="text-muted">Paket Diterima</p>
-          </div>
+          </div> --}}
         </div>
     </div>
 </div>
