@@ -41,8 +41,7 @@
             </thead>
             <tbody>
             @foreach($order as $id => $orders)
-            <a href="{{ url('/order/') }}{{ $orders->order_number }}">
-              <tr>
+              <tr class="order-row" data-href="{{ url('/order/') }}{{ $orders->order_number }}">
                 <th>{{ $orders->order_number }}</th>
                 <td>
                     @if($orders->order_status == 0)
@@ -60,7 +59,6 @@
                 <td>{{ $orders->created_at }}</td>
                 <td>Rp. <span class="number">{{ $orders->amount }}</span>,-</td>
               </tr>
-            </a>
               @endforeach
             </tbody>
           </table>
@@ -69,6 +67,16 @@
 </div>
 
 @include('layouts/footer')
+
+<script src="{{asset('assets/jquery/jquery-3.6.0.min.js')}}"></script>
+
+<script>
+    $(document).ready(function() {
+        $('.order-row').click(function() {
+            window.location = $(this).data('href');
+        });
+    });
+</script>
 
 <script>
     const price = document.querySelectorAll('.number');
