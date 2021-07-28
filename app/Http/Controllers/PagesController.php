@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Order;
 use App\Models\Product;
 
 class PagesController extends Controller
