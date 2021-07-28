@@ -27,8 +27,8 @@
 }
 
 .btn-save {
-  background-color: #b2c9ab !important;
-  border: 1px solid #b2c9ab !important;
+  background-color: #92b6b1 !important;
+  border: 1px solid #92b6b1 !important;
 } 
 
 .buttons {
@@ -37,7 +37,7 @@
 }
 
 .btn-save:hover, .btn-save:focus {
-  background-color: #99ad93 !important;
+  background-color: #74918d !important;
 }
 
 .title {

@@ -58,10 +58,10 @@
               <div class="form-group col-md-9">
                 <label for="password_confirmation">Confirm New Password</label>
                 <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
+                <div class="d-flex justify-content-end">
+                  <button class="btn btn-save text-white" type="submit">Change Password</button>
+                </div>
               </div>
-            </div>
-            <div class="d-flex justify-content-end">
-                <button class="btn btn-save text-white" type="submit">Change Password</button>
             </div>
           </form>
         </div>
