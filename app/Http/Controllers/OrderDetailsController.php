@@ -25,6 +25,8 @@ class OrderDetailsController extends Controller
      */
     public function create()
     {
+      $order_number = session('order_number');
+
       foreach(session('cart') as $detail => $details) {
           $makeOrderDetails = OrderDetail::create([
               'order_number' => $order_number,
@@ -80,6 +82,7 @@ class OrderDetailsController extends Controller
      */
     public function update()
     {
+      $order_number = session('order_number');
       foreach(session('cart') as $detail => $details) {
         $updateOrder = OrderDetail::where('order_number', $order_number)
                         ->where('product_id', $details['product_id'])
