@@ -54,7 +54,7 @@
 }
 
 .order-row:hover {
-  background-color: rgb(207, 207, 207);
+  background-color: #92b6b1;
 }
 
 @media(min-width: 992px) {
