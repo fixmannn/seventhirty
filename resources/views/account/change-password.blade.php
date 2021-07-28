@@ -14,12 +14,12 @@
         <div class="col-xl-3 side-bar">
             <h5 class="font-weight-bold title">Account Details</h5>
             <a href="{{ url('/account-details') }}"><div class="d-flex justify-content-between btn mt-3">
-                <p class="text-muted font-weight-bold active">Edit Profile</p>
-                <span class="iconify text-muted active" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
+                <p class="text-list font-weight-bold active">Edit Profile</p>
+                <span class="iconify text-list active" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div></a>
             <a href="{{ url('/change-password') }}"><div class="d-flex justify-content-between btn mt-1 list-menu">
-                <p class="text-list font-weight-bold">Change Password</p>
-                <span class="iconify text-list" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
+                <p class="text-muted font-weight-bold">Change Password</p>
+                <span class="iconify text-muted" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div></a>
             <a href="{{ url('/orders') }}"><div class="d-flex justify-content-between btn mt-1 list-menu">
                 <p class="text-list font-weight-bold">Orders</p>
@@ -45,12 +45,18 @@
             <div class="form-row mt-3">
               <div class="form-group col-md-5">
                 <label for="old_password">Current Password</label>
+                @error('old_password')
+                <small class="text-danger">{{$message}}</small>
+                @enderror
                 <input type="password" class="form-control" id="old_password" name="old_password">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-5">
                 <label for="password">New Password</label>
+                @error('password')
+                <small class="text-danger">{{$message}}</small>
+                @enderror
                 <input type="password" class="form-control" id="password" name="password">
               </div>
             </div>
