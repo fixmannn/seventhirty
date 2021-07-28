@@ -239,7 +239,7 @@ class UsersController extends Controller
                 'regex:/[0-9]/',
                 'confirmed'
             ]
-            ];
+        ];
 
         $customMessages = [
             'required' => ':attribute harus di isi gan',
@@ -253,19 +253,21 @@ class UsersController extends Controller
 
         $user = User::where('id', session('LoggedUser'))->first();
 
-        if($user) {
-            if(Hash::check($user->password, $request->old_password)) {
-                User::update([
-                    'password' => Hash::make($request->password)
-                ]);
+        dd($user);
 
-                return back()->with('success', 'password berhasil diganti');
-            } else {
-                return back()->with('fail', 'password lama salah gan');
-            }
+        // if($user) {
+        //     if(Hash::check($user->password, $request->old_password)) {
+        //         User::update([
+        //             'password' => Hash::make($request->password)
+        //         ]);
 
-            return back()->with('fail', 'password gagal diganti');
-        }
+        //         return back()->with('success', 'password berhasil diganti');
+        //     } else {
+        //         return back()->with('fail', 'password lama salah gan');
+        //     }
+
+        //     return back()->with('fail', 'password gagal diganti');
+        // }
     }
 
     /**
