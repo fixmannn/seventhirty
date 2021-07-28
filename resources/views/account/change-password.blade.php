@@ -31,12 +31,12 @@
           <h5 class="font-weight-bold title">Change Password</h5>
         </div>
         @if(Session::get('success'))
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-success col-md-5" role="alert">
             {{ Session::get('success') }}
         </div>
         @endif
         @if(Session::get('fail'))
-        <div class="alert alert-danger" role="alert">
+        <div class="alert alert-danger col-md-5" role="alert">
           {{ Session::get('fail') }}
         </div>
         @endif

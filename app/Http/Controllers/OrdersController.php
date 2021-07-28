@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\OrdersDetails;
 use App\Http\Controllers\CheckoutController;
 use Illuminate\Http\Request;
 
@@ -49,11 +50,31 @@ class OrdersController extends Controller
                 'amount' => $amount,
                 'shipping_fee' => $shipping
             ]);
+
+            foreach(session('cart') as $detail => $details) {
+                $makeOrderDetails = OrderDetails::create([
+                    'order_number' = $order_number,
+                    'product_id' = $details['id'],
+                    'quantity' = $details['quantity'],
+                    'size' = $details['size'],
+                    'price' = $details['price']
+                ]);
+            }
         } else {
-            $makeOrder = Order::where('order_number', $order_number)
+            $updateOrder = Order::where('order_number', $order_number)
                 ->update([
                     'amount' => $amount
                 ]);
+
+            foreach(session('cart') as $detail => $details) {
+                $updateOrder = OrderDetails::where('order_number', $order_number)
+                                ->where('product_id', $details['product_id'])
+                                ->update([
+                                    'quantity' => $details['quantity'],
+                                    'size' => $details['size'],
+                                    'price' => $details['price']
+                                ]);
+            }
         }
     }
 
