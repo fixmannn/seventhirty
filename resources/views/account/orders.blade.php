@@ -40,7 +40,7 @@
               </tr>
             </thead>
             <tbody>
-                <tr> 
+                {{-- <tr> 
                     <th>$order->order_number</th>
                     <td>@if($order->order_status == 0)
                         Menunggu Pembayaran
@@ -56,8 +56,8 @@
                     </td>
                     <td>$order->created_at</td>
                     <td>$order->amount</td>
-                </tr>
-            {{-- @foreach($order as $id => $orders)
+                </tr> --}}
+            @foreach($order as $id => $orders)
               <tr>
                 <th>$orders->order_number</th>
                 <td>
@@ -76,7 +76,7 @@
                 <td>$orders->created_at</td>
                 <td>$orders->amount</td>
               </tr>
-              @endforeach --}}
+              @endforeach
             </tbody>
           </table>
         </div>
