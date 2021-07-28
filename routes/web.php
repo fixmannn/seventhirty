@@ -30,6 +30,7 @@ Route::get('/shop', [PagesController::class, 'shop']);
 Route::get('gallery', [PagesController::class, 'gallery']);
 Route::get('about', [PagesController::class, 'about']);
 Route::get('account-details', [PagesController::class, 'accountDetails']);
+Route::get('change-password', [PagesController::class, 'changePassword']);
 Route::get('test', [PagesController::class, 'test']);
 
 // Products Controller 
@@ -72,3 +73,4 @@ Route::delete('cart', [CartsController::class, 'remove']);
 
 // Account Details Routes
 Route::post('account-details', [UsersController::class, 'edit']);
+Route::post('change-password', [UsersController::class, 'change']);

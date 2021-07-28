@@ -52,6 +52,11 @@ class PagesController extends Controller
     return view('account.details', compact('user'));
   }
 
+  public function changePassword()
+  {
+    return view('account.change-password');
+  }
+
   public function logout()
   {
     $users = User::all();

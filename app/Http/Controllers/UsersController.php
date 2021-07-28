@@ -225,6 +225,49 @@ class UsersController extends Controller
         return view('checkout.payment');
     }
 
+    public function change(Request $request, User $user)
+    {
+        $rules = [
+            'old_password' => 'required'
+            'password' => [
+                'required',
+                'string',
+                'min:8',
+                'max:32'
+                'regex:/[a-z]/',
+                'regex:/[A-Z]/',
+                'regex:/[0-9]/',
+                'confirmed'
+            ]
+            ];
+
+        $customMessages = [
+            'required' => ':attribute harus di isi gan',
+            'min' => 'password kurang dari 8 karakter gan',
+            'max' => 'password jangan panjang2 gan',
+            'regex' => 'password harus mengandung huruf besar, dan angka gan',
+            'confirmed' => 'password ga sama nih gan'
+        ];
+
+        $this->validate($request, $rules, $customMessages);
+
+        $user = User::where('id', session('LoggedUser'))->first();
+
+        if($user) {
+            if(Hash::check($user->password, $request->old_password)) {
+                User::update([
+                    'password' => Hash::make($request->password)
+                ]);
+
+                return back()->with('success', 'password berhasil diganti');
+            } else {
+                return back()->with('fail', 'password lama salah gan');
+            }
+
+            return back()->with('fail', 'password gagal diganti');
+        }
+    }
+
     /**
      * Remove the specified resource from storage.
      *

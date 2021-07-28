@@ -13,18 +13,18 @@
     <div class="row">
         <div class="col-xl-3 side-bar">
             <h5 class="font-weight-bold title">Account Details</h5>
-            <div class="d-flex justify-content-between btn mt-3">
+            <a href="{{ url('/account-details') }}"><div class="d-flex justify-content-between btn mt-3">
                 <p class="text-muted font-weight-bold active">Edit Profile</p>
                 <span class="iconify text-muted active" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
-            </div>
-            <div class="d-flex justify-content-between btn mt-1 list-menu">
+            </div></a>
+            <a href="{{ url('/change-password') }}"><div class="d-flex justify-content-between btn mt-1 list-menu">
                 <p class="text-list font-weight-bold">Change Password</p>
                 <span class="iconify text-list" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
-            </div>
-            <div class="d-flex justify-content-between btn mt-1 list-menu">
+            </div></a>
+            <a href="{{ url('/orders') }}"><div class="d-flex justify-content-between btn mt-1 list-menu">
                 <p class="text-list font-weight-bold">Orders</p>
                 <span class="iconify text-list" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
-            </div>
+            </div></a>
         </div>
         <div class="col-xl-9">
         <div class="heading d-flex justify-content-between">
