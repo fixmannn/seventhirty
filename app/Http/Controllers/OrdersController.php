@@ -53,11 +53,11 @@ class OrdersController extends Controller
 
             foreach(session('cart') as $detail => $details) {
                 $makeOrderDetails = OrderDetails::create([
-                    'order_number' = $order_number,
-                    'product_id' = $details['id'],
-                    'quantity' = $details['quantity'],
-                    'size' = $details['size'],
-                    'price' = $details['price']
+                    'order_number' => $order_number,
+                    'product_id' => $details['id'],
+                    'quantity' => $details['quantity'],
+                    'size' => $details['size'],
+                    'price' => $details['price']
                 ]);
             }
         } else {
