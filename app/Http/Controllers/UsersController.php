@@ -254,7 +254,7 @@ class UsersController extends Controller
         $user = User::where('id', session('LoggedUser'))->first();
 
         if($user) {
-            if(Hash::check($user->password, $request->old_password)) {
+            if(Hash::check($request->old_password, $user->password)) {
                 User::update([
                     'password' => Hash::make($request->password)
                 ]);
