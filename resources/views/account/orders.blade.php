@@ -30,8 +30,8 @@
         <div class="heading d-flex justify-content-between">
           <h5 class="font-weight-bold title">Orders</h5>
         </div>
-        <table class="table mt-3 table-success">
-            <thead class="thead-dark">
+        <table class="table mt-3">
+            <thead class="thead-success">
               <tr>
                 <th scope="col">Order No.</th>
                 <th scope="col">Order Status</th>
@@ -57,7 +57,7 @@
                     @endif
                 </td>
                 <td>{{ $orders->created_at }}</td>
-                <td class="number">{{ $orders->amount }}</td>
+                <td class="number">Rp. {{ $orders->amount }},-</td>
               </tr>
               @endforeach
             </tbody>
