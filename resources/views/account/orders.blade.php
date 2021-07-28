@@ -42,15 +42,15 @@
             <tbody>
                 <tr> 
                     <th>$order->order_number</th>
-                    <td>@if($orders->order_status == 0)
+                    <td>@if($order->order_status == 0)
                         Menunggu Pembayaran
-                        @elseif($orders->order_status == 1)
+                        @elseif($order->order_status == 1)
                         Paket Siap Dikirim
-                        @elseif($orders->order_status == 2)
+                        @elseif($order->order_status == 2)
                         Paket Sedang Menuju Lokasi Anda
-                        @elseif($orders->order_status == 3)
+                        @elseif($order->order_status == 3)
                         Paket Sudah Diterima
-                        @elseif($orders->order_status == 4)
+                        @elseif($order->order_status == 4)
                         Order gagal (Pembayaran tidak diselesaikan)
                         @endif
                     </td>
