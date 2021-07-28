@@ -40,7 +40,7 @@
               </tr>
             </thead>
             <tbody>
-            @foreach($order as $id =>orders)
+            @foreach($order as $id => $orders)
               <tr>
                 <th>$orders->order_number</th>
                 <td>
