@@ -6,7 +6,7 @@ use App\Models\OrdersDetails;
 use App\Http\Controllers\CheckoutController;
 use Illuminate\Http\Request;
 
-class OrdersController extends Controller
+class OrderDetailsController extends Controller
 {
     /**
      * Display a listing of the resource.
