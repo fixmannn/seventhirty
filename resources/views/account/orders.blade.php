@@ -30,7 +30,7 @@
         <div class="heading d-flex justify-content-between">
           <h5 class="font-weight-bold title">Orders</h5>
         </div>
-        <table class="table">
+        <table class="table mt-3 table-success">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Order No.</th>
@@ -40,23 +40,6 @@
               </tr>
             </thead>
             <tbody>
-                {{-- <tr> 
-                    <th>$order->order_number</th>
-                    <td>@if($order->order_status == 0)
-                        Menunggu Pembayaran
-                        @elseif($order->order_status == 1)
-                        Paket Siap Dikirim
-                        @elseif($order->order_status == 2)
-                        Paket Sedang Menuju Lokasi Anda
-                        @elseif($order->order_status == 3)
-                        Paket Sudah Diterima
-                        @elseif($order->order_status == 4)
-                        Order gagal (Pembayaran tidak diselesaikan)
-                        @endif
-                    </td>
-                    <td>$order->created_at</td>
-                    <td>$order->amount</td>
-                </tr> --}}
             @foreach($order as $id => $orders)
               <tr>
                 <th>{{ $orders->order_number }}</th>
@@ -74,7 +57,7 @@
                     @endif
                 </td>
                 <td>{{ $orders->created_at }}</td>
-                <td>{{ $orders->amount }}</td>
+                <td class="number">{{ $orders->amount }}</td>
               </tr>
               @endforeach
             </tbody>
@@ -84,3 +67,14 @@
 </div>
 
 @include('layouts/footer')
+
+<script>
+    const price = document.querySelectorAll('.number');
+
+    window.addEventListener('load', function() {
+        price.forEach((val, index) => {
+            valInner = val.innerHTML;
+            val.innerHTML = parseFloat(valInner).toLocaleString('id');
+        });
+    });
+</script>
