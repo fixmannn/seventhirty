@@ -228,7 +228,7 @@ class UsersController extends Controller
     public function change(Request $request, User $user)
     {
         $rules = [
-            'old_password' => 'required'
+            'old_password' => 'required',
             'password' => [
                 'required',
                 'string',
