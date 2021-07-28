@@ -48,6 +48,14 @@
   color: #999 !important;
 }
 
+.order-row {
+  cursor: pointer;
+}
+
+.order-row:hover {
+  background-color: #999;
+}
+
 @media(min-width: 992px) {
   .details .row {
     margin-top: 150px;

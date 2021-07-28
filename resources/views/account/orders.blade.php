@@ -41,7 +41,7 @@
             </thead>
             <tbody>
             @foreach($order as $id => $orders)
-              <tr class="order-row" data-href="{{ url('/order/') }}{{ $orders->order_number }}">
+              <tr class="order-row" data-href="{{ url('/order') }}/{{ $orders->order_number }}">
                 <th>{{ $orders->order_number }}</th>
                 <td>
                     @if($orders->order_status == 0)
