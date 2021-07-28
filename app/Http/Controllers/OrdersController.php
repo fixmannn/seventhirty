@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
-use App\Models\OrdersDetails;
+use App\Models\OrderDetails;
 use App\Http\Controllers\CheckoutController;
 use Illuminate\Http\Request;
 
