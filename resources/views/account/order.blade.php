@@ -35,14 +35,15 @@
             <a href="https://cekresi.com/" class="text-primary d-flex justify-content-end font-weight-bold mt-0">Track your package</a>
 
           <h5 class="font-weight-bold title">Order Status</h5>
-          <div class="progress mt-1" style="height: 10px;">
+          <div class="progress mt-2" style="height: 10px;">
           <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
-          <div class="progress-text d-flex justify-content-between">
-            <p class="text-muted font-weight-bold">Menunggu Pembayaran</p>
-            <p class="text-muted font-weight-bold">Paket Siap Dikirim</p>
-            <p class="text-muted font-weight-bold">Paket Sedang Menuju Lokasi Anda</p>
-            <p class="text-muted font-weight-bold">Paket Diterima</p>
+          <div class="progress-text d-flex justify-content-between mt-2">
+            <p class="text-muted font-weight-bold">Order Placed</p>
+            <p class="text-muted font-weight-bold">Waiting for Payment</p>
+            <p class="text-muted font-weight-bold">Preparing to Ship</p>
+            <p class="text-muted font-weight-bold">Package Sent</p>
+            <p class="text-muted font-weight-bold">Delivered</p>
           </div>
         </div>
     </div>
