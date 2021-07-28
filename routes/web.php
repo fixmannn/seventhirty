@@ -75,3 +75,6 @@ Route::delete('cart', [CartsController::class, 'remove']);
 // Account Details Routes
 Route::post('account-details', [UsersController::class, 'edit']);
 Route::post('change-password', [UsersController::class, 'change']);
+
+// Order Routes 
+Route::get('order/{order_number}', [OrdersController::class, 'show']);

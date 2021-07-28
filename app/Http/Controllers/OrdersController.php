@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\User;
 use App\Models\OrderDetails;
 use App\Http\Controllers\CheckoutController;
 use Illuminate\Http\Request;
@@ -83,9 +84,9 @@ class OrdersController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show(Order $order, $order_number)
     {
-        //
+        return view('account.order');
     }
 
     /**
