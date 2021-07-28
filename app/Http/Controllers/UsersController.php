@@ -233,7 +233,7 @@ class UsersController extends Controller
                 'required',
                 'string',
                 'min:8',
-                'max:32'
+                'max:32',
                 'regex:/[a-z]/',
                 'regex:/[A-Z]/',
                 'regex:/[0-9]/',
