@@ -8,6 +8,7 @@ use App\Http\Controllers\CartsController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\PaymentsController;
+use App\Http\Controllers\OrdersController;
 
 /*
 |--------------------------------------------------------------------------
