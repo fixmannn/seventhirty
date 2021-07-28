@@ -251,7 +251,7 @@ class UsersController extends Controller
 
         $this->validate($request, $rules, $customMessages);
 
-        $user = User::where('id', '=', session('LoggedUser'))->first();
+        $user = User::where('id', session('LoggedUser'))->first();
 
         if($user) {
             if(Hash::check($request->old_password, $user->password)) {
