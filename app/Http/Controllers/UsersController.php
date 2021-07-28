@@ -242,7 +242,7 @@ class UsersController extends Controller
         ];
 
         $customMessages = [
-            'required' => ':attribute harus di isi gan',
+            'required' => 'current harus di isi gan',
             'min' => 'password kurang dari 8 karakter gan',
             'max' => 'password jangan panjang2 gan',
             'regex' => 'password harus mengandung huruf besar, dan angka gan',
@@ -251,7 +251,7 @@ class UsersController extends Controller
 
         $this->validate($request, $rules, $customMessages);
 
-        $user = User::where('id', session('LoggedUser'))->first();
+        $user = User::where('id', '=', session('LoggedUser'))->first();
 
         if($user) {
             if(Hash::check($request->old_password, $user->password)) {
