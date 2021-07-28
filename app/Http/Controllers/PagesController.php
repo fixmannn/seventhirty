@@ -54,7 +54,9 @@ class PagesController extends Controller
 
   public function changePassword()
   {
-    return view('account.change-password');
+    $user = User::where('id', session('LoggedUser'))->first();
+    dd($user);
+    // return view('account.change-password');
   }
 
   public function logout()
