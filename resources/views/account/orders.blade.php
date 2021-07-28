@@ -41,6 +41,7 @@
             </thead>
             <tbody>
             @foreach($order as $id => $orders)
+            <a href="{{ url('/order/')$order_number }}">
               <tr>
                 <th>{{ $orders->order_number }}</th>
                 <td>
@@ -57,8 +58,9 @@
                     @endif
                 </td>
                 <td>{{ $orders->created_at }}</td>
-                <td class="number">Rp. {{ $orders->amount }},-</td>
+                <td>Rp. <span class="number">{{ $orders->amount }}</span>,-</td>
               </tr>
+            </a>
               @endforeach
             </tbody>
           </table>
