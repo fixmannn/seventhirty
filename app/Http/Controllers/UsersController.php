@@ -253,21 +253,19 @@ class UsersController extends Controller
 
         $user = User::where('id', session('LoggedUser'))->first();
 
-        dd($user);
+        if($user) {
+            if(Hash::check($user->password, $request->old_password)) {
+                User::update([
+                    'password' => Hash::make($request->password)
+                ]);
 
-        // if($user) {
-        //     if(Hash::check($user->password, $request->old_password)) {
-        //         User::update([
-        //             'password' => Hash::make($request->password)
-        //         ]);
+                return back()->with('success', 'password berhasil diganti');
+            } else {
+                return back()->with('fail', 'password lama salah gan');
+            }
 
-        //         return back()->with('success', 'password berhasil diganti');
-        //     } else {
-        //         return back()->with('fail', 'password lama salah gan');
-        //     }
-
-        //     return back()->with('fail', 'password gagal diganti');
-        // }
+            return back()->with('fail', 'password gagal diganti');
+        }
     }
 
     /**
