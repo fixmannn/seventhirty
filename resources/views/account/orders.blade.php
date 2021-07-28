@@ -41,7 +41,7 @@
             </thead>
             <tbody>
             @foreach($order as $id => $orders)
-            <a href="{{ url('/order/')$order_number }}">
+            <a href="{{ url('/order/'$order_number) }}">
               <tr>
                 <th>{{ $orders->order_number }}</th>
                 <td>
