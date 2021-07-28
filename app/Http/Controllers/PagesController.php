@@ -60,7 +60,7 @@ class PagesController extends Controller
 
   public function orders()
   {
-    $order = Order::where('user_id', session('LoggedUser'));
+    $order = Order::where('user_id', session('LoggedUser'))->get();
 
     return view('account.orders', compact('order'));
   }
