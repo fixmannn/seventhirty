@@ -40,24 +40,26 @@
               </tr>
             </thead>
             <tbody>
+            @foreach($order as $id =>orders)
               <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th>$orders->order_number</th>
+                <td>
+                    @if($orders->order_status == 0)
+                    Menunggu Pembayaran
+                    @elseif($orders->order_status == 1)
+                    Paket Siap Dikirim
+                    @elseif($orders->order_status == 2)
+                    Paket Sedang Menuju Lokasi Anda
+                    @elseif($orders->order_status == 3)
+                    Paket Sudah Diterima
+                    @elseif($orders->order_status == 4)
+                    Order gagal (Pembayaran tidak diselesaikan)
+                    @endif
+                </td>
+                <td>$orders->created_at</td>
+                <td>$orders->amount</td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
+              @endforeach
             </tbody>
           </table>
         </div>

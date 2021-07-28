@@ -31,6 +31,7 @@ Route::get('gallery', [PagesController::class, 'gallery']);
 Route::get('about', [PagesController::class, 'about']);
 Route::get('account-details', [PagesController::class, 'accountDetails']);
 Route::get('change-password', [PagesController::class, 'changePassword']);
+Route::get('orders', [PagesController::class, 'order']);
 Route::get('test', [PagesController::class, 'test']);
 
 // Products Controller 

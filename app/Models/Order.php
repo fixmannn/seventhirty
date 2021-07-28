@@ -14,8 +14,9 @@ class Order extends Model
         'user_id' => 0,
         'amount' => 0,
         'shipping_fee' => 0,
-        'shipping_number' => 0
+        'shipping_number' => 0,
+        'order_status' => 0
     ];
 
-    protected $fillable = ['order_number', 'user_id', 'amount', 'shipping_fee', 'shipping_number'];
+    protected $fillable = ['order_number', 'user_id', 'amount', 'shipping_fee', 'shipping_number', 'order_status'];
 }

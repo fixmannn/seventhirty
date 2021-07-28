@@ -57,6 +57,13 @@ class PagesController extends Controller
     return view('account.change-password');
   }
 
+  public function orders()
+  {
+    $order = Order::where('user_id', session('LoggedUser'));
+
+    return view('account.orders', compact('order'));
+  }
+
   public function logout()
   {
     $users = User::all();
