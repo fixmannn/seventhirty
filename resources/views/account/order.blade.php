@@ -59,17 +59,17 @@
           <div class="row">
             <div class="col-md-6">
               <h5 class="font-weight-bold title">Payment Details</h5>
-              <table>
+              <table width="80%">
                 <tr>
-                  <th>Payment Method</th>
+                  <td>Payment Method</td>
                   <td>Mandiri Virtual Account</td>
                 </tr>
                 <tr>
-                  <th>Product/s</th>
+                  <td>Product/s</td>
                   <td>Rp. 171.000,-</td>
                 </tr>
                 <tr>
-                  <th>Shipping Fee</th>
+                  <td>Shipping Fee</td>
                   <td>Rp. 9.000,-</td>
                 </tr>
                 <tr>
