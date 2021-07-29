@@ -47,7 +47,7 @@
           </div>
 
           <h5 class="font-weight-bold title mt-4">Detail Products</h5>
-          <table>
+          <table class="mt-3">
             <tr>
               <th></th>
               <th></th>
@@ -57,7 +57,7 @@
               <td><img src="{{ asset('/img/anxiety.jpg') }}" alt="" width="10%" class="product-img"></td>
               <td>
                 <p class="font-weight-bold">Anxiety Disorder - T Shirt</p>
-                <p class="text-muted">XL - 1 pcs</p>
+                {{-- <p class="text-muted">XL - 1 pcs</p> --}}
               </td>
               <td><span class="font-weight-bold">Rp. 180.000,-</span></td>
             </tr>
