@@ -75,7 +75,7 @@ table {
 }
 
 
-@media(min-width: 700px) and (min-height: 900px) {
+@media(min-width: 900px) {
   body {
     font-size: 1rem !important;
   }
