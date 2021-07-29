@@ -35,7 +35,7 @@
             <a href="https://cekresi.com/" class="text-primary d-flex justify-content-end font-weight-bold mt-0 mb-0">Track your package</a>
 
           <h5 class="font-weight-bold title">Order Status</h5>
-          <div class="progress mt-3" style="height: 10px;">
+          <div class="progress mt-3" style="height: 10px;"> 
           <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <div class="progress-text d-flex justify-content-between mt-3">
@@ -56,6 +56,36 @@
               <td style="vertical-align: middle; padding-right: 0;" width="30%" class="font-weight-bold"><span>Rp. 180.000,-</span></td>
             </tr>
           </table>
+          <div class="row">
+            <div class="col-md-6">
+              <h5 class="font-weight-bold title">Payment Details</h5>
+              <table>
+                <tr>
+                  <th>Payment Method</th>
+                  <td>Mandiri Virtual Account</td>
+                </tr>
+                <tr>
+                  <th>Product/s</th>
+                  <td>Rp. 171.000,-</td>
+                </tr>
+                <tr>
+                  <th>Shipping Fee</th>
+                  <td>Rp. 9.000,-</td>
+                </tr>
+                <tr>
+                  <th class="font-weight-bold">Total Payment</th>
+                  <td class="font-weight-bold">Rp. 180.000,-</td>
+                </tr>
+              </table>
+            </div>
+            <div class="col-md-6">
+              <h5 class="font-weight-bold title">Shipping Address</h5>
+              <p>Haliza Nuradila</p>
+              <p>Jalan Haji Nur Lela ya nona No. 28, Kec. Cirendeu
+                Ciputat Timur, Tangerang Selatan
+                150912</p>
+            </div>
+          </div>
         </div>
     </div>
 </div>
