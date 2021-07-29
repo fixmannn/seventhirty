@@ -53,7 +53,7 @@
           <h5 class="font-weight-bold title mt-4">Detail Products</h5>
           <table class="mt-3 table product-table">
             @foreach($product as $p)
-            @foreach($details as $d)
+            @foreach($detail as $d)
             <tr>
               <td width="5%" style="padding-left: 0;"><img src="{{ asset('/img') }}/{{ $p['image'] }}" alt="" width="70px" class="product-img">
               </td>
