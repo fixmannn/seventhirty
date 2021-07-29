@@ -54,10 +54,9 @@
               <th>Amount</th>
             </tr>
             <tr>
-              <td>1</td>
+              <td><img src="{{ asset('/img/anxiety.jpg') }}" alt="" width="10%" class="product-img"></td>
               <td>
-                1
-                {{-- <p class="font-weight-bold">Anxiety Disorder - T Shirt</p> --}}
+                <p class="font-weight-bold">Anxiety Disorder - T Shirt</p>
                 {{-- <p class="text-muted">XL - 1 pcs</p> --}}
               </td>
               <td><span class="font-weight-bold">Rp. 180.000,-</span></td>
