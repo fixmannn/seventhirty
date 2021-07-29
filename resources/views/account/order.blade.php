@@ -36,7 +36,7 @@
 
           <h5 class="font-weight-bold title">Order Status</h5>
           <div class="progress mt-3" style="height: 10px;"> 
-          <div class="progress-bar bg-success" role="progressbar" style="width: 54%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 55%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <div class="progress-text d-flex justify-content-between mt-3">
             <p class="text-muted font-weight-bold">Order Placed</p>
@@ -80,7 +80,7 @@
             </div>
             <div class="col-md-6" style="font-size: 1rem;">
               <h5 class="font-weight-bold title shipping">Shipping Address</h5>
-              <p class="mt-3">Haliza Nuradila</p>
+              <p class="mt-4">Haliza Nuradila</p>
               <p>Jalan Haji Nur Lela ya nona No. 28, Kec. Cirendeu
                 Ciputat Timur, Tangerang Selatan
                 150912</p>
