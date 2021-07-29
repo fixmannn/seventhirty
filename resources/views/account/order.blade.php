@@ -47,13 +47,13 @@
           </div>
 
           <h5 class="font-weight-bold title mt-4">Detail Products</h5>
-          <table class="mt-3 table table-borderless" style="vertical-align: middle">
+          <table class="mt-3 table table-borderless">
             <tr>
               <td><img src="{{ asset('/img/anxiety.jpg') }}" alt="" width="90px" class="product-img">
-                <span class="font-weight-bold ml-3">Anxiety Disorder - T Shirt</span>
-                <span class="text-muted">XL - 1 pcs</span>
+                <span class="font-weight-bold ml-3">Anxiety Disorder - T Shirt <br>
+                  <p class="text-muted">XL - 1 pcs</p></span>
               </td>
-              <td><span class="font-weight-bold d-flex align-items-center">Rp. 180.000,-</span></td>
+              <td style="vertical-align: middle;"><span class="font-weight-bold d-flex align-items-center">Rp. 180.000,-</span></td>
             </tr>
           </table>
         </div>
