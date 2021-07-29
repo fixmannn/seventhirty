@@ -92,8 +92,8 @@ class OrdersController extends Controller
         $user = User::where('id', session('LoggedUser'))->first();
         foreach($detail as $id => $x) {
             $product_id = $x['product_id'];
+            $product = Product::where('id', $product_id)->get();
         } 
-        $product = Product::where('id', $product_id)->get();
 
         dd($product);
 
