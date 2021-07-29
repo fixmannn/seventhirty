@@ -93,9 +93,9 @@ class OrdersController extends Controller
         foreach($detail as $id => $x) {
             $product_id = $x['product_id'];
         } 
-        $product = Product::where('id', $product_id);
+        $product = Product::where('id', $product_id)->get();
 
-        dd($product);
+        dd($detail);
 
 
         // return view('account.order', compact('order', 'detail', 'user', 'product'));
