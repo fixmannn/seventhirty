@@ -95,13 +95,9 @@ class OrdersController extends Controller
         } 
 
         $product = Product::whereIn('id', $product_id)->get();
-        
-        dump($product);
-
-        // dump($product);
 
 
-        // return view('account.order', compact('order', 'detail', 'user', 'product'));
+        return view('account.order', compact('order', 'detail', 'user', 'product'));
     }
 
     /**

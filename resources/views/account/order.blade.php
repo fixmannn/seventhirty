@@ -31,7 +31,11 @@
             <h5 class="font-weight-bold title">Order Detail</h5>
             <p class="text-muted font-weight-bold mb-0">Order Number : {{ $order['order_number'] }}</p>
           </div>
-            <p class="text-muted d-flex justify-content-end font-weight-bold mt-0 mb-0">Tracking Number : {{ $order['order_status'] }}</p>
+            @if($order['shipping_number'] == 0)
+            <p class="text-muted d-flex justify-content-end font-weight-bold mt-0 mb-0">Tracking Number : N/A</p>
+            @else
+            <p class="text-muted d-flex justify-content-end font-weight-bold mt-0 mb-0">Tracking Number : {{ $order['shipping_number'] }}</p>
+            @endif
             <a href="https://cekresi.com/" class="text-primary d-flex justify-content-end font-weight-bold mt-0 mb-0">Track your package</a>
 
           <h5 class="font-weight-bold title">Order Status</h5>
@@ -48,13 +52,17 @@
 
           <h5 class="font-weight-bold title mt-4">Detail Products</h5>
           <table class="mt-3 table product-table">
+            @foreach($product as $p)
+            @foreach($details as $d)
             <tr>
-              <td width="5%" style="padding-left: 0;"><img src="{{ asset('/img/anxiety.jpg') }}" alt="" width="70px" class="product-img">
+              <td width="5%" style="padding-left: 0;"><img src="{{ asset('/img') }}/{{ $p['image'] }}" alt="" width="70px" class="product-img">
               </td>
-              <td style="vertical-align: middle; padding-left: 0;" class="ml-1" width="65%"><span class="font-weight-bold">Anxiety Disorder</span><br>
-              <span class="text-muted">XL - 1 pcs</span></td>
-              <td style="vertical-align: middle; padding-right: 0;" width="30%" class="font-weight-bold"><span>Rp. 180.000,-</span></td>
+              <td style="vertical-align: middle; padding-left: 0;" class="ml-1" width="65%"><span class="font-weight-bold">{{ $p['name'] }}</span><br>
+              <span class="text-muted">{{ $d['size'] }} - {{ $d['quantity'] }}pcs</span></td>
+              <td style="vertical-align: middle; padding-right: 0;" width="30%" class="font-weight-bold"><span>{{ $d['price'] }}</span></td>
             </tr>
+            @endforeach
+            @endforeach
           </table>
           <div class="row">
             <div class="col-md-6">
