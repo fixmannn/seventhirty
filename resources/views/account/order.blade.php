@@ -62,19 +62,19 @@
               <table width="100%" class="table table-borderless">
                 <tr>
                   <td>Payment Method</td>
-                  <td>Mandiri Virtual Account</td>
+                  <td style="text-align: right">Mandiri Virtual Account</td>
                 </tr>
                 <tr>
                   <td>Product/s</td>
-                  <td>Rp. 171.000,-</td>
+                  <td style="text-align: right">Rp. 171.000,-</td>
                 </tr>
                 <tr>
                   <td>Shipping Fee</td>
-                  <td>Rp. 9.000,-</td>
+                  <td style="text-align: right">Rp. 9.000,-</td>
                 </tr>
                 <tr>
                   <th class="font-weight-bold">Total Payment</th>
-                  <td class="font-weight-bold">Rp. 180.000,-</td>
+                  <td class="font-weight-bold" style="text-align: right">Rp. 180.000,-</td>
                 </tr>
               </table>
             </div>
