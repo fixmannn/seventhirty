@@ -61,6 +61,10 @@
   border-radius: 10px;
 }
 
+.progress-text p {
+  font-size: 1em;
+}
+
 @media(min-width: 992px) {
   .details .row {
     margin-top: 150px;

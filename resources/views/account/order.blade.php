@@ -51,9 +51,9 @@
             <tr>
               <td width="10%"><img src="{{ asset('/img/anxiety.jpg') }}" alt="" width="90px" class="product-img">
               </td>
-              <td style="vertical-align: middle;" class="ml-3" width="70%"><span class="font-weight-bold">Anxiety Disorder - T Shirt</span><br>
+              <td style="vertical-align: middle;" class="ml-3" width="70%"><span>Anxiety Disorder - T Shirt</span><br>
               <span class="text-muted">XL - 1 pcs</span></td>
-              <td style="vertical-align: middle" width="20%"><span class="font-weight-bold">Rp. 180.000,-</span></td>
+              <td style="vertical-align: middle" width="20%"><span>Rp. 180.000,-</span></td>
             </tr>
           </table>
         </div>
