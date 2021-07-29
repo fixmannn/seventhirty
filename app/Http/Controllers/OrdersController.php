@@ -94,7 +94,7 @@ class OrdersController extends Controller
             $product = Product::where('id', $x['product_id'])->get();
         } 
 
-        dd($product);
+        dump($product);
 
 
         // return view('account.order', compact('order', 'detail', 'user', 'product'));
