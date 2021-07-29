@@ -54,7 +54,7 @@
               <th>Amount</th>
             </tr>
             <tr>
-              <td><img src="{{ asset('/img/anxiety.jpg') }}" alt="" width="90px" class="product-img"></td>
+              <td style="max-width: 120px"><img src="{{ asset('/img/anxiety.jpg') }}" alt="" width="90px" class="product-img"></td>
               <td>
                 <p class="font-weight-bold">Anxiety Disorder - T Shirt</p>
                 {{-- <p class="text-muted">XL - 1 pcs</p> --}}
