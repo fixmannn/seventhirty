@@ -6,9 +6,6 @@ table {
   font-size: small;
 }
 
-table td {
-  padding-left: 0;
-}
 
 .details {
   min-height: 900px;
@@ -81,6 +78,10 @@ table td {
 
   table {
     font-size: medium;
+  }
+
+  table td {
+    padding-left: 0.7rem !important;
   }
 
   .details .row {
