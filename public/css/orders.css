@@ -1,3 +1,7 @@
+body {
+  font-size: 0.8rem;
+}
+
 .details {
   min-height: 900px;
   margin-left: 20px;
@@ -61,11 +65,12 @@
   border-radius: 10px;
 }
 
-.progress-text p {
-  font-size: 0.8rem;
-}
 
 @media(min-width: 992px) {
+  .body {
+    font-size: 1rem !important;
+  }
+
   .details .row {
     margin-top: 150px;
   }
