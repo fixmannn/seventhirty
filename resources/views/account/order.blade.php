@@ -49,7 +49,7 @@
           <h5 class="font-weight-bold title mt-4">Detail Products</h5>
           <table class="mt-3 table">
             <tr>
-              <td width="10%"><img src="{{ asset('/img/anxiety.jpg') }}" alt="" style="max-width: 90px" class="product-img">
+              <td width="10%"><img src="{{ asset('/img/anxiety.jpg') }}" alt="" width="70px" class="product-img">
               </td>
               <td style="vertical-align: middle;" class="ml-3" width="70%"><span>Anxiety Disorder - T Shirt</span><br>
               <span class="text-muted">XL - 1 pcs</span></td>
