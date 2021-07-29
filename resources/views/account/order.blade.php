@@ -60,7 +60,7 @@
               </td>
               <td style="vertical-align: middle; padding-left: 0;" class="ml-1" width="65%"><span class="font-weight-bold">{{ $p['name'] }}</span><br>
                 <span class="text-muted">{{ $d['size'] }} - {{ $d['quantity'] }}pcs</span></td>
-                <td style="vertical-align: middle; padding-right: 0;" width="30%" class="font-weight-bold"><span>{{ $d['price'] }}</span></td>
+                <td style="vertical-align: middle; padding-right: 0;" width="30%" class="font-weight-bold">Rp.<span class="number">{{ $d['price'] }}</span>,-</td>
               </tr>
             @endif
             @endforeach
@@ -72,15 +72,15 @@
               <table width="100%" class="table table-borderless">
                 <tr>
                   <td>Product/s</td>
-                  <td style="text-align: right">Rp. 171.000,-</td>
+                  <td style="text-align: right">Rp.<span class="number">{{ $order['amount'] - $order['shipping_fee'] }}</span>,-</td>
                 </tr>
                 <tr>
                   <td>Shipping Fee</td>
-                  <td style="text-align: right">Rp. 9.000,-</td>
+                  <td style="text-align: right">Rp.<span class="number">{{ $order['shipping_fee'] }}</span>,-</td>
                 </tr>
                 <tr>
                   <th class="font-weight-bold">Total Payment</th>
-                  <td class="font-weight-bold" style="text-align: right">Rp. 180.000,-</td>
+                  <td class="font-weight-bold" style="text-align: right">Rp.<span class="number">{{ $order['amount'] }}</span>,-</td>
                 </tr>
               </table>
             </div>
@@ -101,13 +101,6 @@
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 <script src="{{asset('assets/jquery/jquery-3.6.0.min.js')}}"></script>
 
-<script>
-    $(document).ready(function() {
-        $('.order-r ow').click(function() {
-            window.location = $(this).data('href');
-        });
-    });
-</script>
 
 <script>
     const price = document.querySelectorAll('.number');
