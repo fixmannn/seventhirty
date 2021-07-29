@@ -18,17 +18,17 @@
                 <span class="iconify text-list active" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div></a>
             <a href="{{ url('/change-password') }}"><div class="d-flex justify-content-between btn mt-1 list-menu">
-                <p class="text-muted font-weight-bold">Change Password</p>
-                <span class="iconify text-muted" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
+                <p class="text-list font-weight-bold">Change Password</p>
+                <span class="iconify text-list" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div></a>
             <a href="{{ url('/orders') }}"><div class="d-flex justify-content-between btn mt-1 list-menu">
-                <p class="text-list font-weight-bold">Orders</p>
-                <span class="iconify text-list" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
+                <p class="text-muted font-weight-bold">Orders</p>
+                <span class="iconify text-muted" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div></a>
         </div>
         <div class="col-xl-9">
           <div class="heading d-flex justify-content-between">
-            <h5 class="font-weight-bold title">Order Detail</h5>
+            <h5 class="font-weight-bold title mt-2">Order Detail</h5>
             <p class="text-muted font-weight-bold mb-0">Order Number : 2021928904F</p>
           </div>
             <p class="text-muted d-flex justify-content-end font-weight-bold mt-0 mb-0">Tracking Number : 920581085102</p>
@@ -45,6 +45,18 @@
             <p class="text-muted font-weight-bold">Package Sent</p>
             <p class="text-muted font-weight-bold">Delivered</p>
           </div>
+
+          <h5 class="font-weight-bold title mt-4">Detail Products</h5>
+          <table class="table table-borderless">
+            <tr>
+              <th><img src="{{ asset('/img/anxiety.jpg') }}" alt="" width="10%"></th>
+              <th>
+                <p class="font-weight-bold">Anxiety Disorder - T Shirt</p>
+                <p class="text-muted">XL - 1 pcs</p>
+              </th>
+              <th><span class="font-weight-bold number">Rp. 180.000,-</span></th>
+            </tr>
+          </table>
         </div>
     </div>
 </div>
