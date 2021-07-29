@@ -62,7 +62,7 @@
 }
 
 .progress-text p {
-  font-size: 1em;
+  font-size: 0.5rem;
 }
 
 @media(min-width: 992px) {
