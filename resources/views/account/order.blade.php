@@ -29,9 +29,9 @@
         <div class="col-xl-9">
           <div class="heading d-flex justify-content-between">
             <h5 class="font-weight-bold title">Order Detail</h5>
-            <p class="text-muted font-weight-bold mb-0">Order Number : 2021928904F</p>
+            <p class="text-muted font-weight-bold mb-0">Order Number : {{ $order['order_number'] }}</p>
           </div>
-            <p class="text-muted d-flex justify-content-end font-weight-bold mt-0 mb-0">Tracking Number : 920581085102</p>
+            <p class="text-muted d-flex justify-content-end font-weight-bold mt-0 mb-0">Tracking Number : {{ $order['order_status'] }}</p>
             <a href="https://cekresi.com/" class="text-primary d-flex justify-content-end font-weight-bold mt-0 mb-0">Track your package</a>
 
           <h5 class="font-weight-bold title">Order Status</h5>
@@ -39,7 +39,7 @@
           <div class="progress-bar bg-success" role="progressbar" style="width: 55%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <div class="progress-text d-flex justify-content-between mt-3">
-            <p class="text-muted font-weight-bold">Order Placed</p>
+            <p class="text-muted font-weight-bold" style="text-align: left">Order Placed</p>
             <p class="text-muted font-weight-bold">Waiting for Payment</p>
             <p class="text-muted font-weight-bold">Preparing to Ship</p>
             <p class="text-muted font-weight-bold">Package Sent</p>
@@ -61,10 +61,6 @@
               <h5 class="font-weight-bold title">Payment Details</h5>
               <table width="100%" class="table table-borderless">
                 <tr>
-                  <td>Payment Method</td>
-                  <td style="text-align: right">Mandiri Virtual Account</td>
-                </tr>
-                <tr>
                   <td>Product/s</td>
                   <td style="text-align: right">Rp. 171.000,-</td>
                 </tr>
@@ -80,7 +76,7 @@
             </div>
             <div class="col-md-6" style="font-size: 1rem;">
               <h5 class="font-weight-bold title shipping">Shipping Address</h5>
-              <p class="mt-4">Haliza Nuradila</p>
+              <p class="mt-3">Haliza Nuradila</p>
               <p>Jalan Haji Nur Lela ya nona No. 28, Kec. Cirendeu
                 Ciputat Timur, Tangerang Selatan
                 150912</p>

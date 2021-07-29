@@ -86,7 +86,18 @@ class OrdersController extends Controller
      */
     public function show(Order $order, $order_number)
     {
-        return view('account.order');
+        $order = Order::find($order_number);
+        $detail = OrderDetail::where('order_number', $order_number)->get();
+        $user = User::where('id', session('LoggedUser'))->first();
+        foreach($detail as $id => $x) {
+            $product_id = $x['product_id'];
+        } 
+        $product = Product::where('id', $product_id);
+
+        dd($product);
+
+
+        // return view('account.order', compact('order', 'detail', 'user', 'product'));
     }
 
     /**
