@@ -59,7 +59,7 @@
           <div class="row">
             <div class="col-md-6">
               <h5 class="font-weight-bold title">Payment Details</h5>
-              <table width="100%" class="table">
+              <table width="100%" class="table table-borderless">
                 <tr>
                   <td>Payment Method</td>
                   <td>Mandiri Virtual Account</td>
@@ -79,8 +79,8 @@
               </table>
             </div>
             <div class="col-md-6">
-              <h5 class="font-weight-bold title">Shipping Address</h5>
-              <p>Haliza Nuradila</p>
+              <h5 class="font-weight-bold title shipping">Shipping Address</h5>
+              <p class="mt-3">Haliza Nuradila</p>
               <p>Jalan Haji Nur Lela ya nona No. 28, Kec. Cirendeu
                 Ciputat Timur, Tangerang Selatan
                 150912</p>

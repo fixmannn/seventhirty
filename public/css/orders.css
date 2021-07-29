@@ -6,7 +6,6 @@ table {
   font-size: 0.7rem;
 }
 
-
 .details {
   min-height: 900px;
   margin-left: 20px;
@@ -72,6 +71,10 @@ table {
 
 .progress-text p {
   text-align: center;
+}
+
+.shipping p {
+  font-size: 1rem !important;
 }
 
 
