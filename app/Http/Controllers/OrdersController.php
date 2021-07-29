@@ -91,10 +91,11 @@ class OrdersController extends Controller
         $detail = OrderDetail::where('order_number', $order_number)->get();
         $user = User::where('id', session('LoggedUser'))->first();
         foreach($detail as $id => $x) {
-            $product = Product::where('id', $x['product_id'])->get();
+            // $product = Product::where('id', $x['product_id'])->get();
+            dump($x['product_id']);
         } 
 
-        dump($product);
+        // dump($product);
 
 
         // return view('account.order', compact('order', 'detail', 'user', 'product'));
