@@ -70,6 +70,10 @@ table {
   border-radius: 10px;
 }
 
+.progress-text p {
+  text-align: center;
+}
+
 
 @media(min-width: 700px) {
   body {
