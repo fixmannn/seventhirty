@@ -78,7 +78,7 @@
                 </tr>
               </table>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" style="font-size: 1rem;">
               <h5 class="font-weight-bold title shipping">Shipping Address</h5>
               <p class="mt-3">Haliza Nuradila</p>
               <p>Jalan Haji Nur Lela ya nona No. 28, Kec. Cirendeu
