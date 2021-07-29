@@ -84,7 +84,7 @@ table {
     font-size: medium;
   }
 
-  table td {
+  .product-table td {
     padding-left: 0.7rem !important;
   }
 

@@ -36,7 +36,7 @@
 
           <h5 class="font-weight-bold title">Order Status</h5>
           <div class="progress mt-3" style="height: 10px;"> 
-          <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 54%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <div class="progress-text d-flex justify-content-between mt-3">
             <p class="text-muted font-weight-bold">Order Placed</p>
@@ -47,7 +47,7 @@
           </div>
 
           <h5 class="font-weight-bold title mt-4">Detail Products</h5>
-          <table class="mt-3 table">
+          <table class="mt-3 table product-table">
             <tr>
               <td width="5%" style="padding-left: 0;"><img src="{{ asset('/img/anxiety.jpg') }}" alt="" width="70px" class="product-img">
               </td>
@@ -59,7 +59,7 @@
           <div class="row">
             <div class="col-md-6">
               <h5 class="font-weight-bold title">Payment Details</h5>
-              <table width="80%">
+              <table width="100%" class="table">
                 <tr>
                   <td>Payment Method</td>
                   <td>Mandiri Virtual Account</td>
