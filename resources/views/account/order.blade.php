@@ -53,7 +53,7 @@
               </td>
               <td style="vertical-align: middle;" class="ml-1" width="65%"><span class="font-weight-bold">Anxiety Disorder - T Shirt</span><br>
               <span class="text-muted">XL - 1 pcs</span></td>
-              <td style="vertical-align: middle" width="30%" class="font-weight-bold"><span>Rp. 180.000,-</span></td>
+              <td style="vertical-align: middle; padding-right: 0; text-align: end;" width="30%" class="font-weight-bold"><span>Rp. 180.000,-</span></td>
             </tr>
           </table>
         </div>
