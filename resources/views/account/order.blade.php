@@ -62,7 +62,6 @@
               <td style="vertical-align: middle; padding-right: 0;" width="30%" class="font-weight-bold"><span>{{ $d['price'] }}</span></td>
             </tr>
             @endforeach
-            @endforeach
           </table>
           <div class="row">
             <div class="col-md-6">
