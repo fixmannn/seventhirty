@@ -91,10 +91,11 @@ class OrdersController extends Controller
         $detail = OrderDetail::where('order_number', $order_number)->get();
         $user = User::where('id', session('LoggedUser'))->first();
         foreach($detail as $id => $x) {
-            $product = Product::whereIn('id', $x['product_id'])->get();
-            // $product_id[] = $x['product_id'];
+            $product_id[] = $x['product_id'];
         } 
 
+        $product = Product::whereIn('id', $product_id)->get();
+        
         dump($product);
 
         // dump($product);
