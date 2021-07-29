@@ -86,7 +86,7 @@ class OrdersController extends Controller
      */
     public function show(Order $order, $order_number)
     {
-        $order = Order::find($order_number);
+        $order = Order::where('order_number', $order_number)->first();
         $detail = OrderDetail::where('order_number', $order_number)->get();
         $user = User::where('id', session('LoggedUser'))->first();
         foreach($detail as $id => $x) {
