@@ -18,12 +18,12 @@
                 <span class="iconify text-list active" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div></a>
             <a href="{{ url('/change-password') }}"><div class="d-flex justify-content-between btn mt-1 list-menu">
-                <p class="text-muted font-weight-bold">Change Password</p>
-                <span class="iconify text-muted" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
+                <p class="text-list font-weight-bold">Change Password</p>
+                <span class="iconify text-list" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div></a>
             <a href="{{ url('/orders') }}"><div class="d-flex justify-content-between btn mt-1 list-menu">
-                <p class="text-list font-weight-bold">Orders</p>
-                <span class="iconify text-list" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
+                <p class="text-muted font-weight-bold">Orders</p>
+                <span class="iconify text-muted" data-icon="ic:baseline-navigate-next" data-inline="false"></span>
             </div></a>
         </div>
         <div class="col-xl-9">
@@ -68,6 +68,7 @@
 
 @include('layouts/footer')
 
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 <script src="{{asset('assets/jquery/jquery-3.6.0.min.js')}}"></script>
 
 <script>
