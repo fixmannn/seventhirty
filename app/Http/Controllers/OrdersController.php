@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\User;
-use App\Models\OrderDetails;
-use App\Http\Controllers\OrderDetailsController;
+use App\Models\OrderDetail;
 use App\Http\Controllers\CheckoutController;
 use Illuminate\Http\Request;
 
