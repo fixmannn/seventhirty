@@ -28,7 +28,7 @@
         </div>
         <div class="col-xl-9">
           <div class="heading d-flex justify-content-between">
-            <h5 class="font-weight-bold title mt-2">Order Detail</h5>
+            <h5 class="font-weight-bold title">Order Detail</h5>
             <p class="text-muted font-weight-bold mb-0">Order Number : 2021928904F</p>
           </div>
             <p class="text-muted d-flex justify-content-end font-weight-bold mt-0 mb-0">Tracking Number : 920581085102</p>
