@@ -47,7 +47,7 @@
           </div>
 
           <h5 class="font-weight-bold title mt-4">Detail Products</h5>
-          <table class="mt-3 table" style="padding-left: 0;">
+          <table class="mt-3 table">
             <tr>
               <td width="5%"><img src="{{ asset('/img/anxiety.jpg') }}" alt="" width="70px" class="product-img">
               </td>

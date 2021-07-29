@@ -6,6 +6,10 @@ table {
   font-size: small;
 }
 
+table td {
+  padding-left: 0;
+}
+
 .details {
   min-height: 900px;
   margin-left: 20px;
