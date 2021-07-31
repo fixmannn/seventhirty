@@ -73,10 +73,6 @@ table {
   text-align: center;
 }
 
-.shipping p {
-  font-size: 1rem !important;
-}
-
 
 @media(min-width: 900px) {
   body {
@@ -91,7 +87,7 @@ table {
     padding-left: 0.7rem !important;
   }
 
-  .details .row {
+  .details .row:nth-child(1) {
     margin-top: 150px;
   }
 
