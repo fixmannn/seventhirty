@@ -94,7 +94,7 @@
                 </tr>
               </table>
             </div>
-            <div class="col-md-6" style="font-size: 0.8rem;">
+            <div class="col-md-6" style="font-size: 1rem;">
               <h5 class="font-weight-bold title shipping">Shipping Address</h5>
               <p class="mt-3">{{ $user['nama_depan'] }} {{ $user['nama_belakang'] }}</p>
               <p><i>{{ $user['alamat'] }} <br>

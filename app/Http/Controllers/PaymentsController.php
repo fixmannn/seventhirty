@@ -18,6 +18,8 @@ class PaymentsController extends Controller
         $time = time();
 
         if (isset($success)) {
+            $status = Order::where('order_number', session('order_number'))
+                        ->update('order_status', 1);
             session()->pull('payment');
         }
 
@@ -25,6 +27,8 @@ class PaymentsController extends Controller
         if ($expiration['timestamp'] > $time) {
             return view('checkout.payment');
         } else {
+            $status = Order::where('order_number', session('order_number'))
+                        ->update('order_status', 4);
             session()->pull('payment');
             session()->pull('expiration');
             session()->pull('shipping');
