@@ -11,6 +11,8 @@ class DeliveryMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $email_details
+
     /**
      * Create a new message instance.
      *
@@ -18,7 +20,7 @@ class DeliveryMail extends Mailable
      */
     public function __construct()
     {
-        //
+        $this->email_details = $email_details;
     }
 
     /**
@@ -26,8 +28,10 @@ class DeliveryMail extends Mailable
      *
      * @return $this
      */
-    public function build()
+    public function build($order_number)
     {
-        return $this->view('view.name');
+        $order = Order::where('order_number', $order_number)->get();
+
+        return $this->subject('Pesenan #' . $order_number . 'Dalam Perjalanan')->view('mail.deliverymail', compact('order'));
     }
 }
