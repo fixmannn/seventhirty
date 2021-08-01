@@ -62,11 +62,12 @@ class PagesController extends Controller
   {
     if(session('LoggedUser') == 8) {
       $order = Order::all();
+      return voew('admin.orders', compact('order'));
     } else {
       $order = Order::where('user_id', session('LoggedUser'))->get();
+      return view('account.orders', compact('order'));
     }
 
-    return view('account.orders', compact('order'));
   }
 
 

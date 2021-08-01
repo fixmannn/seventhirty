@@ -96,10 +96,8 @@
             </div>
             <div class="col-md-6" style="font-size: 1rem;">
               <h5 class="font-weight-bold title shipping">Shipping Address</h5>
-              <p class="mt-3">{{ $user['nama_depan'] }} {{ $user['nama_belakang'] }}</p>
-              <p><i>{{ $user['alamat'] }} <br>
-              Kec. {{ $user['kecamatan'] }}, Kota {{ $user['kota'] }} <br>
-              Prov. {{ $user['provinsi'] }}</i></p>
+              <p class="mt-3">{{ $order['shipping_name'] }}</p>
+              <p>{{ $order['shipping_address'] }}</p>
             </div>
           </div>
         </div>

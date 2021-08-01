@@ -96,7 +96,7 @@ class UsersController extends Controller
 
             session()->put('guest', $user);
 
-            $ordercontroller->create();
+            $ordercontroller->create($request);
 
             if ($request->payment == 'MANDIRI' || $request->payment == 'BRI' || $request->payment == 'PERMATA' || $request->payment == 'BNI') {
                 $xenditcontroller->createVa($request);
@@ -178,7 +178,7 @@ class UsersController extends Controller
                     'nomor_handphone' => $request->phonenumber
                 ]);
 
-            $ordercontroller->create();
+            $ordercontroller->create($request);
 
 
             if ($request->payment == 'MANDIRI' || $request->payment == 'BRI' || $request->payment == 'PERMATA' || $request->payment == 'BNI') {
@@ -207,7 +207,7 @@ class UsersController extends Controller
 
             session()->put('guest', $update);
 
-            $ordercontroller->create();
+            $ordercontroller->create($request);
 
             if ($request->payment == 'MANDIRI' || $request->payment == 'BRI' || $request->payment == 'PERMATA' || $request->payment == 'BNI') {
                 $xenditcontroller->createVa($request);

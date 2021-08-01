@@ -13,6 +13,8 @@ class Order extends Model
         'order_number' => 0,
         'user_id' => 0,
         'amount' => 0,
+        'shipping_name' => 0,
+        'shipping_address' => 0,
         'shipping_fee' => 0,
         'shipping_number' => 0,
         'order_status' => 0

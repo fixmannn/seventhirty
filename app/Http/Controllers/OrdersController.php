@@ -26,7 +26,7 @@ class OrdersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         if (!session('LoggedUser')) {
             $orderid = 0;
@@ -52,6 +52,8 @@ class OrdersController extends Controller
                 'order_number' => $order_number,
                 'user_id' => $orderid,
                 'amount' => $amount,
+                'shipping_name' => $request->first_name . ' ' . $request->last_name,
+                'shipping_address' => $request->address . ',' . $request->district . ',' . $request->city_destination . ',' $request->province_destination, 
                 'shipping_fee' => $shipping
             ]);
 
