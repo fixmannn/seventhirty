@@ -75,10 +75,18 @@ class OrdersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $order_number)
     {
         //Store order details when payment paid
-
+        $order = Order::where('order_number', $order_number)
+                    ->update([
+                        'order_status' => 2,
+                        'shipping_number' => $request->shipping_number
+                    ]);
+        
+        // Sending Delivery Email to Customer
+        $mail = new MailController();
+        $mail->deliveryMail();
     }
 
     /**
