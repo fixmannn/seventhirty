@@ -94,12 +94,12 @@
                 </tr>
               </table>
             </div>
-            <div class="col-md-6" style="font-size: 1rem;">
+            <div class="col-md-6" style="font-size: 0.8rem;">
               <h5 class="font-weight-bold title shipping">Shipping Address</h5>
               <p class="mt-3">{{ $user['nama_depan'] }} {{ $user['nama_belakang'] }}</p>
-              <p>{{ $user['alamat'] }}</p>
-              <p>Kec. {{ $user['kecamatan'] }}, Kota {{ $user['kota'] }}</p>
-              <p>Prov. {{ $user['provinsi'] }}</p>
+              <p><i>{{ $user['alamat'] }} <br>
+              Kec. {{ $user['kecamatan'] }}, Kota {{ $user['kota'] }} <br>
+              Prov. {{ $user['provinsi'] }}</i></p>
             </div>
           </div>
         </div>
