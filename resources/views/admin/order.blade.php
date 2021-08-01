@@ -33,6 +33,7 @@
           </div>
           @if($order['shipping_number'] == 0)
           <form action="/order-status" method="POST">
+            @csrf
             <div class="form-group d-flex justify-content-end mb-2">
               <label for="shipping_number" class="font-weight-bold text-muted">Input Tracking Number</label>
               <input type="text" id="shipping_number" name="shipping_number" class="ml-2">
