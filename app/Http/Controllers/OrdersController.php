@@ -102,6 +102,21 @@ class OrdersController extends Controller
         return view('account.order', compact('order', 'detail', 'user', 'product'));
     }
 
+    public function showAdmin(Order $order, $order_number)
+    {
+        $order = Order::where('order_number', $order_number)->first();
+        $detail = OrderDetail::where('order_number', $order_number)->get();
+        $user = User::where('id', session('LoggedUser'))->first();
+        foreach($detail as $id => $x) {
+            $product_id[] = $x['product_id'];
+        } 
+
+        $product = Product::whereIn('id', $product_id)->get();
+
+
+        return view('account.order', compact('order', 'detail', 'user', 'product'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

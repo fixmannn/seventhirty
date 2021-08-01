@@ -33,7 +33,6 @@ Route::get('about', [PagesController::class, 'about']);
 Route::get('account-details', [PagesController::class, 'accountDetails']);
 Route::get('change-password', [PagesController::class, 'changePassword']);
 Route::get('orders', [PagesController::class, 'orders']);
-Route::get('test', [PagesController::class, 'test']);
 
 // Products Controller 
 Route::get('/products/friendship/{id}', [ProductsController::class, 'friendship']);
@@ -79,3 +78,4 @@ Route::post('change-password', [UsersController::class, 'change']);
 
 // Order Routes 
 Route::get('order/{order_number}', [OrdersController::class, 'show']);
+Route::get('admin/order/{order_number}', [OrdersController::class, 'showAdmin']);
