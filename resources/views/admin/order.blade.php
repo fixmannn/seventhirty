@@ -33,9 +33,9 @@
           </div>
           @if($order['shipping_number'] == 0)
           <form action="/order-status" method="POST">
-            <div class="form-group d-flex justify-content-end mr-1">
+            <div class="form-group">
               <label for="shipping_number" class="font-weight-bold text-muted">Input Tracking Number</label>
-              <input type="text" id="shipping_number" name="shipping_number">
+              <input type="text" id="shipping_number" name="shipping_number" class="ml-2">
             </div>
             <button type="submit" class="btn btn-primary d-flex justify-content-end">Save</button>
           </form>
