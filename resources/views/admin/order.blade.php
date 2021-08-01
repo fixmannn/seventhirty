@@ -31,6 +31,15 @@
             <h5 class="font-weight-bold title">Order Detail</h5>
             <p class="text-muted font-weight-bold mb-0">Order Number : {{ $order['order_number'] }}</p>
           </div>
+          @if($order['shipping_number'] == 0)
+          <form action="/order-status" method="POST" class="d-flex justify-content-end">
+            <label for="shipping_number">Input Tracking Number</label>
+            <input type="text" id="shipping_number" name="shipping_number">
+            <button type="submit" class="btn btn-primary">Save</button>
+          </form>
+          @else
+          <p class="text-muted d-flex justify-content-end font-weight-bold mt-0 mb-0">Tracking Number : {{ $order['shipping_number'] }}</p>
+          @endif
 
           <h5 class="font-weight-bold title">Order Status</h5>
           <div class="progress mt-3" style="height: 10px;">

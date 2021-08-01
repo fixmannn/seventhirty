@@ -67,14 +67,11 @@ class PagesController extends Controller
       $order = Order::where('user_id', session('LoggedUser'))->get();
       return view('account.orders', compact('order'));
     }
-
   }
-
 
   public function logout()
   {
     $users = User::all();
-
     return view('pages.logout', compact('users'));
   }
 
