@@ -39,8 +39,18 @@
             <a href="https://cekresi.com/" class="text-primary d-flex justify-content-end font-weight-bold mt-0 mb-0">Track your package</a>
 
           <h5 class="font-weight-bold title">Order Status</h5>
-          <div class="progress mt-3" style="height: 10px;"> 
-          <div class="progress-bar bg-success" role="progressbar" style="width: 55%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress mt-3" style="height: 10px;">
+            @if($order['order_status'] == 0)
+            <div class="progress-bar bg-success" role="progressbar" style="width: 28%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            @elseif($order['order_status'] == 1)
+            <div class="progress-bar bg-success" role="progressbar" style="width: 55%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            @elseif($order['order_status'] == 2)
+            <div class="progress-bar bg-success" role="progressbar" style="width: 77%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            @elseif($order['order_status'] == 3)
+            <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            @else
+            <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            @endif
           </div>
           <div class="progress-text d-flex justify-content-between mt-3">
             <p class="text-muted font-weight-bold" style="text-align: left">Order Placed</p>
@@ -86,10 +96,10 @@
             </div>
             <div class="col-md-6" style="font-size: 1rem;">
               <h5 class="font-weight-bold title shipping">Shipping Address</h5>
-              <p class="mt-3">Haliza Nuradila</p>
-              <p>Jalan Haji Nur Lela ya nona No. 28, Kec. Cirendeu
-                Ciputat Timur, Tangerang Selatan
-                150912</p>
+              <p class="mt-3">{{ $user['nama_depan'] }} {{ $user['nama_belakang'] }}</p>
+              <p>{{ $user['alamat'] }}</p>
+              <p>Kec. {{ $user['kecamatan'] }}, Kota {{ $user['kota'] }}</p>
+              <p>Prov. {{ $user['provinsi'] }}</p>
             </div>
           </div>
         </div>
