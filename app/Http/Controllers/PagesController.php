@@ -60,10 +60,15 @@ class PagesController extends Controller
 
   public function orders()
   {
-    $order = Order::where('user_id', session('LoggedUser'))->get();
+    if(session('LoggedUser') == 8) {
+      $order = Order::all();
+    } else {
+      $order = Order::where('user_id', session('LoggedUser'))->get();
+    }
 
     return view('account.orders', compact('order'));
   }
+
 
   public function logout()
   {

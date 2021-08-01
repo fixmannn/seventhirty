@@ -27,6 +27,9 @@
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item nav-text text-light" href="/account-details">Account Details</a>
         <a class="dropdown-item nav-text text-light" href="/orders">My order</a>
+        @if(session('LoggedUser') == 8)
+        <a class="dropdown-item nav-text text-light" href="/update-order">Update Order</a>
+        @endif
         <a class="dropdown-item nav-text text-light" href="/logout">Log out</a>
       </div>
     </div>
