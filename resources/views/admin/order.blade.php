@@ -45,7 +45,7 @@
           @endif
           @if(Session::get('success'))
           <div class="alert alert-success" role="alert">
-            {{ $message }}
+            {{ Session::get('success') }}
           </div>
           @endif
 
