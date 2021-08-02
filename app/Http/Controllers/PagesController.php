@@ -71,7 +71,7 @@ class PagesController extends Controller
   {
     if(session('LoggedUser') == 8) {
       $order = Order::paginate(25)
-                ->latest()->get();
+                ->latest()->first();
       return view('admin.orders', compact('order'));
     } elseif(!session('LoggedUser')) {
       return redirect('login');
