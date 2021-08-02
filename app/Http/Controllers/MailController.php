@@ -57,9 +57,10 @@ class MailController extends Controller
         }
     }
 
-    public function deliveryMail()
+    public function deliveryMail($order_number)
     {
-        $details = User::where('id', session('LoggedUser'))->get();
+        $order = Order::where('order_number', $order_number)->first();
+        $details = User::where('id', $order['user_id'])->first();
         $guest = session('guest');
 
         $email_details = [
@@ -67,10 +68,12 @@ class MailController extends Controller
             'body' => 123
         ];
 
-        if(isset($guest)) {
-            Mail::to($guest['email'])->send(new DeliveryMail($email_details));
-        } else {
-            Mail::to($details[0]['email'])->send(new DeliveryMail($email_details));
-        }
+        dd($details);
+
+        // if(isset($guest)) {
+        //     Mail::to($guest['email'])->send(new DeliveryMail($email_details));
+        // } else {
+        //     Mail::to($details[0]['email'])->send(new DeliveryMail($email_details));
+        // }
     }
 }
