@@ -123,8 +123,11 @@ class OrdersController extends Controller
 
         $product = Product::whereIn('id', $product_id)->get();
 
-
-        return view('admin.order', compact('order', 'detail', 'user', 'product'));
+        if($order['user_id'] == session('LoggedUser')) {
+            return view('admin.order', compact('order', 'detail', 'user', 'product'));
+        } else {
+            return redirect('/');
+        }
     }
 
     /**
