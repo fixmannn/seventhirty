@@ -86,7 +86,7 @@ class OrdersController extends Controller
         
         // Sending Delivery Email to Customer
         $mail = new MailController();
-        $mail->deliveryMail();
+        $mail->deliveryMail($order_number);
     }
 
     /**
