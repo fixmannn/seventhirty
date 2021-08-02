@@ -72,7 +72,7 @@ class PagesController extends Controller
     if(session('LoggedUser') == 8) {
       $order = Order::all();
       return view('admin.orders', compact('order'));
-    } elseif(session('LoggedUser')) {
+    } elseif(!session('LoggedUser')) {
       return redirect('login');
     } else {
       $order = Order::where('user_id', session('LoggedUser'))->get();
