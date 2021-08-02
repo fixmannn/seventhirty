@@ -54,6 +54,9 @@ class PaymentsController extends Controller
                 $mail->orderMail();
                 $mail->paymentpaidMail();
 
+                $status = Order::where('order_number', session('order_number'))
+                        ->update('order_status', 1);
+
                 session()->pull('payment');
                 session()->pull('expiration');
                 session()->pull('cart');
@@ -71,6 +74,9 @@ class PaymentsController extends Controller
                 // Send order Mail to Customer and us
                 $mail->orderMail();
                 $mail->paymentpaidMail();
+
+                $status = Order::where('order_number', session('order_number'))
+                        ->update('order_status', 1);
 
                 session()->pull('payment');
                 session()->pull('expiration');
@@ -97,6 +103,9 @@ class PaymentsController extends Controller
                 // Send order Mail to Customer and us
                 $mail->orderMail();
                 $mail->paymentpaidMail();
+
+                $status = Order::where('order_number', session('order_number'))
+                        ->update('order_status', 1);
 
                 session()->pull('payment');
                 session()->pull('expiration');
