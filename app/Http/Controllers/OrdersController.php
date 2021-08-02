@@ -108,8 +108,11 @@ class OrdersController extends Controller
 
         $product = Product::whereIn('id', $product_id)->get();
 
-
-        return view('account.order', compact('order', 'detail', 'user', 'product'));
+        if($order['user_id'] == session('LoggedUser')) {
+            return view('account.order', compact('order', 'detail', 'user', 'product'));
+        } else {
+            return redirect('/');
+        }
     }
 
     public function showAdmin(Order $order, $order_number)
@@ -123,11 +126,7 @@ class OrdersController extends Controller
 
         $product = Product::whereIn('id', $product_id)->get();
 
-        if($order['user_id'] == session('LoggedUser')) {
-            return view('admin.order', compact('order', 'detail', 'user', 'product'));
-        } else {
-            return redirect('/');
-        }
+        return view('admin.order', compact('order', 'detail', 'user', 'product'));
     }
 
     /**

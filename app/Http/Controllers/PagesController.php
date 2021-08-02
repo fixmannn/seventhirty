@@ -50,12 +50,21 @@ class PagesController extends Controller
   public function accountDetails()
   {
     $user = User::where('id', session('LoggedUser'))->first();
-    return view('account.details', compact('user'));
+
+    if(session('LoggedUser')) {
+      return view('account.details', compact('user'));
+    } else {
+      return redirect('login');
+    }
   }
 
   public function changePassword()
   {
-    return view('account.change-password');
+    if(session('LoggedUser')){
+      return view('account.change-password');
+    } else {
+      return redirect('login');
+    }
   }
 
   public function orders()
