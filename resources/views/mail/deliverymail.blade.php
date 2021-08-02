@@ -83,7 +83,7 @@
 
 <body>
   <div class="container">
-    <img src="https://www.freepik.com/free-vector/food-delivery-man-riding-motorcycles-cartoon-art-illustration_14088973.htm#page=1&query=delivery&position=4" alt="">
+    <img src="https://yi-files.s3.eu-west-1.amazonaws.com/products/870000/870595/1476666-full.jpg" alt="">
     <h2>Order {{ $order['order_number'] }} Sedang Dalam Perjalanan</h2>
     <p class="message">{{ $order['shipping_name'] }}, pesananmu sedang dalam perjalanan nih, yuk sit tight and wait for the package to come.</p>
     <table>
