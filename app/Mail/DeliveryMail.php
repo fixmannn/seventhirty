@@ -11,7 +11,7 @@ class DeliveryMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $email_details
+    public $email_details;
 
     /**
      * Create a new message instance.
