@@ -29,8 +29,9 @@ class DeliveryMail extends Mailable
      *
      * @return $this
      */
-    public function build($order_number)
+    public function build()
     {
+        $order_number = session('order_number');
         $order = Order::where('order_number', $order_number)->first();
 
         return $this->subject('Pesenan #' . $order_number . 'Dalam Perjalanan')->view('mail.deliverymail', compact('order'));

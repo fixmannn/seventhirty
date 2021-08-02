@@ -63,6 +63,8 @@ class MailController extends Controller
         $details = User::where('id', $order['user_id'])->first();
         $guest = session('guest');
 
+        session()->put('order_number', $order_number);
+
         $email_details = [
             'nama' => 123,
             'body' => 123
