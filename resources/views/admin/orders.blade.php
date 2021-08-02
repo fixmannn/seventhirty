@@ -49,10 +49,8 @@
                     @elseif($orders->order_status == 1)
                     Paket Siap Dikirim
                     @elseif($orders->order_status == 2)
-                    Paket Sedang Menuju Lokasi Anda
-                    @elseif($orders->order_status == 3)
-                    Paket Sudah Diterima
-                    @elseif($orders->order_status == 4)
+                    Paket Terkirim
+                    @else
                     Order gagal (Pembayaran tidak diselesaikan)
                     @endif
                 </td>

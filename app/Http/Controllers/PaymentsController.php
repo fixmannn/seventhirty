@@ -28,7 +28,7 @@ class PaymentsController extends Controller
             return view('checkout.payment');
         } else {
             $status = Order::where('order_number', session('order_number'))
-                        ->update('order_status', 4);
+                        ->update('order_status', 3);
             session()->pull('payment');
             session()->pull('expiration');
             session()->pull('shipping');
