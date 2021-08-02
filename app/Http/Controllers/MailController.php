@@ -68,12 +68,12 @@ class MailController extends Controller
             'body' => 123
         ];
 
-        dd($details);
+        // dd($details);
 
-        // if(isset($guest)) {
-        //     Mail::to($guest['email'])->send(new DeliveryMail($email_details));
-        // } else {
-        //     Mail::to($details[0]['email'])->send(new DeliveryMail($email_details));
-        // }
+        if(isset($guest)) {
+            Mail::to($guest['email'])->send(new DeliveryMail($email_details));
+        } else {
+            Mail::to($details['email'])->send(new DeliveryMail($email_details));
+        }
     }
 }
