@@ -32,7 +32,7 @@
             <p class="text-muted font-weight-bold mb-0">Order Number : {{ $order['order_number'] }}</p>
           </div>
           @if($order['shipping_number'] == 0)
-          <form action="/admin/order/{order_number}" method="POST">
+          <form action="/admin/order/{{ $order['order_number'] }}" method="POST">
             @csrf
             <div class="form-group d-flex justify-content-end mb-2">
               <label for="shipping_number" class="font-weight-bold text-muted">Input Tracking Number</label>
