@@ -18,7 +18,7 @@ class DeliveryMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($email_details)
     {
         $this->email_details = $email_details;
     }
