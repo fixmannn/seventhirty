@@ -29,6 +29,8 @@ class PaymentsController extends Controller
         } else {
             $status = Order::where('order_number', session('order_number'))
                         ->update(['order_status' => 3]);
+                        
+            session()->pull('order_number');
             session()->pull('payment');
             session()->pull('expiration');
             session()->pull('shipping');
