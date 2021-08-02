@@ -70,8 +70,7 @@ class PagesController extends Controller
   public function orders()
   {
     if(session('LoggedUser') == 8) {
-      $order = Order::paginate(25)
-                ->orderBy('created_at')->get();
+      $order = Order::paginate(25);
       return view('admin.orders', compact('order'));
     } elseif(!session('LoggedUser')) {
       return redirect('login');
