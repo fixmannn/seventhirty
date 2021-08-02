@@ -42,7 +42,7 @@
             <tbody>
             @foreach($order as $id => $orders)
               <tr class="order-row" data-href="{{ url('admin/order') }}/{{ $orders->order_number }}">
-                <th>{{ $orders->order_number }}</th>
+                <td>{{ $orders->order_number }}</td>
                 <td>
                     @if($orders->order_status == 0)
                     Menunggu Pembayaran
