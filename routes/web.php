@@ -79,4 +79,4 @@ Route::post('change-password', [UsersController::class, 'change']);
 // Order Routes 
 Route::get('order/{order_number}', [OrdersController::class, 'show']);
 Route::get('admin/order/{order_number}', [OrdersController::class, 'showAdmin']);
-Route::post('order-status', [OrdersController::class, 'store']);
+Route::post('admin/order/{order_number}', [OrdersController::class, 'store']);
