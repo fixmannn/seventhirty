@@ -60,6 +60,9 @@
               @endforeach
             </tbody>
           </table>
+          <div class="d-flex justify-content-center">
+            {!! $order->links() !!}
+        </div>
         </div>
     </div>
 </div>
