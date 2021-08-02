@@ -52,9 +52,9 @@
           <h5 class="font-weight-bold title">Order Status</h5>
           <div class="progress mt-3" style="height: 10px;">
             @if($order['order_status'] == 0)
-            <div class="progress-bar bg-success" role="progressbar" style="width: 28%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 34%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             @elseif($order['order_status'] == 1)
-            <div class="progress-bar bg-success" role="progressbar" style="width: 77%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 67%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             @elseif($order['order_status'] == 2)
             <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             @else
