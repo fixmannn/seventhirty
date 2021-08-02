@@ -48,7 +48,7 @@
       margin: 0 auto;
       max-width: 450px;
       height: 50px;
-      background-color: rgb(4, 161, 4);
+      background-color: #92b6b1;
       color: white;
       font-weight: bold;
       border-radius: 2px;
@@ -83,9 +83,9 @@
 
 <body>
   <div class="container">
-    <img src="https://bit.ly/custpayment" alt="">
-    <h2>Order {{ $order['shipping_number'] }} Sedang Dalam Perjalanan</h2>
-    <p class="message">{{ $order['name'] }}, sedang dalam perjalanan nih, yuk sit tight and wait for the package to come.</p>
+    <img src="https://www.freepik.com/free-vector/food-delivery-man-riding-motorcycles-cartoon-art-illustration_14088973.htm#page=1&query=delivery&position=4" alt="">
+    <h2>Order {{ $order['order_number'] }} Sedang Dalam Perjalanan</h2>
+    <p class="message">{{ $order['shipping_name'] }}, pesananmu sedang dalam perjalanan nih, yuk sit tight and wait for the package to come.</p>
     <table>
       <tr>
         <th class="header" style="font-weight: bold">Order No. {{ $order['order_number'] }}</th>
@@ -108,7 +108,7 @@
         <td>{{ $order['shipping_address'] }}</td>
       </tr> 
     </table>
-    <a href="" style="text-decoration: none;">
+    <a href="{{ url('/order') }}/{{ $order['order_number'] }}" style="text-decoration: none;">
     <div class="button">
       LIHAT ORDER
     </div>

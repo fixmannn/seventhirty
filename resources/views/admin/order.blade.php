@@ -43,6 +43,11 @@
           @else
           <p class="text-muted d-flex justify-content-end font-weight-bold mt-0 mb-0">Tracking Number : {{ $order['shipping_number'] }}</p>
           @endif
+          @if(Session::get('success'))
+          <div class="alert alert-success" role="alert">
+            {{ $message }}
+          </div>
+          @endif
 
           <h5 class="font-weight-bold title">Order Status</h5>
           <div class="progress mt-3" style="height: 10px;">
