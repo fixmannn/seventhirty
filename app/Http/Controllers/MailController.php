@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderMail;
 use App\Mail\PaymentMail;
 use App\Mail\PaymentPaidMail;
+use App\Mail\DeliveryMail;
 
 class MailController extends Controller
 {
