@@ -19,7 +19,7 @@ class PaymentsController extends Controller
 
         if (isset($success)) {
             $status = Order::where('order_number', session('order_number'))
-                        ->update('order_status', 1);
+                        ->update(['order_status' => 1]);
             session()->pull('payment');
         }
 
@@ -28,7 +28,7 @@ class PaymentsController extends Controller
             return view('checkout.payment');
         } else {
             $status = Order::where('order_number', session('order_number'))
-                        ->update('order_status', 3);
+                        ->update(['order_status' => 3]);
             session()->pull('payment');
             session()->pull('expiration');
             session()->pull('shipping');
@@ -55,7 +55,7 @@ class PaymentsController extends Controller
                 $mail->paymentpaidMail();
 
                 $status = Order::where('order_number', session('order_number'))
-                        ->update('order_status', 1);
+                        ->update(['order_status' => 1]);
 
                 session()->pull('payment');
                 session()->pull('expiration');
@@ -76,7 +76,7 @@ class PaymentsController extends Controller
                 $mail->paymentpaidMail();
 
                 $status = Order::where('order_number', session('order_number'))
-                        ->update('order_status', 1);
+                        ->update(['order_status' => 1]);
 
                 session()->pull('payment');
                 session()->pull('expiration');
@@ -105,7 +105,7 @@ class PaymentsController extends Controller
                 $mail->paymentpaidMail();
 
                 $status = Order::where('order_number', session('order_number'))
-                        ->update('order_status', 1);
+                        ->update(['order_status' => 1]);
 
                 session()->pull('payment');
                 session()->pull('expiration');
