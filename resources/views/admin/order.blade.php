@@ -54,10 +54,8 @@
             @if($order['order_status'] == 0)
             <div class="progress-bar bg-success" role="progressbar" style="width: 28%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             @elseif($order['order_status'] == 1)
-            <div class="progress-bar bg-success" role="progressbar" style="width: 55%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            @elseif($order['order_status'] == 2)
             <div class="progress-bar bg-success" role="progressbar" style="width: 77%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            @elseif($order['order_status'] == 3)
+            @elseif($order['order_status'] == 2)
             <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             @else
             <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -68,7 +66,6 @@
             <p class="text-muted font-weight-bold">Waiting for Payment</p>
             <p class="text-muted font-weight-bold">Preparing to Ship</p>
             <p class="text-muted font-weight-bold">Package Sent</p>
-            <p class="text-muted font-weight-bold">Delivered</p>
           </div>
 
           <h5 class="font-weight-bold title mt-4">Detail Products</h5>
