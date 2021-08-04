@@ -4,10 +4,11 @@
 
 @section('orders')
 <link rel="stylesheet" href="{{asset('css/orders.css')}}">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
 @endsection
 
 @include('layouts/nav')
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
 
 {{-- Order Details --}}
 <div class="details">
