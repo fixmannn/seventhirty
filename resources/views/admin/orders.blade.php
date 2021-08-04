@@ -71,7 +71,7 @@
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 <script src="{{asset('assets/jquery/jquery-3.6.0.min.js')}}"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/datatables.min.js"></script>
 
 <script>
     $(document).ready(function() {
