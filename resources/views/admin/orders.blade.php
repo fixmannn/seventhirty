@@ -30,7 +30,7 @@
         <div class="heading d-flex justify-content-between">
           <h5 class="font-weight-bold title">Orders</h5>
         </div>
-        <table class="table mt-3">
+        <table id ="dataTable" class="table mt-3">
             <thead class="thead-success">
               <tr>
                 <th scope="col">Order No.</th>
@@ -71,12 +71,17 @@
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 <script src="{{asset('assets/jquery/jquery-3.6.0.min.js')}}"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
 
 <script>
     $(document).ready(function() {
         $('.order-row').click(function() {
             window.location = $(this).data('href');
         });
+    });
+
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
     });
 </script>
 
