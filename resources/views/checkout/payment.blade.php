@@ -12,6 +12,7 @@
     $payment = Session::get('payment');
     $expiration = Session::get('expiration');
     require_once(public_path('/phpqrcode/qrlib.php'));
+    json_decode(file_get_contents('php://input'), true);
 @endphp
 
 @if(!$payment)
