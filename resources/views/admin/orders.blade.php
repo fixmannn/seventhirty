@@ -1,5 +1,4 @@
 @include('layouts/pages')
-@extends('layouts/pages')
 
 @section('title', 'Seven Thirty - My Order')
 
