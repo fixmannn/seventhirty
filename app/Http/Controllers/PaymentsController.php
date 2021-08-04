@@ -18,7 +18,7 @@ class PaymentsController extends Controller
         $time = time();
 
         if (isset($success)) {
-            $status = Order::where('order_number', session('order_number'))
+            $status = Order::where('order_number', $success['external_id'])
                         ->update(['order_status' => 1]);
             session()->pull('payment');
         }

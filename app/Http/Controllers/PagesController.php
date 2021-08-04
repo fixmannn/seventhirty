@@ -16,9 +16,7 @@ class PagesController extends Controller
    */
   public function home()
   {
-    $users = User::all();
-	
-    return view('home', compact('users'));
+    return view('home');
   }
 
   public function shop()

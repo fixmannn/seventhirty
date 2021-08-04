@@ -14,7 +14,11 @@
     require_once(public_path('/phpqrcode/qrlib.php'));
 @endphp
 
-
+@if(!$payment)
+<div class="payment">
+  <h5>You don't have any transaction to pay yet, shop now!</h5>
+</div>
+@else
 <div class="payment">
   <div class="container">
   <div class="row">
@@ -192,6 +196,7 @@
 
 
 </div>
+@endif
 
 @include('layouts/footer')
 
