@@ -70,8 +70,9 @@
 @include('layouts/footer')
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-{{-- <script src="{{asset('assets/jquery/jquery-3.6.0.min.js')}}"></script> --}}
+<script src="{{asset('assets/jquery/jquery-3.6.0.min.js')}}"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
 
 <script>
     $(document).ready(function() {
