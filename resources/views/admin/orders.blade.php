@@ -5,7 +5,7 @@
 
 {{-- Order Details --}}
 <div class="details">
-    <div class="row">
+    <div class="row header">
         <div class="col-xl-3 side-bar">
             <h5 class="font-weight-bold title">Account Details</h5>
             <a href="{{ url('/account-details') }}"><div class="d-flex justify-content-between btn mt-3">

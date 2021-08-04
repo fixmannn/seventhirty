@@ -91,6 +91,10 @@ table {
     margin-top: 150px;
   }
 
+  .dataTables_wrapper .row {
+    margin-top: 30px !important;
+  }
+
   .side-bar {
     display: inline-block;
   }
