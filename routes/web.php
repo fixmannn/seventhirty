@@ -80,3 +80,6 @@ Route::post('change-password', [UsersController::class, 'change']);
 Route::get('order/{order_number}', [OrdersController::class, 'show']);
 Route::get('admin/order/{order_number}', [OrdersController::class, 'showAdmin']);
 Route::post('admin/order/{order_number}', [OrdersController::class, 'store']);
+
+// Webhook
+Route::webHooks('payment');
