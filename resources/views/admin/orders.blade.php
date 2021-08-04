@@ -30,7 +30,7 @@
         <div class="heading d-flex justify-content-between">
           <h5 class="font-weight-bold title">Orders</h5>
         </div>
-        <table id ="dataTable" class="table mt-3">
+        <table class="table mt-3 dataTable">
             <thead class="thead-success">
               <tr>
                 <th scope="col">Order No.</th>
@@ -79,11 +79,9 @@
         $('.order-row').click(function() {
             window.location = $(this).data('href');
         });
+        $('.dataTable').DataTable();
     });
 
-    $(document).ready(function() {
-        $('#dataTable').DataTable();
-    });
 </script>
 
 <script>
