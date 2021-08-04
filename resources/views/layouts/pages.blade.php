@@ -3,6 +3,7 @@
 
 <head>
   @extends('layouts/title')
+  @extends('layouts/css')
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,7 +13,9 @@
 
   {{-- Data Table plugin --}}
   
-  @include('layouts/css')
+  @section('orders')
+  <link rel="stylesheet" href="{{asset('css/orders.css')}}">
+  @endsection
 
 
   <link rel="stylesheet" href="{{asset('css/index.css')}}">
