@@ -1,5 +1,9 @@
 @extends('layouts/home')
 
+@php
+    json_decode(file_get_contents('php://input'), true);
+@endphp
+
 {{-- @extends('layouts/loader') --}}
 
 <!-- Navbar -->
