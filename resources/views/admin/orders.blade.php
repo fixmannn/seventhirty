@@ -1,9 +1,10 @@
-@include('layouts/pages')
+@extends('layouts/pages')
 
 @section('title', 'Seven Thirty - My Order')
 
 @section('orders')
 <link rel="stylesheet" href="{{asset('css/orders.css')}}">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
 @endsection
 
 @include('layouts/nav')
