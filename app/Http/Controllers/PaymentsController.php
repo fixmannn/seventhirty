@@ -13,7 +13,7 @@ class PaymentsController extends Controller
 {
     public function index()
     {
-        $success = json_decode(file_get_contents('php://input'), true);
+        $success = json_decode($this->webhookCall, true)['payload'];
         $expiration = session('expiration');
         $time = time();
 

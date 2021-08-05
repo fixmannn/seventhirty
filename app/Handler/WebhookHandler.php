@@ -9,5 +9,7 @@ class WebhookHandler extends ProcessWebhookJob
   public function handle()
   {
     logger($this->webhookCall);
+    $data = json_decode($this->webhookCall, true)['payload'];
+    logger($data);
   }
 }
