@@ -13,29 +13,31 @@ class PaymentsController extends Controller
 {
     public function index()
     {
-        $success = json_decode($this->webhookCall, true)['payload'];
-        $expiration = session('expiration');
-        $time = time();
+        return view('checkout.payment');
 
-        if (isset($success)) {
-            $status = Order::where('order_number', $success['external_id'])
-                        ->update(['order_status' => 1]);
-            session()->pull('payment');
-        }
+        // $success = json_decode($this->webhookCall, true)['payload'];
+        // $expiration = session('expiration');
+        // $time = time();
+
+        // if (isset($success)) {
+        //     $status = Order::where('order_number', $success['external_id'])
+        //                 ->update(['order_status' => 1]);
+        //     session()->pull('payment');
+        // }
 
 
-        if ($expiration['timestamp'] > $time) {
-            return view('checkout.payment');
-        } else {
-            $status = Order::where('order_number', session('order_number'))
-                        ->update(['order_status' => 3]);
+        // if ($expiration['timestamp'] > $time) {
+        //     return view('checkout.payment');
+        // } else {
+        //     $status = Order::where('order_number', session('order_number'))
+        //                 ->update(['order_status' => 3]);
                         
-            session()->pull('order_number');
-            session()->pull('payment');
-            session()->pull('expiration');
-            session()->pull('shipping');
-            return redirect('checkout');
-        }
+        //     session()->pull('order_number');
+        //     session()->pull('payment');
+        //     session()->pull('expiration');
+        //     session()->pull('shipping');
+        //     return redirect('checkout');
+        // }
     }
 
     public function status()
