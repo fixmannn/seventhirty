@@ -2,7 +2,7 @@
 
 namespace App\Handler;
 
-use Spatie/WebhookClient/ProcessWebhookJob;
+use Spatie\WebhookClient\ProcessWebhookJob;
 
 class WebhookHandler extends ProcessWebhookJob
 {
