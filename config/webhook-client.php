@@ -18,7 +18,7 @@ return [
             /*
              * The name of the header containing the signature.
              */
-            'signature_header_name' => 'X-CALLBACK-TOKEN',
+            'signature_header_name' => 'x-callback-token',
 
             /*
              *  This class will verify that the content of the signature header is valid.
