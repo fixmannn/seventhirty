@@ -13,7 +13,7 @@ return [
              * We expect that every webhook call will be signed using a secret. This secret
              * is used to verify that the payload has not been tampered with.
              */
-            'signing_secret' => 'af104a1c55feab4327d98bbc88866e92c6f3645d4745b6f0153e3873fb5936e4',
+            'signing_secret' => env('WEBHOOK_CLIENT_SECRET'),
 
             /*
              * The name of the header containing the signature.
