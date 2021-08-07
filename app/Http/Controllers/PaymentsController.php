@@ -13,15 +13,14 @@ class PaymentsController extends Controller
 {
     public function index()
     {
+        $success = session('success');
         $expiration = session('expiration');
         $time = time();
 
         if (isset($success)) {
-            $status = Order::where('order_number', session('order_number'))
-                        ->update(['order_status' => 1]);
-            session()->pull('payment');
+            return redirect()->route('payment-status', [PaymentsController::class, 'status']);
+            die;
         }
-
 
         if ($expiration['timestamp'] > $time) {
             return view('checkout.payment');
@@ -123,4 +122,4 @@ class PaymentsController extends Controller
     {
         return redirect()->route('payment-check', [PaymentsController::class, 'check']);
     }
- }
+}
