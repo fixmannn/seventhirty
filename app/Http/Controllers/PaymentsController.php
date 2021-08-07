@@ -63,10 +63,10 @@ class PaymentsController extends Controller
     
                 return redirect('payment-success');
     
-            } elseif (in_array('qr.payment', $success)) {
-                // $QRstatus = $xenditController->getQR();
+            } elseif ($expiration['type'] == 'qris') {
+                $QRstatus = $xenditController->getPayment();
     
-                // if (is_array($QRstatus)) {
+                if (is_array($QRstatus)) {
                     
                 // Send order Mail to Customer and us
                 $mail->orderMail();
@@ -80,7 +80,7 @@ class PaymentsController extends Controller
                 session()->pull('shipping');
     
                 return redirect('payment-success');
-                // } 
+                } 
             } else {
                 $eWalletStatus = $xenditController->geteWallets();
                 // dd($eWalletStatus['status']);
@@ -111,8 +111,6 @@ class PaymentsController extends Controller
         } else {
             return redirect('payment');
         }
-
-        
     }
 
     public function check()
