@@ -63,24 +63,6 @@ class PaymentsController extends Controller
     
                 return redirect('payment-success');
     
-            } elseif ($expiration['type'] == 'qris') {
-                $QRstatus = $xenditController->getPayment();
-    
-                if (is_array($QRstatus)) {
-                    
-                // Send order Mail to Customer and us
-                $mail->orderMail();
-                $mail->paymentpaidMail();
-    
-                $status = Order::where('order_number', $success['qr_code']['external_id'])
-                        ->update(['order_status' => 1]);
-    
-                session()->pull('payment');
-                session()->pull('expiration');
-                session()->pull('shipping');
-    
-                return redirect('payment-success');
-                } 
             } else {
                 $eWalletStatus = $xenditController->geteWallets();
                 // dd($eWalletStatus['status']);
@@ -108,6 +90,23 @@ class PaymentsController extends Controller
                     return redirect('payment-success');
                 } 
             }
+        } elseif ($expiration['type'] == 'qris') {
+            $QRstatus = $xenditController->getPayment();
+    
+            if (is_array($QRstatus)) {
+                // Send order Mail to Customer and us
+                $mail->orderMail();
+                $mail->paymentpaidMail();
+
+                $status = Order::where('order_number', $success['qr_code']['external_id'])
+                        ->update(['order_status' => 1]);
+
+                session()->pull('payment');
+                session()->pull('expiration');
+                session()->pull('shipping');
+
+                return redirect('payment-success');
+            } 
         } else {
             return redirect('payment');
         }
