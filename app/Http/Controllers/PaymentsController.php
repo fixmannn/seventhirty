@@ -18,7 +18,7 @@ class PaymentsController extends Controller
         $time = time();
 
         if (isset($success)) {
-            return redirect()->route('payment-status', [PaymentsController::class, 'status']);
+            return redirect()->route('payment-success', [PaymentsController::class, 'status']);
             die;
         }
 
@@ -115,7 +115,7 @@ class PaymentsController extends Controller
 
         session()->put('success', $success);
 
-        return redirect()->route('payment-status', [PaymentsController::class, 'status']);
+        return redirect()->route('payment-success', [PaymentsController::class, 'status']);
     }
 
     public function home()
