@@ -128,6 +128,7 @@ class PaymentsController extends Controller
 
     public function success()
     {
-        return view('checkout.payment-success');
+        // return view('checkout.payment-success');
+        dd(session('success'));
     }
 }
