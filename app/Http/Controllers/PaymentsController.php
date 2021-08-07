@@ -44,69 +44,75 @@ class PaymentsController extends Controller
         $mail = new MailController();
         $expiration = session('expiration');
 
-        if (in_array('BNI' || 'MANDIRI' || 'BRI' || 'PERMATA', $success)) {
-            // Get Xendit Payment Callback
-
-            // Send order Mail to Customer and us
-            $mail->orderMail();
-            $mail->paymentpaidMail();
-
-            $status = Order::where('order_number', $success['external_id'])
-                    ->update(['order_status' => 1]);
-
-            session()->pull('payment');
-            session()->pull('expiration');
-            session()->pull('cart');
-            session()->pull('shipping');
-            session()->pull('success');
-
-            return redirect('payment-success');
-
-        } elseif (in_array('qr.payment', $success)) {
-            // $QRstatus = $xenditController->getQR();
-
-            // if (is_array($QRstatus)) {
-                
-            // Send order Mail to Customer and us
-            $mail->orderMail();
-            $mail->paymentpaidMail();
-
-            $status = Order::where('order_number', $success['qr_code']['external_id'])
-                    ->update(['order_status' => 1]);
-
-            session()->pull('payment');
-            session()->pull('expiration');
-            session()->pull('shipping');
-
-            return redirect('payment-success');
-            // } 
-        } else {
-            $eWalletStatus = $xenditController->geteWallets();
-            // dd($eWalletStatus['status']);
-
-            if ($eWalletStatus['status'] == 'FAILED') {
-                session()->pull('payment');
-                session()->pull('expiration');
-                session()->pull('shipping');
-
-                return redirect('payment');
-            } elseif ($eWalletStatus['status'] == 'SUCCEEDED' || $eWalletStatus['status'] == 'COMPLETED') {
-
+        if($success) {
+            if (in_array('BNI' || 'MANDIRI' || 'BRI' || 'PERMATA', $success)) {
+                // Get Xendit Payment Callback
+    
                 // Send order Mail to Customer and us
                 $mail->orderMail();
                 $mail->paymentpaidMail();
-
-                $status = Order::where('order_number', $success['data']['reference_id'])
+    
+                $status = Order::where('order_number', $success['external_id'])
                         ->update(['order_status' => 1]);
-
+    
                 session()->pull('payment');
                 session()->pull('expiration');
                 session()->pull('cart');
                 session()->pull('shipping');
-
+                session()->pull('success');
+    
                 return redirect('payment-success');
-            } 
+    
+            } elseif (in_array('qr.payment', $success)) {
+                // $QRstatus = $xenditController->getQR();
+    
+                // if (is_array($QRstatus)) {
+                    
+                // Send order Mail to Customer and us
+                $mail->orderMail();
+                $mail->paymentpaidMail();
+    
+                $status = Order::where('order_number', $success['qr_code']['external_id'])
+                        ->update(['order_status' => 1]);
+    
+                session()->pull('payment');
+                session()->pull('expiration');
+                session()->pull('shipping');
+    
+                return redirect('payment-success');
+                // } 
+            } else {
+                $eWalletStatus = $xenditController->geteWallets();
+                // dd($eWalletStatus['status']);
+    
+                if ($eWalletStatus['status'] == 'FAILED') {
+                    session()->pull('payment');
+                    session()->pull('expiration');
+                    session()->pull('shipping');
+    
+                    return redirect('payment');
+                } elseif ($eWalletStatus['status'] == 'SUCCEEDED' || $eWalletStatus['status'] == 'COMPLETED') {
+    
+                    // Send order Mail to Customer and us
+                    $mail->orderMail();
+                    $mail->paymentpaidMail();
+    
+                    $status = Order::where('order_number', $success['data']['reference_id'])
+                            ->update(['order_status' => 1]);
+    
+                    session()->pull('payment');
+                    session()->pull('expiration');
+                    session()->pull('cart');
+                    session()->pull('shipping');
+    
+                    return redirect('payment-success');
+                } 
+            }
+        } else {
+            return redirect('payment');
         }
+
+        
     }
 
     public function check()
