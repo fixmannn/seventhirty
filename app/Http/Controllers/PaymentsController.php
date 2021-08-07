@@ -130,6 +130,7 @@ class PaymentsController extends Controller
     {
         // return view('checkout.payment-success');
         $success = session('success');
-        gettype($success);
+        dd($success);
+        // gettype($success);
     }
 }
