@@ -44,42 +44,42 @@ class PaymentsController extends Controller
         $mail = new MailController();
         $expiration = session('expiration');
 
-        if ($expiration['type'] == 'va') {
+        if (in_array('BNI', $success) || in_array('MANDIRI', $success) || in_array('PERMATA', $success) || in_array('BRI', $success)) {
             // Get Xendit Payment Callback
 
-            if (isset($success)) {
-                // Send order Mail to Customer and us
-                $mail->orderMail();
-                $mail->paymentpaidMail();
+            // Send order Mail to Customer and us
+            $mail->orderMail();
+            $mail->paymentpaidMail();
 
-                $status = Order::where('order_number', $success['external_id'])
-                        ->update(['order_status' => 1]);
+            $status = Order::where('order_number', $success['external_id'])
+                    ->update(['order_status' => 1]);
 
-                session()->pull('payment');
-                session()->pull('expiration');
-                session()->pull('cart');
-                session()->pull('shipping');
-                session()->pull('success');
+            session()->pull('payment');
+            session()->pull('expiration');
+            session()->pull('cart');
+            session()->pull('shipping');
+            session()->pull('success');
 
-                return redirect('payment-success');
-            } 
-        } elseif ($expiration['type'] == 'qris') {
-            $QRstatus = $xenditController->getQR();
+            return redirect('payment-success');
 
-            if (is_array($QRstatus)) {
-                // Send order Mail to Customer and us
-                $mail->orderMail();
-                $mail->paymentpaidMail();
+        } elseif (in_array('qr.payment', $success)) {
+            // $QRstatus = $xenditController->getQR();
 
-                $status = Order::where('order_number', $success['qr_code']['external_id'])
-                        ->update(['order_status' => 1]);
+            // if (is_array($QRstatus)) {
+                
+            // Send order Mail to Customer and us
+            $mail->orderMail();
+            $mail->paymentpaidMail();
 
-                session()->pull('payment');
-                session()->pull('expiration');
-                session()->pull('shipping');
+            $status = Order::where('order_number', $success['qr_code']['external_id'])
+                    ->update(['order_status' => 1]);
 
-                return redirect('payment-success');
-            } 
+            session()->pull('payment');
+            session()->pull('expiration');
+            session()->pull('shipping');
+
+            return redirect('payment-success');
+            // } 
         } else {
             $eWalletStatus = $xenditController->geteWallets();
             // dd($eWalletStatus['status']);
