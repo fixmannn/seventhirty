@@ -180,7 +180,7 @@
     <ul class="list-group align-item-center">
       <li class="list-group-item d-flex justify-content-between align-items-center">
         <b>METODE PEMBAYARAN</b>
-        <span class="badge badge-pill"><img src="{{ asset('/img/payment/bca.png') }}" width="60"></span>
+        <span class="badge badge-pill"><img src="{{ asset('/img/payment/BCA.png') }}" width="60"></span>
       </li>
     </ul>
       <div class="card text-center">
