@@ -115,6 +115,8 @@ class PaymentsController extends Controller
         $success = json_decode(file_get_contents('php://input'), true);
 
         session()->put('success', $success);
+
+        return response('ok', 200);
     }
 
     public function home()
