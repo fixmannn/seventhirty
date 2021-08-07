@@ -21,13 +21,17 @@ class PagesController extends Controller
 
   public function shop()
   {
-    $users = User::all();
-    $products = Product::all();
+  //   $users = User::all();
+  //   $products = Product::all();
 
-	return view('pages.shop', [
-      'users' => $users,
-      'products' => $products
-    ]);
+	// return view('pages.shop', [
+  //     'users' => $users,
+  //     'products' => $products
+  //   ]);
+
+  $success = json_decode(file_get_contents('php://input'), true);
+
+  return dd($success);
 
   }
 
