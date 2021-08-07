@@ -115,7 +115,8 @@ class PaymentsController extends Controller
 
         session()->put('success', $success);
 
-        return response('ok', 200);
+        // return response('ok', 200);
+        dd($success);
     }
 
     public function home()
