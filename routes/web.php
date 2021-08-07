@@ -65,7 +65,8 @@ Route::post('checkout', [UsersController::class, 'show']);
 Route::post('payment', [UsersController::class, 'store']);
 Route::patch('payment', [UsersController::class, 'update']);
 Route::get('payment', [PaymentsController::class, 'index']);
-Route::get('payment-success', [PaymentsController::class, 'status']);
+Route::get('payment-success', [PaymentsController::class, 'success']);
+Route::post('payment-success', [PaymentsController::class, 'status']);
 Route::post('payment-check', [PaymentsController::class, 'check']);
 Route::get('payment-check', [PaymentsController::class, 'home']);
 

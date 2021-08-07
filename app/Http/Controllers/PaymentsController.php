@@ -18,7 +18,7 @@ class PaymentsController extends Controller
         $time = time();
 
         if (isset($success)) {
-            return redirect()->route('payment-success', [PaymentsController::class, 'status']);
+            return redirect('payment-success');
         } else {
             if ($expiration['timestamp'] > $time) {
                 return view('checkout.payment');
@@ -124,5 +124,10 @@ class PaymentsController extends Controller
     public function home()
     {
         return redirect()->route('payment-check', [PaymentsController::class, 'check']);
+    }
+
+    public function success()
+    {
+        return view('checkout.payment-success');
     }
 }
