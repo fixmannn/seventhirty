@@ -44,7 +44,7 @@ class PaymentsController extends Controller
         $mail = new MailController();
         $expiration = session('expiration');
 
-        if (in_array('BNI', $success) || in_array('MANDIRI', $success) || in_array('PERMATA', $success) || in_array('BRI', $success)) {
+        if (in_array('BNI' || 'MANDIRI' || 'BRI' || 'PERMATA', $success)) {
             // Get Xendit Payment Callback
 
             // Send order Mail to Customer and us
@@ -115,8 +115,7 @@ class PaymentsController extends Controller
 
         session()->put('success', $success);
 
-        // return response('ok', 200);
-        return gettype($success);
+        return response('ok', 200);
     }
 
     public function home()
