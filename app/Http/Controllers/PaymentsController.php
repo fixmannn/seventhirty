@@ -13,12 +13,11 @@ class PaymentsController extends Controller
 {
     public function index()
     {
-        $success = json_decode(file_get_contents('php://input'), true;
         $expiration = session('expiration');
         $time = time();
 
         if (isset($success)) {
-            $status = Order::where('order_number', $success['external_id'])
+            $status = Order::where('order_number', session('order_number'))
                         ->update(['order_status' => 1]);
             session()->pull('payment');
         }
