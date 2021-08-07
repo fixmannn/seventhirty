@@ -115,7 +115,7 @@ class PaymentsController extends Controller
 
         session()->put('success', $success);
 
-        return response('ok', 200);
+        return redirect()->route('payment-status', [PaymentsController::class, 'status']);
     }
 
     public function home()
