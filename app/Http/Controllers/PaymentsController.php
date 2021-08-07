@@ -129,6 +129,7 @@ class PaymentsController extends Controller
     public function success()
     {
         // return view('checkout.payment-success');
-        gettype(session('success'));
+        $success = session('success');
+        gettype($success);
     }
 }
