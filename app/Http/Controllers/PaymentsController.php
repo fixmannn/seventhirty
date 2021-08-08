@@ -130,7 +130,12 @@ class PaymentsController extends Controller
     {
         // return view('checkout.payment-success');
         $success = session('success');
-        $status = explode(',', $success);
+        $array = explode(',', $success);
+
+        foreach($array as $val) {
+            $status = explode(':', $val);
+        }
+
         dd($status);
         // gettype($success);
     }
