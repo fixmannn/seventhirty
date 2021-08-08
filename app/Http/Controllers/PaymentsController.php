@@ -133,7 +133,8 @@ class PaymentsController extends Controller
         $array = explode(',', $success);
 
         foreach($array as $val) {
-            $status = explode(':', $val);
+            $tmp = explode(':', $val);
+            $status[$tmp[0]] = $tmp[1];
         }
 
         dd($status);
