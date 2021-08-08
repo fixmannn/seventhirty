@@ -273,8 +273,7 @@ class XenditController extends Controller
 
         session()->put('success', $result);
 
-        $success = session('success');
-        $array = explode(',', $success);
+        $array = explode(',', $result);
 
         foreach($array as $val) {
             $tmp = explode(':', $val);
@@ -283,6 +282,5 @@ class XenditController extends Controller
         }
 
         session()->put('status', $status);
-        session()->pull('success');
     }
 }
