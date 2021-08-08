@@ -18,7 +18,7 @@ class PaymentsController extends Controller
         $time = time();
 
         if (isset($status)) {
-            $this->status();
+            return $this->status();
         } else {
             if ($expiration['timestamp'] > $time) {
                 return view('checkout.payment');
