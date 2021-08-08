@@ -13,11 +13,11 @@ class PaymentsController extends Controller
 {
     public function index()
     {
-        $success = session('success');
+        $status = session('status');
         $expiration = session('expiration');
         $time = time();
 
-        if (isset($success)) {
+        if (isset($status)) {
             $this->status();
         } else {
             if ($expiration['timestamp'] > $time) {
@@ -39,27 +39,27 @@ class PaymentsController extends Controller
     public function status()
     {
         $xenditController = new XenditController();
-        $success = session('success');
+        $status = session('status');
         // Sending Email
         $mail = new MailController();
         $expiration = session('expiration');
 
-        if($success) {
-            if (in_array('BNI' || 'MANDIRI' || 'BRI' || 'PERMATA', $success)) {
+        if($status) {
+            if (in_array('BNI' || 'MANDIRI' || 'BRI' || 'PERMATA', $status)) {
                 // Get Xendit Payment Callback
     
                 // Send order Mail to Customer and us
                 $mail->orderMail();
                 $mail->paymentpaidMail();
     
-                $status = Order::where('order_number', $success['external_id'])
+                $status = Order::where('order_number', $status['external_id'])
                         ->update(['order_status' => 1]);
     
                 session()->pull('payment');
                 session()->pull('expiration');
                 session()->pull('cart');
                 session()->pull('shipping');
-                session()->pull('success');
+                session()->pull('status');
     
                 return redirect('payment-success');
     
@@ -79,7 +79,7 @@ class PaymentsController extends Controller
                     $mail->orderMail();
                     $mail->paymentpaidMail();
     
-                    $status = Order::where('order_number', $success['data']['reference_id'])
+                    $status = Order::where('order_number', $status['data']['reference_id'])
                             ->update(['order_status' => 1]);
     
                     session()->pull('payment');
@@ -98,7 +98,7 @@ class PaymentsController extends Controller
                 $mail->orderMail();
                 $mail->paymentpaidMail();
 
-                $status = Order::where('order_number', $success['"external_id"'])
+                $status = Order::where('order_number', $status['"external_id"'])
                         ->update(['order_status' => 1]);
 
                 session()->pull('payment');
@@ -114,9 +114,9 @@ class PaymentsController extends Controller
 
     public function check()
     {
-        $success = json_decode(file_get_contents('php://input'), true);
+        $status = json_decode(file_get_contents('php://input'), true);
 
-        session()->put('success', $success);
+        session()->put('status', $status);
 
         return response('ok', 200);
     }

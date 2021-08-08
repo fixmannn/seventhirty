@@ -281,5 +281,8 @@ class XenditController extends Controller
             $status[$tmp[0]] = $tmp[1];
             $status = str_replace(array('[', '{', '"', '}', ']'), '', $status);
         }
+
+        session()->put('status', $status);
+        session()->pull('success');
     }
 }
