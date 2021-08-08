@@ -93,7 +93,9 @@ class PaymentsController extends Controller
                     session()->pull('paid');
     
                     return view('checkout.payment-success');
-                } 
+                } elseif ($eWalletStatus['status'] == 'PENDING') {
+                    return redirect('payment');
+                }
         
         } elseif ($expiration['type'] == 'qris') {
             $QRstatus = $xenditController->getPayment();
