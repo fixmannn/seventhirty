@@ -135,8 +135,8 @@ class PaymentsController extends Controller
         foreach($array as $val) {
             $tmp = explode(':', $val);
             $status[$tmp[0]] = $tmp[1];
+            $status = str_replace(array('[', '{', '"', '}', ']'), '', $status);
         }
-        $status = str_replace(array('[', '{', '"', '}', ']'), '', $status);
         dd($status);
         // gettype($success);
     }
