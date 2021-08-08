@@ -136,7 +136,7 @@ class PaymentsController extends Controller
             $tmp = explode(':', $val);
             $status[$tmp[0]] = $tmp[1];
         }
-
+        $status = str_replace(array('[', '{', '"', '}', ']'), '', $status);
         dd($status);
         // gettype($success);
     }
