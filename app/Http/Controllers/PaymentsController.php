@@ -14,10 +14,11 @@ class PaymentsController extends Controller
     public function index()
     {
         $status = session('status');
+        $paid = session('paid');
         $expiration = session('expiration');
         $time = time();
 
-        if (isset($status)) {
+        if (isset($status) || isset($paid)) {
             return $this->status();
         } else {
             if ($expiration['timestamp'] > $time) {
@@ -40,11 +41,12 @@ class PaymentsController extends Controller
     {
         $xenditController = new XenditController();
         $status = session('status');
+        $paid = session('paid');
         // Sending Email
         $mail = new MailController();
         $expiration = session('expiration');
 
-        if($status) {
+        if($paid) {
             if (in_array('BNI' || 'MANDIRI' || 'BRI' || 'PERMATA', $status)) {
                 // Get Xendit Payment Callback
     
@@ -114,9 +116,9 @@ class PaymentsController extends Controller
 
     public function check()
     {
-        $status = json_decode(file_get_contents('php://input'), true);
+        $paid = json_decode(file_get_contents('php://input'), true);
 
-        session()->put('status', $status);
+        session()->put('paid', $paid);
 
         return response('ok', 200);
     }
