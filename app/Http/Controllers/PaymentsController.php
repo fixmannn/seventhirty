@@ -61,7 +61,7 @@ class PaymentsController extends Controller
                 session()->pull('shipping');
                 session()->pull('status');
     
-                return redirect('payment-success');
+                return view('checkout.payment-success');
     
             } else {
                 $eWalletStatus = $xenditController->geteWallets();
@@ -87,7 +87,7 @@ class PaymentsController extends Controller
                     session()->pull('cart');
                     session()->pull('shipping');
     
-                    return redirect('payment-success');
+                    return view('checkout.payment-success');
                 } 
             }
         } elseif ($expiration['type'] == 'qris') {
@@ -105,7 +105,7 @@ class PaymentsController extends Controller
                 session()->pull('expiration');
                 session()->pull('shipping');
 
-                return redirect('payment-success');
+                return view('checkout.payment-success');
             } 
         } else {
             return redirect('payment');
@@ -126,8 +126,8 @@ class PaymentsController extends Controller
         return redirect()->route('payment-check', [PaymentsController::class, 'check']);
     }
 
-    public function success()
+    public function success() 
     {
-        return view('checkout.payment-success');
+        $this->status();
     }
 }
