@@ -62,6 +62,7 @@ class PaymentsController extends Controller
                 session()->pull('cart');
                 session()->pull('shipping');
                 session()->pull('status');
+                session()->pull('paid');
     
                 return view('checkout.payment-success');
     
@@ -88,6 +89,7 @@ class PaymentsController extends Controller
                     session()->pull('expiration');
                     session()->pull('cart');
                     session()->pull('shipping');
+                    session()->pull('paid');
     
                     return view('checkout.payment-success');
                 } 
@@ -106,6 +108,8 @@ class PaymentsController extends Controller
                 session()->pull('payment');
                 session()->pull('expiration');
                 session()->pull('shipping');
+                session()->pull('cart');
+                session()->pull('status');
 
                 return view('checkout.payment-success');
             } 
