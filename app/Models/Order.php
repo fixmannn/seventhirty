@@ -15,7 +15,7 @@ class Order extends Model
         'amount' => 0,
         'shipping_name' => 0,
         'shipping_address' => 0,
-        'shipping_mail' = 0,
+        'shipping_mail' => 0,
         'shipping_fee' => 0,
         'shipping_number' => 0,
         'order_status' => 0
