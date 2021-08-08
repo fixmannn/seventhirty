@@ -13,6 +13,7 @@ class PaymentsController extends Controller
 {
     public function index()
     {
+        $this->check();
         $status = session('status');
         $paid = session('paid');
         $expiration = session('expiration');
