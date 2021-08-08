@@ -127,7 +127,7 @@
         <td>Rp. {{ $order[0]['amount'] }},-</td>
       </tr>
     </table>
-    <a href="{{ url('/order') }}/{{ $order['order_number'] }}" style="text-decoration: none;">
+    <a href="{{ url('/order') }}/{{ $order[0]['order_number'] }}" style="text-decoration: none;">
     <div class="button">
       LIHAT ORDER
     </div>
