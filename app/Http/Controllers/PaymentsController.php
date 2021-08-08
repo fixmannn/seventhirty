@@ -143,7 +143,9 @@ class PaymentsController extends Controller
 
     public function success() 
     {
-        if(session('succeed')) {
+        $succeed = session('succeed');
+
+        if(isset($succeed)) {
             session()->pull('succeed');
             return view('checkout.payment-success');
         } else {
