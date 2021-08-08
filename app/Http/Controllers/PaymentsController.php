@@ -14,12 +14,11 @@ class PaymentsController extends Controller
     public function index()
     {
         $this->check();
-        $status = session('status');
         $paid = session('paid');
         $expiration = session('expiration');
         $time = time();
 
-        if (isset($status) || isset($paid)) {
+        if ($paid) {
             return $this->status();
         } else {
             if ($expiration['timestamp'] > $time) {
@@ -129,7 +128,7 @@ class PaymentsController extends Controller
     {
         $paid = json_decode(file_get_contents('php://input'), true);
 
-        return response('ok', 200);
+        session()->put('paid', $paid);
     }
 
     public function home()
