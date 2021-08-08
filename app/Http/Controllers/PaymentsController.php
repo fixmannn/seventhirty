@@ -86,7 +86,7 @@ class PaymentsController extends Controller
                     $mail->orderMail();
                     $mail->paymentpaidMail();
     
-                    $status = Order::where('order_number', $status['data']['reference_id'])
+                    $status = Order::where('order_number', $eWalletStatus['reference_id'])
                             ->update(['order_status' => 1]);
     
                     session()->pull('payment');
