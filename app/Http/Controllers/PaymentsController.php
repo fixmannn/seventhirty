@@ -65,7 +65,7 @@ class PaymentsController extends Controller
             session()->pull('status');
             session()->pull('paid');
 
-            return view('checkout.payment-success');
+            session()->put('succeed', 'Pembayaran Berhasil');
     
         } elseif($expiration['type'] == 'ewallets') {
             $eWalletStatus = $xenditController->geteWallets();
@@ -95,7 +95,7 @@ class PaymentsController extends Controller
                     session()->pull('shipping');
                     session()->pull('paid');
     
-                    return view('checkout.payment-success');
+                    session()->put('succeed', 'Pembayaran Berhasil');
                 } elseif ($eWalletStatus['status'] == 'PENDING') {
                     return redirect('payment');
                 }
@@ -117,7 +117,7 @@ class PaymentsController extends Controller
                 session()->pull('cart');
                 session()->pull('status');
 
-                return view('checkout.payment-success');
+                session()->put('succeed', 'Pembayaran Berhasil');
             } 
         } else {
             return redirect('payment');
@@ -138,7 +138,12 @@ class PaymentsController extends Controller
 
     public function success() 
     {
-        $this->check();
-        $this->status();
+        if(session('succeed')) {
+            session()->pull('succeed');
+            return view('checkout.payment-success');
+        } else {
+            $this->check();
+            $this->status();
+        }
     }
 }
