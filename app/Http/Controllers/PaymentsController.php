@@ -93,12 +93,12 @@ class PaymentsController extends Controller
         } elseif ($expiration['type'] == 'qris') {
             $QRstatus = $xenditController->getPayment();
     
-            if (is_array($QRstatus)) {
+            if ($session['"status"'] == 'COMPLETED') {
                 // Send order Mail to Customer and us
                 $mail->orderMail();
                 $mail->paymentpaidMail();
 
-                $status = Order::where('order_number', $success['qr_code']['external_id'])
+                $status = Order::where('order_number', $success['"external_id"'])
                         ->update(['order_status' => 1]);
 
                 session()->pull('payment');
@@ -128,16 +128,6 @@ class PaymentsController extends Controller
 
     public function success()
     {
-        // return view('checkout.payment-success');
-        $success = session('success');
-        $array = explode(',', $success);
-
-        foreach($array as $val) {
-            $tmp = explode(':', $val);
-            $status[$tmp[0]] = $tmp[1];
-            $status = str_replace(array('[', '{', '"', '}', ']'), '', $status);
-        }
-        dd($status);
-        // gettype($success);
+        return view('checkout.payment-success');
     }
 }

@@ -272,5 +272,14 @@ class XenditController extends Controller
         curl_close($ch);
 
         session()->put('success', $result);
+
+        $success = session('success');
+        $array = explode(',', $success);
+
+        foreach($array as $val) {
+            $tmp = explode(':', $val);
+            $status[$tmp[0]] = $tmp[1];
+            $status = str_replace(array('[', '{', '"', '}', ']'), '', $status);
+        }
     }
 }
