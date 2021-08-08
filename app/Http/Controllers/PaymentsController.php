@@ -132,7 +132,7 @@ class PaymentsController extends Controller
 
     public function home()
     {
-        return redirect()->route('payment-check', [PaymentsController::class, 'check']);
+        return $this->check();
     }
 
     public function success() 
