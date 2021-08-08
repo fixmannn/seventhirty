@@ -21,20 +21,25 @@ class PaymentsController extends Controller
         if ($paid) {
             return $this->status();
         } else {
-            if ($expiration['timestamp'] > $time) {
-                return view('checkout.payment');
+            if(session('payment')) {
+                if ($expiration['timestamp'] > $time) {
+                    return view('checkout.payment');
+                } else {
+                    $status = Order::where('order_number', session('order_number'))
+                                ->update(['order_status' => 3]);
+                                
+                    session()->pull('order_number');
+                    session()->pull('payment');
+                    session()->pull('expiration');
+                    session()->pull('shipping');
+                    session()->pull('cart');
+    
+                    return redirect('checkout');
+                }
             } else {
-                $status = Order::where('order_number', session('order_number'))
-                            ->update(['order_status' => 3]);
-                            
-                session()->pull('order_number');
-                session()->pull('payment');
-                session()->pull('expiration');
-                session()->pull('shipping');
-                session()->pull('cart');
-
-                return redirect('checkout');
+                return redirect('cart');
             }
+            
         }
 
     }
