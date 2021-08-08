@@ -32,6 +32,8 @@ class PaymentsController extends Controller
                 session()->pull('payment');
                 session()->pull('expiration');
                 session()->pull('shipping');
+                session()->pull('cart');
+
                 return redirect('checkout');
             }
         }
@@ -74,6 +76,8 @@ class PaymentsController extends Controller
                     session()->pull('payment');
                     session()->pull('expiration');
                     session()->pull('shipping');
+                    session()->pull('order_number');
+                    session()->pull('cart');
     
                     return redirect('checkout');
 
