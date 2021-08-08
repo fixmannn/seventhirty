@@ -61,7 +61,6 @@ class MailController extends Controller
     {
         $order = Order::where('order_number', $order_number)->first();
         $details = User::where('id', $order['user_id'])->first();
-        $guest = session('guest');
 
         session()->put('order_number', $order_number);
 
@@ -70,12 +69,6 @@ class MailController extends Controller
             'body' => 123
         ];
 
-        // dd($details);
-
-        if(isset($guest)) {
-            Mail::to($guest['email'])->send(new DeliveryMail($email_details));
-        } else {
-            Mail::to($details['email'])->send(new DeliveryMail($email_details));
-        }
+        Mail::to($order['shipping_mail'])->send(new DeliveryMail($email_details));
     }
 }
