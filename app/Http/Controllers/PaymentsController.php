@@ -93,7 +93,7 @@ class PaymentsController extends Controller
         } elseif ($expiration['type'] == 'qris') {
             $QRstatus = $xenditController->getPayment();
     
-            if ($session['"status"'] == 'COMPLETED') {
+            if ($status['"status"'] == 'COMPLETED') {
                 // Send order Mail to Customer and us
                 $mail->orderMail();
                 $mail->paymentpaidMail();
