@@ -123,7 +123,9 @@ class PaymentsController extends Controller
     {
         $paid = json_decode(file_get_contents('php://input'), true);
 
-        session()->put('paid', $paid);
+        if($paid) {
+            session()->put('paid', $paid);
+        }
 
         return response('ok', 200);
     }
@@ -135,6 +137,7 @@ class PaymentsController extends Controller
 
     public function success() 
     {
+        $this->check();
         $this->status();
     }
 }
