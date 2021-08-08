@@ -18,7 +18,7 @@ class PaymentsController extends Controller
         $time = time();
 
         if (isset($success)) {
-            return redirect('payment-success');
+            return redirect()->route('payment-success', [PaymentsController::class, 'status']);
         } else {
             if ($expiration['timestamp'] > $time) {
                 return view('checkout.payment');
