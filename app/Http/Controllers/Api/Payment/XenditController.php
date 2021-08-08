@@ -73,7 +73,16 @@ class XenditController extends Controller
         return $checkVA;
     }
 
+    public function getFVAPayment()
+    {
+        Xendit::setApiKey($this->token);
+        $payment = session('payment');
+        $id = $payment['id'];
 
+        $getFVAPayment = \Xendit\VirtualAccounts::getFVAPayment($id);
+
+        return $getFVAPayment;
+    }
 
     public function createEWallets(Request $request)
     {

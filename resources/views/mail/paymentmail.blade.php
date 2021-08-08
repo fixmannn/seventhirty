@@ -48,7 +48,7 @@
       margin: 0 auto;
       max-width: 450px;
       height: 50px;
-      background-color: rgb(4, 161, 4);
+      background-color: #92b6b1;
       color: white;
       font-weight: bold;
       border-radius: 2px;
@@ -131,7 +131,7 @@
         <td>{{ $expiration['date'] }}</td>
       </tr> 
     </table>
-    <a href="" style="text-decoration: none;">
+    <a href="{{ url('/order') }}/{{ $order['order_number'] }}" style="text-decoration: none;">
     <div class="button">
       LIHAT ORDER
     </div>
