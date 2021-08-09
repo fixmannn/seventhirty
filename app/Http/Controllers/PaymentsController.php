@@ -11,7 +11,7 @@ use Xendit\Xendit;
 
 class PaymentsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // $this->check();
         // $paid = session('paid');
@@ -40,7 +40,7 @@ class PaymentsController extends Controller
         //         return redirect('cart');
         //     } 
         // }
-        $this->check();
+        $this->check($request);
         $payment = session('paid');
         dd($payment);
 
@@ -131,14 +131,14 @@ class PaymentsController extends Controller
         }
     }
 
-    public function check()
+    public function check(Request $request)
     {
         // $paid = json_decode(file_get_contents('php://input'), true);
         $paid = $request->all();
 
         session()->put('paid', $paid);
         
-        dump($paid);
+        // dump($paid);
     }
 
     public function home()
