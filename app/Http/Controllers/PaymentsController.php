@@ -144,7 +144,7 @@ class PaymentsController extends Controller
         return $this->check($request);
     }
 
-    public function success() 
+    public function success(Request $request) 
     {
         $succeed = session('succeed');
 
@@ -152,7 +152,7 @@ class PaymentsController extends Controller
             session()->pull('succeed');
             return view('checkout.payment-success');
         } else {
-            $this->check();
+            $this->check($request);
             $this->status();
         }
     }
