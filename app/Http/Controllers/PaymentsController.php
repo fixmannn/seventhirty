@@ -42,7 +42,7 @@ class PaymentsController extends Controller
         // }
 
         $paid = json_decode(file_get_contents('https://seventhirty-id.com/payment-check'), true);
-        Session::put('paid', $paid);
+        session()->put('paid', $paid);
         $payment = session('paid');
         dd($payment);
 
