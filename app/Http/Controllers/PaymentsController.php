@@ -131,13 +131,15 @@ class PaymentsController extends Controller
         }
     }
 
-    public function check()
+    public function check(Request $request)
     {
-        $paid = json_decode(file_get_contents('php://input'), true);
+        // $paid = json_decode(file_get_contents('php://input'), true);
+        $paid = $request->all();
 
         session()->put('paid', $paid);
 
-        redirect()->to('/payment-success');
+        dd($paid);
+        // return response()->json(compact('paid'), 200);
     }
 
     public function home()
