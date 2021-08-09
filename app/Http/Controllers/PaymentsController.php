@@ -40,7 +40,7 @@ class PaymentsController extends Controller
         //         return redirect('cart');
         //     } 
         // }
-
+        $this->check();
         $payment = session('paid');
         dd($payment);
 
@@ -137,9 +137,8 @@ class PaymentsController extends Controller
         $paid = $request->all();
 
         session()->put('paid', $paid);
-
-        dd($paid);
-        // return response()->json(compact('paid'), 200);
+        
+        // dump($paid);
     }
 
     public function home()
