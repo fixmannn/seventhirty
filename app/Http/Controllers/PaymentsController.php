@@ -83,7 +83,7 @@ class PaymentsController extends Controller
                     session()->pull('order_number');
                     session()->pull('cart');
     
-                    return redirect('checkout');
+                    return redirect('cart');
 
                 } elseif ($eWalletStatus['status'] == 'SUCCEEDED' || $eWalletStatus['status'] == 'COMPLETED') {
     
@@ -134,6 +134,8 @@ class PaymentsController extends Controller
         $paid = json_decode(file_get_contents('php://input'), true);
 
         session()->put('paid', $paid);
+
+        dd(session('paid'));
     }
 
     public function home()
