@@ -143,9 +143,9 @@ class PaymentsController extends Controller
         // dump($paid);
     }
 
-    public function home()
+    public function home(Request $request)
     {
-        return $this->check();
+        return $this->check($request);
     }
 
     public function success() 
