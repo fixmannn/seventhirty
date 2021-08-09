@@ -13,34 +13,36 @@ class PaymentsController extends Controller
 {
     public function index()
     {
-        $this->check();
-        $paid = session('paid');
-        $expiration = session('expiration');
-        $time = time();
+        // $this->check();
+        // $paid = session('paid');
+        // $expiration = session('expiration');
+        // $time = time();
 
-        if ($paid) {
-            return $this->status();
-        } else {
-            if(session('payment')) {
-                if ($expiration['timestamp'] > $time) {
-                    return view('checkout.payment');
-                } else {
-                    $status = Order::where('order_number', session('order_number'))
-                                ->update(['order_status' => 3]);
+        // if ($paid) {
+        //     return $this->status();
+        // } else {
+        //     if(session('payment')) {
+        //         if ($expiration['timestamp'] > $time) {
+        //             return view('checkout.payment');
+        //         } else {
+        //             $status = Order::where('order_number', session('order_number'))
+        //                         ->update(['order_status' => 3]);
                                 
-                    session()->pull('order_number');
-                    session()->pull('payment');
-                    session()->pull('expiration');
-                    session()->pull('shipping');
-                    session()->pull('cart');
+        //             session()->pull('order_number');
+        //             session()->pull('payment');
+        //             session()->pull('expiration');
+        //             session()->pull('shipping');
+        //             session()->pull('cart');
     
-                    return redirect('checkout');
-                }
-            } else {
-                return redirect('cart');
-            }
-            
-        }
+        //             return redirect('checkout');
+        //         }
+        //     } else {
+        //         return redirect('cart');
+        //     } 
+        // }
+
+        $payment = session('payment');
+        dd($payment);
 
     }
 
