@@ -40,7 +40,9 @@ class PaymentsController extends Controller
         //         return redirect('cart');
         //     } 
         // }
-        $this->check($request);
+
+        $paid = json_decode(file_get_contents('https://seventhirty-id.com/payment-check'), true);
+        Session::put('paid', $paid);
         $payment = session('paid');
         dd($payment);
 
