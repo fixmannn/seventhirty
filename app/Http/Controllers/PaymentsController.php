@@ -138,11 +138,9 @@ class PaymentsController extends Controller
         // $paid = json_decode(file_get_contents('php://input'), true);
         $paid = $request->all();
 
-        $this->index($request);
-
         // session()->put('paid', $paid);
         
-        // return $paid;
+        return $paid;
     }
 
     public function home(Request $request)
