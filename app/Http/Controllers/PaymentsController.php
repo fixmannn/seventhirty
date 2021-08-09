@@ -135,7 +135,11 @@ class PaymentsController extends Controller
 
         session()->put('paid', $paid);
 
-        dd(session('paid'));
+        if(isset(session('paid'))) {
+            dump($paid);
+        } else {
+            return 'season not found';
+        }
     }
 
     public function home()
