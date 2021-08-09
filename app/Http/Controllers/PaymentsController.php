@@ -40,7 +40,7 @@ class PaymentsController extends Controller
         //         return redirect('cart');
         //     } 
         // }
-        $this->check();
+        $this->check($request);
         $payment = session('paid');
         dd($payment);
 
