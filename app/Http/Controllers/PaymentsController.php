@@ -140,7 +140,7 @@ class PaymentsController extends Controller
 
         // session()->put('paid', $paid);
         
-        return view('payment.payment-check', compact('paid'));
+        return view('checkout.payment-check', compact('paid'));
     }
 
     public function home(Request $request)
