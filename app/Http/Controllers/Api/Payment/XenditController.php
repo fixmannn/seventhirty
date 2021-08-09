@@ -76,7 +76,7 @@ class XenditController extends Controller
     public function getFVAPayment()
     {
         Xendit::setApiKey($this->token);
-        $payment = session('payment');
+        $payment = session('paymentVA');
         $id = $payment['id'];
 
         $getFVAPayment = \Xendit\VirtualAccounts::getFVAPayment($id);
