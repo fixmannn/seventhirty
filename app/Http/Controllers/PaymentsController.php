@@ -41,7 +41,7 @@ class PaymentsController extends Controller
         //     } 
         // }
 
-        $payment = session('payment');
+        $payment = session('paid');
         dd($payment);
 
     }
