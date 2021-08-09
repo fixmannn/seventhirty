@@ -1,3 +1,3 @@
 @php
-    var_dump($paid);
+    dump($paid);
 @endphp
