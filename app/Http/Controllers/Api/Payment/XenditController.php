@@ -104,7 +104,7 @@ class XenditController extends Controller
             "checkout_method" => "ONE_TIME_PAYMENT",
             "channel_code" => "$request->payment",
             "channel_properties" => [
-                "success_redirect_url" => 'https://seventhirty-id.com/'
+                "success_redirect_url" => 'https://seventhirty-id.com/payment-success'
             ],
         ];
 
@@ -115,7 +115,8 @@ class XenditController extends Controller
             "checkout_method" => "ONE_TIME_PAYMENT",
             "channel_code" => "ID_OVO",
             "channel_properties" => [
-                "mobile_number" => "+" . strval($request->ovo_number)
+                "mobile_number" => "+" . strval($request->ovo_number),
+                "success_redirect_url" => 'https://seventhirty-id.com/payment-success'
             ],
             "voided_at" => Carbon::now()->addDays(1)->toISOString(),
             "refunded_amount" => 0

@@ -135,7 +135,7 @@ class PaymentsController extends Controller
 
         session()->put('paid', $paid);
 
-        dd ($paid);
+        redirect()->to('/payment-success');
     }
 
     public function home()
