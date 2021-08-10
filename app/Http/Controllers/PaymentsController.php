@@ -133,7 +133,7 @@ class PaymentsController extends Controller
 
     public function check(Request $request)
     {
-        $url = 'https://seventhirty-id.com/payment-check'
+        $url = 'https://seventhirty-id.com/payment-check';
         $data = json_decode(file_get_contents($url), true);
         // $paid = $request->all();
 
