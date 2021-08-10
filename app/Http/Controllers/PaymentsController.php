@@ -133,12 +133,14 @@ class PaymentsController extends Controller
 
     public function check(Request $request)
     {
-        // $paid = json_decode(file_get_contents('php://input'), true);
-        $paid = $request->all();
+        $url = 'https://seventhirty-id.com/payment-check'
+        $data = json_decode(file_get_contents($url), true);
+        // $paid = $request->all();
 
         // session()->put('paid', $paid);
-        
-        return view('checkout.payment-check', compact('paid'));
+
+        return response()->json($data);
+    
     }
 
     public function home(Request $request)
