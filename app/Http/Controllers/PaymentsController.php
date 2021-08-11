@@ -133,13 +133,17 @@ class PaymentsController extends Controller
 
     public function check(Request $request)
     {
-        // $url = 'https://seventhirty-id.com/payment-check';
-        // $data = json_decode(file_get_contents($url), true);
         $data = $request->all();
+        Xendit::setApiKey('xnd_production_ERRXoEh6KiQLisCaNSrFHTy6kvf0l2Olra3JfXqnvKa8wXWeZXrYXqxUP195w5');
+        $id = $data['id'];
 
-        // session()->put('paid', $paid);
+        $getFVAPayment = \Xendit\VirtualAccounts::getFVAPayment($id);
 
-        return response()->json($data);
+        return $getFVAPayment;
+
+        // // session()->put('paid', $paid);
+
+        // return response()->json($data);
     
     }
 
