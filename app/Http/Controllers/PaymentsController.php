@@ -134,16 +134,11 @@ class PaymentsController extends Controller
     public function check(Request $request)
     {
         $data = $request->all();
-        Xendit::setApiKey('xnd_production_ERRXoEh6KiQLisCaNSrFHTy6kvf0l2Olra3JfXqnvKa8wXWeZXrYXqxUP195w5');
         $id = $data['id'];
-
-        $getFVAPayment = \Xendit\VirtualAccounts::getFVAPayment($id);
-
-        return $getFVAPayment;
 
         // // session()->put('paid', $paid);
 
-        // return response()->json($data);
+        return response()->json($id);
     
     }
 
