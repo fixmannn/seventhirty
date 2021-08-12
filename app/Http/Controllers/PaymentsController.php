@@ -41,11 +41,7 @@ class PaymentsController extends Controller
         //     } 
         // }
 
-        if($request->header('X-CALLBACK-TOKEN', '123')) {
-            return response('ok', 200);
-        } else {
-            return response('not found', 404);
-        }
+        $this->check($request);
     }
 
     public function status()
@@ -136,7 +132,7 @@ class PaymentsController extends Controller
 
     public function check(Request $request)
     {
-        $data = $request->header();
+        $data = $request->all();
 
         return $data;        
     }
