@@ -140,7 +140,7 @@ class PaymentsController extends Controller
 
         // return response()->json($id);
 
-        $url = 'https://api.xendit.co/callback_urls';
+        $url = 'https://api.xendit.co/callback_urls/fva_paid';
         $apiKey = 'xnd_production_ERRXoEh6KiQLisCaNSrFHTy6kvf0l2Olra3JfXqnvKa8wXWeZXrYXqxUP195w5';
         $headers = [];
         $headers[] = 'Content-Type: application/json';
