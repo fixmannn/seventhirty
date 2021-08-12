@@ -41,7 +41,9 @@ class PaymentsController extends Controller
         //     } 
         // }
 
-        $this->check($request);
+        $data = session('data');
+
+        dd($data);
     }
 
     public function status()
@@ -132,7 +134,9 @@ class PaymentsController extends Controller
 
     public function check(Request $request)
     {
-        $data = $request->all();
+        $data = $request->flash();
+
+        session()->put('data', $data);
 
         return $data;        
     }
