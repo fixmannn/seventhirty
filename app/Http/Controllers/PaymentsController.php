@@ -162,7 +162,7 @@ class PaymentsController extends Controller
 
         session()->put('test', $result);
 
-        dd($result);
+        dd($payload);
     
     }
 
