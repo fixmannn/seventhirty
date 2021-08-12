@@ -135,15 +135,15 @@ class PaymentsController extends Controller
     {
         $data = $request->all();
 
-        session()->put('paid', $data);
+        if($request->header('X-CALLBACK-TOKEN', 'af104a1c55feab4327d98bbc88866e92c6f3645d4745b6f0153e3873fb5936e4')) {
+            return response('ok', 200);
+        } else {
+            return response('not found', 404);
+        }
+
+        // session()->put('paid', $data);
 
         // return response()->json($data);
-
-        $context = stream_context_create($data);
-
-        $fp = fopen('https://seventhirty-id.com/payment', 'r', false, $context);
-        fpassthru($fp);
-        fclose($fp);
         
     
     }
