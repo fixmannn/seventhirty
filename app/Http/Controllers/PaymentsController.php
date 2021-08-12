@@ -41,7 +41,7 @@ class PaymentsController extends Controller
         //     } 
         // }
 
-        $test = session('paymentVA');
+        $test = session('test');
         dd($test);
     }
 
@@ -161,6 +161,8 @@ class PaymentsController extends Controller
         $result = curl_exec($curl);
 
         return $result
+
+        session()->put('test', $result);
     
     }
 
