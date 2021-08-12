@@ -160,9 +160,9 @@ class PaymentsController extends Controller
   
         $result = curl_exec($curl);
 
-        return $result
-
         session()->put('test', $result);
+
+        return $result;
     
     }
 
