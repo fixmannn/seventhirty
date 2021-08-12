@@ -133,12 +133,34 @@ class PaymentsController extends Controller
 
     public function check(Request $request)
     {
-        $data = $request->all();
-        $id = $data['id'];
+        // $data = $request->all();
+        // $id = $data['id'];
 
-        // // session()->put('paid', $paid);
+        // // // session()->put('paid', $paid);
 
-        return response()->json($id);
+        // return response()->json($id);
+
+        $url = 'https://seventhirty-id.com/payment-check';
+        $apiKey = 'xnd_production_ERRXoEh6KiQLisCaNSrFHTy6kvf0l2Olra3JfXqnvKa8wXWeZXrYXqxUP195w5';
+        $headers = [];
+        $headers[] = 'Content-Type: application/json';
+        $data = [
+            'url' => 'https://seventhirty-id.com/payment'
+        ];
+
+        $curl = curl_init();
+  
+        $payload = json_encode($data);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($curl, CURLOPT_USERPWD, $apiKey.":");
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $payload);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+  
+        $result = curl_exec($curl);
+
+        return $result
     
     }
 
