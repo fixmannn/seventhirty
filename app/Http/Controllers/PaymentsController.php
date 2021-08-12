@@ -137,8 +137,9 @@ class PaymentsController extends Controller
 
         session()->put('paid', $data);
 
-        return response()->json($data);
+        // return response()->json($data);
 
+        var_dump($http_response_header);
     
     }
 
