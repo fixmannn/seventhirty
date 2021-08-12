@@ -139,7 +139,7 @@ class PaymentsController extends Controller
 
         // return response()->json($data);
 
-        var_dump($http_response_header);
+        var_dump(get_headers($data));
     
     }
 
