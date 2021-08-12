@@ -140,12 +140,12 @@ class PaymentsController extends Controller
 
         // return response()->json($id);
 
-        $url = 'https://seventhirty-id.com/payment-check';
+        $url = 'https://api.xendit.co/callback_urls';
         $apiKey = 'xnd_production_ERRXoEh6KiQLisCaNSrFHTy6kvf0l2Olra3JfXqnvKa8wXWeZXrYXqxUP195w5';
         $headers = [];
         $headers[] = 'Content-Type: application/json';
         $data = [
-            'url' => 'https://seventhirty-id.com/payment'
+            'url' => 'https://seventhirty-id.com/payment-check'
         ];
 
         $curl = curl_init();
@@ -162,7 +162,7 @@ class PaymentsController extends Controller
 
         session()->put('test', $result);
 
-        dd($payload);
+        dd($result);
     
     }
 
