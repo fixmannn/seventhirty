@@ -41,8 +41,8 @@ class PaymentsController extends Controller
         //     } 
         // }
 
-        $test = session('paid');
-        dd($test);
+        $data = $request->all();
+        dd($data);
     }
 
     public function status()
@@ -141,7 +141,9 @@ class PaymentsController extends Controller
 
         $context = stream_context_create($data);
 
-        return $context;
+        $fp = fopen('https://seventhirty-id.com/payment', 'r', false, $context);
+        fpassthru($fp);
+        fclose($fp);
         
     
     }
