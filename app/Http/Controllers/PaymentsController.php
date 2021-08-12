@@ -41,9 +41,11 @@ class PaymentsController extends Controller
         //     } 
         // }
 
-        $data = session('data');
-
-        dd($data);
+        if($request->header('x-callback-token', 'test??')) {
+            return 'ok mantap';
+        } else {
+            return 'gagal bayar gan';
+        }
     }
 
     public function status()
@@ -134,7 +136,8 @@ class PaymentsController extends Controller
 
     public function check(Request $request)
     {
-        $data = $request->flash();
+        $catch = $request->all();
+        $data = $request->flash($data);
 
         session()->put('data', $data);
 
