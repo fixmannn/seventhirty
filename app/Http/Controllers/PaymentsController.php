@@ -136,16 +136,11 @@ class PaymentsController extends Controller
         $data = $request->all();
 
         if($request->header('X-CALLBACK-TOKEN', 'af104a1c55feab4327d98bbc88866e92c6f3645d4745b6f0153e3873fb5936e4')) {
-            return response('ok', 200);
+            $data = $request->all();
+            return $data;
         } else {
             return response('not found', 404);
         }
-
-        // session()->put('paid', $data);
-
-        // return response()->json($data);
-        
-    
     }
 
     public function home(Request $request)
