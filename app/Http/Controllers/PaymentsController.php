@@ -41,7 +41,7 @@ class PaymentsController extends Controller
         //     } 
         // }
 
-        if($request->header('X-CALLBACK-TOKEN', 'af104a1c55feab4327d98bbc88866e92c6f3645d4745b6f0153e3873fb5936e4')) {
+        if($request->header('X-CALLBACK-TOKEN', '123')) {
             return response('ok', 200);
         } else {
             return response('not found', 404);
