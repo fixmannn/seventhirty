@@ -139,7 +139,10 @@ class PaymentsController extends Controller
 
         // return response()->json($data);
 
-        var_dump(get_headers($data));
+        $context = stream_context_create($data);
+
+        return $context;
+        
     
     }
 
