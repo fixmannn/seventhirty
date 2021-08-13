@@ -1,3 +1,3 @@
 @foreach($catch as $data)
-    <p>$data</p>
+    <p>{{ $data }}</p>
 @endforeach
