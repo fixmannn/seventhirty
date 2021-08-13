@@ -136,9 +136,12 @@ class PaymentsController extends Controller
 
     public function check(Request $request)
     {
-        $catch = $request->all();
-       
-        return view('checkout.payment-check', compact('catch'));
+        $callback = $request->all();
+
+        $update = Order::where('order_number', '202108080E64')
+                    ->update(['callback_id' => $callback['id']]);
+        
+        return response('ok', 200);
     }
 
     public function home(Request $request)
