@@ -1,3 +1,3 @@
-@php
-    dump($paid);
-@endphp
+@foreach($catch as $data)
+    <p>$data</p>
+@endforeach

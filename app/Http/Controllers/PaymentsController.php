@@ -137,11 +137,8 @@ class PaymentsController extends Controller
     public function check(Request $request)
     {
         $catch = $request->all();
-        $data = $request->flash($data);
-
-        session()->put('data', $data);
-
-        return $data;        
+       
+        return view('checkout.payment-check', compact('catch'));
     }
 
     public function home(Request $request)
