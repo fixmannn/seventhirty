@@ -1,5 +1,5 @@
 @php
-    $show = file_get_contents('https://seventhirty-id.com/payment-check', true);
+    $show = file_get_contents('php://input', true);
     echo $show;
 @endphp
 
