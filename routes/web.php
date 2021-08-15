@@ -85,4 +85,4 @@ Route::post('admin/order/{order_number}', [OrdersController::class, 'store']);
 // Callback Routes
 Route::post('checkFVA', [PaymentsController::class, 'checkFVA']);
 Route::post('checkOVO', [PaymentsController::class, 'checkOVO']);
-Route::post('checkeWallets' [PaymentsController::class, 'checkeWallets']);
+Route::post('checkeWallets', [PaymentsController::class, 'checkeWallets']);
