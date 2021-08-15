@@ -15,7 +15,9 @@ class VerifyCsrfToken extends Middleware
         //
         '/products/*',
         '/add-to-cart/{id}',
-        '/payment-check',
+        '/checkFVA',
+        '/checkOVO',
+        '/checkeWallets',
         '/payment-success'
     ];
 }

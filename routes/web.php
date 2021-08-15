@@ -67,8 +67,6 @@ Route::patch('payment', [UsersController::class, 'update']);
 Route::get('payment', [PaymentsController::class, 'index']);
 Route::get('payment-success', [PaymentsController::class, 'success']);
 Route::post('payment-success', [PaymentsController::class, 'status']);
-Route::post('payment-check', [PaymentsController::class, 'check']);
-Route::get('payment-check', [PaymentsController::class, 'home']);
 
 // Cart Routes
 Route::post('add-to-cart/{id}', [CartsController::class, 'addToCart']);
@@ -83,3 +81,8 @@ Route::post('change-password', [UsersController::class, 'change']);
 Route::get('order/{order_number}', [OrdersController::class, 'show']);
 Route::get('admin/order/{order_number}', [OrdersController::class, 'showAdmin']);
 Route::post('admin/order/{order_number}', [OrdersController::class, 'store']);
+
+// Callback Routes
+Route::post('checkFVA', [PaymentsController::class, 'checkFVA']);
+Route::post('checkOVO', [PaymentsController::class, 'checkOVO']);
+Route::post('checkeWallets' [PaymentsController::class, 'checkeWallets']);

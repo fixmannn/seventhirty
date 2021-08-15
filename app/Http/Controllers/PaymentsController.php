@@ -40,12 +40,8 @@ class PaymentsController extends Controller
         //         return redirect('cart');
         //     } 
         // }
+        
 
-        if($request->header('x-callback-token', 'test??')) {
-            return 'ok mantap';
-        } else {
-            return 'gagal bayar gan';
-        }
     }
 
     public function status()
@@ -134,19 +130,49 @@ class PaymentsController extends Controller
         }
     }
 
-    public function check(Request $request)
+    public function checkFVA(Request $request)
     {
         $callback = $request->all();
 
-        $update = Order::where('order_number', '202108080E64')
-                    ->update(['callback_id' => $callback['id']]);
+        return $callback['external_id'];
+
+        // $update = Order::where('order_number', $callback['external_id'])
+        //             ->update(['order_status' => 1]);
         
-        return response('ok', 200);
+        // return response('ok', 200);
     }
 
-    public function home(Request $request)
+    public function checkOVO(Request $request)
     {
-        return $this->check($request);
+        $callback = $request->all();
+
+        return $callback['status'];
+
+        // if($callback['status'] == 'COMPLETED') {
+        //     $update = Order::where('order_number', $callback['external_id'])
+        //                     ->update(['order_status' => 1]);
+            
+        //     return response('ok', 200);
+        // } else {
+        //     return response('payment failed', 404);
+        // }
+
+    }
+
+    public function checkeWallets(Request $request)
+    {
+        $callback = $request->all();
+
+        return $callback['data']['status'];
+
+        // if($callback['data']['status'] == 'SUCCEEDED') {
+        //     $update = Order::where('order_number', $callback['data']['reference_id'])
+        //                     ->update(['order_status' => 1]);
+
+        //     return response('ok', 200);
+        // } else {
+        //     return response('payment failed', 404);
+        // }
     }
 
     public function success(Request $request) 
