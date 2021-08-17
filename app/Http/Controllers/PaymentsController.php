@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Product;
 use App\Http\Controllers\Api\Payment\XenditController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
