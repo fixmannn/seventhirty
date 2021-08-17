@@ -53,6 +53,7 @@ class OrdersController extends Controller
                 'user_id' => $orderid,
                 'amount' => $amount,
                 'shipping_name' => $request->first_name . ' ' . $request->last_name,
+                'shipping_phone' => $request->$phonenumber,
                 'shipping_address' => $request->address . ',' . $request->district . ',' . $request->city_destination . ',' . $request->province_destination,
                 'shipping_mail' => $request->email, 
                 'shipping_fee' => $shipping

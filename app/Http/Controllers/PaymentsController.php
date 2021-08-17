@@ -128,17 +128,19 @@ class PaymentsController extends Controller
 
     public function checkFVA(Request $request)
     {
-        $callback = $request->all();
+        $details = OrderDetail::where('order_number', '20210728BD2E')->get();
+
+        return $details;
+                
+        // $callback = $request->all();
 
         // $update = Order::where('order_number', $callback['external_id'])
         //             ->update(['order_status' => 1]);
 
-        session()->put('order_number', $callback['external_id']);
+        // session()->put('order_number', $callback['external_id']);
 
-        $order_number = session('order_number');
+        // $order_number = session('order_number');
 
-        return $order_number;
-        
         // return response('ok', 200);
     }
 

@@ -55,51 +55,25 @@
     <h2>Hello, ada orderan masuk nih, yuk buruan di proses!</h2>
     <table>
       <tr>
-        <th class="header" style="font-weight: bold">Order No. {{ session('order_number') }}</th>
+        <th class="header" style="font-weight: bold">Order No. {{ $order['order_number'] }}</th>
         <td></td>
       </tr>
-      @php
-          $guest = session('guest')
-      @endphp
-      @if(Session::get('guest'))
       <tr>
         <th>Nama</th>
-        <td>{{ $guest['nama_depan'] }} {{ $guest['nama_belakang'] }}</td>
+        <td>{{ $order['shipping_name'] }}</td>
       </tr>
       <tr>
         <th>Alamat</th>
-        <td>{{ $guest['alamat'] }} <br>
-        {{ $guest['kecamatan'] }} <br>
-        {{ $guest['kota'] }}</td>
+        <td>{{ $order['shipping_address'] }}</td>
       </tr> 
       <tr>
         <th>No. Handphone</th>
-        <td>{{ $guest['nomor_handphone'] }}</td>
+        <td>{{ $order['shipping_phone'] }}</td>
       </tr>
       <tr>
         <th>Email</th>
-        <td>{{ $guest['email'] }}</td>
+        <td>{{ $order['shipping_mail'] }}</td>
       </tr>
-      @else
-      <tr>
-        <th>Nama</th>
-        <td>{{ $details[0]['nama_depan'] }} {{ $details[0]['nama_belakang'] }}</td>
-      </tr>
-      <tr>
-        <th>Alamat</th>
-        <td>{{ $details[0]['alamat'] }} <br>
-        {{ $details[0]['kecamatan'] }} <br>
-        {{ $details[0]['kota'] }}</td>
-      </tr> 
-      <tr>
-        <th>No. Handphone</th>
-        <td>{{ $details[0]['nomor_handphone'] }}</td>
-      </tr>
-      <tr>
-        <th>Email</th>
-        <td>{{ $details[0]['email'] }}</td>
-      </tr>
-      @endif
       <tr>
         <th class="header" style="font-weight: bold">Items</th>
       </tr>
