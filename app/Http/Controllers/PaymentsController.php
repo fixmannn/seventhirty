@@ -22,7 +22,7 @@ class PaymentsController extends Controller
         }
 
         foreach($item as $x) {
-            return $x;
+            return $x['name'];
         }
 
         
