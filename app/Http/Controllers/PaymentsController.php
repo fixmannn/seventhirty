@@ -14,32 +14,39 @@ class PaymentsController extends Controller
 {
     public function index(Request $request)
     {
-        $check = Order::where('order_number', session('order_number'))->first();
-        $expiration = session('expiration');
-        $time = time();
+        $details = OrderDetail::where('order_number', $order_number)->get();
 
-        if ($check['order_status'] == 1) {
-            $this->status();
-        } elseif ($check['order_status'] == 0) {
-            if(session('payment')) {
-                if ($expiration['timestamp'] > $time) {
-                    return view('checkout.payment');
-                } else {
-                    $status = Order::where('order_number', session('order_number'))
-                                ->update(['order_status' => 3]);
-                                
-                    session()->pull('order_number');
-                    session()->pull('payment');
-                    session()->pull('expiration');
-                    session()->pull('shipping');
-                    session()->pull('cart');
-    
-                    return redirect('checkout');
-                }
-            } else {
-                return redirect('cart');
-            } 
+        foreach($details as $items) {
+            $item = Product::where('product_id', $items['product_id'])->get();
         }
+
+        return $item;
+        // $check = Order::where('order_number', session('order_number'))->first();
+        // $expiration = session('expiration');
+        // $time = time();
+
+        // if ($check['order_status'] == 1) {
+        //     $this->status();
+        // } elseif ($check['order_status'] == 0) {
+        //     if(session('payment')) {
+        //         if ($expiration['timestamp'] > $time) {
+        //             return view('checkout.payment');
+        //         } else {
+        //             $status = Order::where('order_number', session('order_number'))
+        //                         ->update(['order_status' => 3]);
+                                
+        //             session()->pull('order_number');
+        //             session()->pull('payment');
+        //             session()->pull('expiration');
+        //             session()->pull('shipping');
+        //             session()->pull('cart');
+    
+        //             return redirect('checkout');
+        //         }
+        //     } else {
+        //         return redirect('cart');
+        //     } 
+        // }
     }
 
     public function status()
@@ -129,20 +136,16 @@ class PaymentsController extends Controller
 
     public function checkFVA(Request $request)
     {
-        $details = OrderDetail::where('order_number', '20210728BD2E')->get();
+        $callback = $request->all();
 
-        return $details;
+        $update = Order::where('order_number', $callback['external_id'])
+                    ->update(['order_status' => 1]);
 
-        // $callback = $request->all();
+        session()->put('order_number', $callback['external_id']);
 
-        // $update = Order::where('order_number', $callback['external_id'])
-        //             ->update(['order_status' => 1]);
+        $order_number = session('order_number');
 
-        // session()->put('order_number', $callback['external_id']);
-
-        // $order_number = session('order_number');
-
-        // return response('ok', 200);
+        return response('ok', 200);
     }
 
     public function checkOVO(Request $request)

@@ -77,7 +77,7 @@
       <tr>
         <th class="header" style="font-weight: bold">Items</th>
       </tr>
-      @foreach(session('cart') as $id => $item)
+      @foreach($details as $detail)
       <tr>
         <td class="item" style="text-align: left">{{ $item['name'] }}</td>
         <td>Size {{ $item['size'] }}, {{ $item['quantity'] }} pcs</td>
