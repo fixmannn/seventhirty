@@ -137,9 +137,7 @@ class PaymentsController extends Controller
 
         // session()->put('order_number', $callback['external_id']);
 
-        session()->put('order_number', '20210728BD2E')
-
-        $order_number = session('order_number');
+        session()->put('order_number', '20210728BD2E');
 
         $mail = new MailController();
         $mail->orderMail();
