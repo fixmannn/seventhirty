@@ -19,9 +19,10 @@ class PaymentsController extends Controller
 
         foreach($details as $items) {
             $item = Product::where('id', $items['product_id'])->get();
+            
+            return $item;
         }
 
-        return $item;
         // $check = Order::where('order_number', session('order_number'))->first();
         // $expiration = session('expiration');
         // $time = time();
