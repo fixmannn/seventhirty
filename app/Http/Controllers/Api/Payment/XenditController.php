@@ -215,7 +215,7 @@ class XenditController extends Controller
         curl_setopt($ch, CURLOPT_URL, 'https://api.xendit.co/qr_codes');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, "external_id=" . $order_number . "&type=DYNAMIC&callback_url=https://www.seventhirty-id.com/payment-check&amount=" . (int)$amount);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, "external_id=" . $order_number . "&type=DYNAMIC&callback_url=https://www.seventhirty-id.com/checkQR&amount=" . (int)$amount);
         curl_setopt($ch, CURLOPT_USERPWD, 'xnd_production_ERRXoEh6KiQLisCaNSrFHTy6kvf0l2Olra3JfXqnvKa8wXWeZXrYXqxUP195w5' . ':' . '');
 
         $headers = array();

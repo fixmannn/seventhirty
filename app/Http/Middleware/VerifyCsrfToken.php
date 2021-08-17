@@ -18,6 +18,7 @@ class VerifyCsrfToken extends Middleware
         '/checkFVA',
         '/checkOVO',
         '/checkeWallets',
+        '/checkQR',
         '/payment-success'
     ];
 }
