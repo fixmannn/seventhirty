@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Http\Controllers\Api\Payment\XenditController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
@@ -131,7 +132,7 @@ class PaymentsController extends Controller
         $details = OrderDetail::where('order_number', '20210728BD2E')->get();
 
         return $details;
-                
+
         // $callback = $request->all();
 
         // $update = Order::where('order_number', $callback['external_id'])
