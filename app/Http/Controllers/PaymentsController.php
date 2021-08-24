@@ -139,10 +139,20 @@ class PaymentsController extends Controller
 
         session()->put('order_number', '20210728BD2E');
 
-        $mail = new MailController();
-        $mail->orderMail();
+        // $mail = new MailController();
+        // $mail->orderMail();
 
-        return response('ok', 200);
+        // return response('ok', 200);
+
+        $order_number = session('order_number');
+        $order = Order::where('order_number', $order_number)->first();
+        $details = OrderDetail::where('order_number', $order_number)->get();
+
+        foreach($details as $products) {
+            $product = Product::where('id', $products['product_id'])->get();
+        }
+
+        return $product;
     }
 
     public function checkOVO(Request $request)
