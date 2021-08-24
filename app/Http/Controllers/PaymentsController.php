@@ -150,7 +150,7 @@ class PaymentsController extends Controller
 
         foreach($details as $products) {
             $product = Product::where('id', $products['product_id'])->get();
-            var_dump($product); 
+            dump($product); 
         }
 
     }
