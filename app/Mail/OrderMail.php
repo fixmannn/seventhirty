@@ -38,8 +38,10 @@ class OrderMail extends Mailable
         $details = OrderDetail::where('order_number', $order_number)->get();
 
         foreach($details as $products) {
-            $product = Product::where('id', $products['product_id'])->get();
+            $product = Product::where('id', $products['product_id'])->first();
             $names[] = $product['name'];
+
+            return $names;
         }
 
         return $this->subject('New Order #' . $order_number)->view('mail.ordermail', compact('order', 'details', 'names'));
