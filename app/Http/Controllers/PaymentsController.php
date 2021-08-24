@@ -15,46 +15,35 @@ class PaymentsController extends Controller
 {
     public function index(Request $request)
     {
-        // $check = Order::where('order_number', session('order_number'))->first();
-        // $expiration = session('expiration');
-        // $time = time();
+        $check = Order::where('order_number', session('order_number'))->first();
+        $expiration = session('expiration');
+        $time = time();
 
-        // if ($check['order_status'] == 1) {
-        //     $this->status();
-        // } elseif ($check['order_status'] == 0) {
-        //     if(session('payment')) {
-        //         if ($expiration['timestamp'] > $time) {
-        //             return view('checkout.payment');
-        //         } else {
-        //             $status = Order::where('order_number', session('order_number'))
-        //                         ->update(['order_status' => 3]);
+        if ($check['order_status'] == 1) {
+            $this->status();
+        } elseif ($check['order_status'] == 0) {
+            if(session('payment')) {
+                if ($expiration['timestamp'] > $time) {
+                    return view('checkout.payment');
+                } else {
+                    $status = Order::where('order_number', session('order_number'))
+                                ->update(['order_status' => 3]);
                                 
-        //             session()->pull('order_number');
-        //             session()->pull('payment');
-        //             session()->pull('expiration');
-        //             session()->pull('shipping');
-        //             session()->pull('cart');
+                    session()->pull('order_number');
+                    session()->pull('payment');
+                    session()->pull('expiration');
+                    session()->pull('shipping');
+                    session()->pull('cart');
     
-        //             return redirect('checkout');
-        //         }
-        //     } else {
-        //         return redirect('cart');
-        //     } 
-        // }
-
-
-        // testing
-        session()->put('order_number', '20210728BD2E');
-        $order_number = session('order_number');
-        $order = Order::where('order_number', $order_number)->first();
-        $details = OrderDetail::where('order_number', $order_number)->get();
-
-        foreach($details as $products) {
-            $product = Product::where('id', $products['product_id'])->first();
-            $product[] = $product['name'];
+                    return redirect('checkout');
+                }
+            } else {
+                return redirect('cart');
+            } 
         }
 
-        dump($product);    
+
+        // testing   
     }
 
     public function status()
@@ -153,19 +142,10 @@ class PaymentsController extends Controller
 
         session()->put('order_number', '20210728BD2E');
 
-        // $mail = new MailController();
-        // $mail->orderMail();
+        $mail = new MailController();
+        $mail->orderMail();
 
-        // return response('ok', 200);
-
-        $order_number = session('order_number');
-        $order = Order::where('order_number', $order_number)->first();
-        $details = OrderDetail::where('order_number', $order_number)->get();
-
-        foreach($details as $products) {
-            $product = Product::where('id', $products['product_id'])->get();
-            dump();    
-        }
+        return response('ok', 200);
         
     }
 
