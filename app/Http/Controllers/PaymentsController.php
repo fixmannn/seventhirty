@@ -149,7 +149,8 @@ class PaymentsController extends Controller
         $details = OrderDetail::where('order_number', $order_number)->get();
 
         foreach($details as $products) {
-            return $products['product_id'];
+            $product = Product::where('id', $products['product_id'])->get();
+            var_dump($product); 
         }
 
     }
