@@ -53,8 +53,9 @@ class PaymentsController extends Controller
             $product = Product::where('id', $products['product_id'])->first();
             $names = [];
             $names = $product['name'];
-            dump($names);    
         }
+        
+        dump($names);    
     }
 
     public function status()
