@@ -77,14 +77,14 @@
       <tr>
         <th class="header" style="font-weight: bold">Items</th>
       </tr>
-      @foreach($names as $item)
-      @foreach($details as $detail)
       <tr>
+        @foreach($names as $item)
         <td class="item" style="text-align: left">{{ $item }}</td>
+        @endforeach
+        @foreach($details as $detail)
         <td>Size {{ $detail['size'] }}, {{ $detail['quantity'] }} pcs</td>
+        @endforeach
       </tr>
-      @endforeach
-      @endforeach
       <tr style="font-weight: bold">
         <th style="font-weight: bold">Biaya Ongkir</th>
         <td>Rp. {{ $order['shipping_fee'] }},-</td>
