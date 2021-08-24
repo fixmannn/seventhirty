@@ -77,13 +77,11 @@
       <tr>
         <th class="header" style="font-weight: bold">Items</th>
       </tr>
-      @foreach($names as $item)
       @foreach($details as $detail)
       <tr>
-        <td class="item" style="text-align: left">{{ $item }}</td>
+        <td class="item" style="text-align: left">{{ $detail['product_id'] }}</td>
         <td>Size {{ $detail['size'] }}, {{ $detail['quantity'] }} pcs</td>
       </tr>
-      @endforeach
       @endforeach
       <tr style="font-weight: bold">
         <th style="font-weight: bold">Biaya Ongkir</th>
