@@ -51,8 +51,9 @@ class PaymentsController extends Controller
 
         foreach($details as $products) {
             $product = Product::where('id', $products['product_id'])->first();
-            $product[] = $product['name'];
-            dump($product);    
+            $names = [];
+            $names = $product['name'];
+            dump($names);    
         }
     }
 
