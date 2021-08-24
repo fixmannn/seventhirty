@@ -150,9 +150,9 @@ class PaymentsController extends Controller
 
         foreach($details as $products) {
             $product = Product::where('id', $products['product_id'])->get();
-            dump($product); 
         }
-
+        
+        dump($product); 
     }
 
     public function checkOVO(Request $request)
