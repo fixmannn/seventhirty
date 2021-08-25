@@ -32,10 +32,9 @@ class PaymentPaidMail extends Mailable
      */
     public function build()
     {
-        $details = User::where('id', session('LoggedUser'))->get();
-        $order = Order::where('order_number', session('order_number'))->get();
+        $order = Order::where('order_number', session('order_number'))->first();
         $order_number = session('order_number');
 
-        return $this->subject('Order #' . $order_number . ' berhasil dibayar')->view('mail.paymentpaidmail', compact('details', 'order'));
+        return $this->subject('Order #' . $order_number . ' berhasil dibayar')->view('mail.paymentpaidmail', compact('order'));
     }
 }

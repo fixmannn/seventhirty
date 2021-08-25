@@ -42,19 +42,14 @@ class MailController extends Controller
     }
     public function paymentpaidMail()
     {
-        $details = User::where('id', session('LoggedUser'))->get();
-        $guest = session('guest');
+        $order = Order::where('order_number', session('order_number'))->first();
 
         $email_details = [
             'nama' => "123",
             'body' => "123"
         ];
 
-        if (isset($guest)) {
-            Mail::to($guest['email'])->send(new PaymentPaidMail($email_details));
-        } else {
-            Mail::to($details[0]['email'])->send(new PaymentPaidMail($email_details));
-        }
+        Mail::to($order['shipping_mail'])->send(new PaymentPaidMail($email_details));
     }
 
     public function deliveryMail($order_number)

@@ -139,11 +139,15 @@ class PaymentsController extends Controller
         //             ->update(['order_status' => 1]);
 
         // session()->put('order_number', $callback['external_id']);
+        // session()->put('payment_method', $callback['bank_code']);
 
+        // testing
         session()->put('order_number', '20210728BD2E');
+        session()->put('payment_method', 'MANDIRI');
 
         $mail = new MailController();
         $mail->orderMail();
+        $mail->paymentpaidMail();
 
         return response('ok', 200);
         
