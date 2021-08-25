@@ -146,7 +146,7 @@ class PaymentsController extends Controller
         session()->put('payment_method', 'MANDIRI');
 
         $mail = new MailController();
-        $mail->orderMail();
+        // $mail->orderMail();
         $mail->paymentpaidMail();
 
         return response('ok', 200);
