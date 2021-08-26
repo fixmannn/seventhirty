@@ -112,7 +112,7 @@ class PaymentsController extends Controller
             $update = Order::where('order_number', $callback['data']['reference_id'])
                             ->update(['order_status' => 1]);
 
-            session()->put('order_number', $callback['data']['external_id']);
+            session()->put('order_number', $callback['data']['reference_id']);
             session()->put('payment_method', $callback['data']['channel_code']);
 
             $mail = new MailController();
