@@ -20,7 +20,7 @@ class PaymentsController extends Controller
         $time = time();
 
         if ($check['order_status'] == 1) {
-            $this->status();
+            return $this->status();
         } elseif ($check['order_status'] == 0) {
             if(session('payment')) {
                 if ($expiration['timestamp'] > $time) {
