@@ -54,7 +54,7 @@ class PaymentsController extends Controller
             session()->pull('cart');
             session()->pull('shipping');
 
-            return redirect('payment-success');
+            return view('checkout.payment-success');
         } else {
             return redirect('payment');
         }
