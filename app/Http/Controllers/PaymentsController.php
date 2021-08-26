@@ -145,9 +145,4 @@ class PaymentsController extends Controller
             return response('payment failed', 404);
         }
     }
-
-    public function success() 
-    {
-        return view('checkout.payment-success');
-    }
 }
