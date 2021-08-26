@@ -41,91 +41,20 @@ class PaymentsController extends Controller
                 return redirect('cart');
             } 
         }
-
-
-        // testing   
     }
 
     public function status()
     {
-        $xenditController = new XenditController();
+        $check = Order::where('order_number', session('order_number'))->first();
 
-        // Sending Email
-        $mail = new MailController();
-        $expiration = session('expiration');
-
-        if($expiration['type'] == 'va') {
-            $xenditController->checkVA();
-            $paid = $xenditController->getFVAPayment();
-    
-            // Send order Mail to Customer and us
-            $mail->orderMail(); 
-            $mail->paymentpaidMail();
-
-            $status = Order::where('order_number', $paid['external_id'])
-                    ->update(['order_status' => 1]);
-
+        if($check['order_status'] == 1) {
+            session()->pull('order_number');
             session()->pull('payment');
             session()->pull('expiration');
             session()->pull('cart');
             session()->pull('shipping');
-            session()->pull('status');
-            session()->pull('paid');
 
-            session()->put('succeed', 'Pembayaran Berhasil');
-    
-        } elseif($expiration['type'] == 'ewallets') {
-            $eWalletStatus = $xenditController->geteWallets();
-                // dd($eWalletStatus['status']);
-    
-                if ($eWalletStatus['status'] == 'FAILED') {
-                    session()->pull('payment');
-                    session()->pull('expiration');
-                    session()->pull('shipping');
-                    session()->pull('order_number');
-                    session()->pull('cart');
-    
-                    return redirect('cart');
-
-                } elseif ($eWalletStatus['status'] == 'SUCCEEDED' || $eWalletStatus['status'] == 'COMPLETED') {
-    
-                    // Send order Mail to Customer and us
-                    $mail->orderMail();
-                    $mail->paymentpaidMail();
-    
-                    $status = Order::where('order_number', $eWalletStatus['reference_id'])
-                            ->update(['order_status' => 1]);
-    
-                    session()->pull('payment');
-                    session()->pull('expiration');
-                    session()->pull('cart');
-                    session()->pull('shipping');
-                    session()->pull('paid');
-    
-                    session()->put('succeed', 'Pembayaran Berhasil');
-                } elseif ($eWalletStatus['status'] == 'PENDING') {
-                    return redirect('payment');
-                }
-        
-        } elseif ($expiration['type'] == 'qris') {
-            $QRstatus = $xenditController->getPayment();
-    
-            if ($status['"status"'] == 'COMPLETED') {
-                // Send order Mail to Customer and us
-                $mail->orderMail();
-                $mail->paymentpaidMail();
-
-                $status = Order::where('order_number', $status['"external_id"'])
-                        ->update(['order_status' => 1]);
-
-                session()->pull('payment');
-                session()->pull('expiration');
-                session()->pull('shipping');
-                session()->pull('cart');
-                session()->pull('status');
-
-                session()->put('succeed', 'Pembayaran Berhasil');
-            } 
+            return redirect('payment-success');
         } else {
             return redirect('payment');
         }
@@ -133,20 +62,20 @@ class PaymentsController extends Controller
 
     public function checkFVA(Request $request)
     {
-        // $callback = $request->all();
+        $callback = $request->all();
 
-        // $update = Order::where('order_number', $callback['external_id'])
-        //             ->update(['order_status' => 1]);
+        $update = Order::where('order_number', $callback['external_id'])
+                    ->update(['order_status' => 1]);
 
-        // session()->put('order_number', $callback['external_id']);
-        // session()->put('payment_method', $callback['bank_code']);
+        session()->put('order_number', $callback['external_id']);
+        session()->put('payment_method', $callback['bank_code']);
 
-        // testing
-        session()->put('order_number', '20210728BD2E');
-        session()->put('payment_method', 'MANDIRI');
+        // // testing
+        // session()->put('order_number', '20210728BD2E');
+        // session()->put('payment_method', 'MANDIRI');
 
         $mail = new MailController();
-        // $mail->orderMail();
+        $mail->orderMail();
         $mail->paymentpaidMail();
 
         return response('ok', 200);
@@ -161,6 +90,13 @@ class PaymentsController extends Controller
             $update = Order::where('order_number', $callback['external_id'])
                             ->update(['order_status' => 1]);
             
+            session()->put('order_number', $callback['external_id']);
+            session()->put('payment_method', $callback['ewallet_type']);
+
+            $mail = new MailController();
+            $mail->orderMail();
+            $mail->paymentpaidMail();
+
             return response('ok', 200);
         } else {
             return response('payment failed', 404);
@@ -176,6 +112,13 @@ class PaymentsController extends Controller
             $update = Order::where('order_number', $callback['data']['reference_id'])
                             ->update(['order_status' => 1]);
 
+            session()->put('order_number', $callback['data']['external_id']);
+            session()->put('payment_method', $callback['data']['channel_code']);
+
+            $mail = new MailController();
+            $mail->orderMail();
+            $mail->paymentpaidMail();
+            
             return response('ok', 200);
         } else {
             return response('payment failed', 404);
@@ -190,22 +133,21 @@ class PaymentsController extends Controller
             $update = Order::where('order_number', $callback['qr_code']['external_id'])
                             ->update(['order_status' => 1]);
 
+            session()->put('order_number', $callback['qr_code']['external_id']);
+            session()->put('payment_method', 'Scan QR BCA');
+
+            $mail = new MailController();
+            $mail->orderMail();
+            $mail->paymentpaidMail();
+
             return response('ok', 200);
         } else {
             return response('payment failed', 404);
         }
     }
 
-    public function success(Request $request) 
+    public function success() 
     {
-        $succeed = session('succeed');
-
-        if(isset($succeed)) {
-            session()->pull('succeed');
-            return view('checkout.payment-success');
-        } else {
-            $this->check($request);
-            $this->status();
-        }
+        return view('checkout.payment-success');
     }
 }
