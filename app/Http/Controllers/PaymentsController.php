@@ -13,7 +13,7 @@ use Xendit\Xendit;
 
 class PaymentsController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $check = Order::where('order_number', session('order_number'))->first();
         $expiration = session('expiration');
