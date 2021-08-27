@@ -1,9 +1,9 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light scroll-down">
-  <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand mr-auto" href="/">SEVEN THIRTY</a>
+  <a class="navbar-brand" href="/">SEVEN THIRTY</a>
   <div class="collapse navbar-collapse ml-auto" id="navbarNavAltMarkup">
     <div class="navbar-nav menu mx-auto">
       <a class="nav-link text-body" href="/">Home <span class="sr-only">(current)</span></a>
