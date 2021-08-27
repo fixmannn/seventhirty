@@ -3,7 +3,7 @@
   <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand mr-auto" href="/">SEVEN THIRTY</a>
+  <a class="navbar-brand mr-auto nav-text" href="/">SEVEN THIRTY</a>
   <div class="collapse navbar-collapse ml-auto" id="navbarNavAltMarkup">
     <div class="navbar-nav menu mx-auto">
       <a class="nav-link text-body" href="/">Home <span class="sr-only">(current)</span></a>
@@ -29,7 +29,7 @@
     @else
     <a href="/login" class="nav-link icons text-body"><i class="bi bi-person-circle text-body"></i><span class="nav-link">LOG IN</span></a>
     @endif
-    <a href="/cart" class="icons text-body ml-4"><i class="bi bi-cart text-body"></i></a>
+    <a href="/cart" class="icons text-body"><i class="bi bi-cart text-body"></i></a>
   </div>
 </nav>
 <!-- End of Navbar -->
