@@ -27,9 +27,9 @@
       </div>
     </div>
     @else
-    <a href="/login" class="nav-link icons text-body"><i class="bi bi-person-circle text-body"></i><span>LOG IN</span></a>
+    <a href="/login" class="nav-link icons text-body"><i class="bi bi-person-circle text-body"></i><span class="nav-link">LOG IN</span></a>
     @endif
-    <a href="/cart" class="nav-link icons text-body ml-4"><i class="bi bi-cart text-body"></i></a>
+    <a href="/cart" class="icons text-body ml-4"><i class="bi bi-cart text-body"></i></a>
   </div>
 </nav>
 <!-- End of Navbar -->
