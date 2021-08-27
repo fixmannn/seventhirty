@@ -65,7 +65,6 @@ session_start();
         <table>
           <tr class="summary">
             <th>Order Summary</th>
-            <td></td>
           </tr>
           <tr>
             <th>Subtotal</th>
