@@ -64,7 +64,7 @@ session_start();
       <div class="order-summary">
         <table>
           <tr class="summary">
-            <th>Order Summary</th>
+            <th colspan="2">Order Summary</th>
           </tr>
           <tr>
             <th>Subtotal</th>
