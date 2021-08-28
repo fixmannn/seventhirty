@@ -14,12 +14,12 @@
     <div class="navbar-nav">
       <a href="https://wa.link/wrsgrl" class="navlink text-body icons remove"><i class="bi bi-telephone-fill text-body"></i><span class="wa-number">+62 858-9031-7097</span></a>
       @if(Session::get('LoggedUser'))
-      <div class="nav-item dropdown my-account d-inline-block align-middle">
+      <div class="nav-item dropdown my-account ">
         <button class="bg-transparent btn nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="bi bi-person-circle align-middle"></i>
-          <span class="text-body align-middle">MY ACCOUNT</span>
+          <i class="bi bi-person-circle"></i>
+          <span class="text-body">MY ACCOUNT</span>
         </button>
-        <div class="dropdown-menu align-middle" aria-labelledby="dropdownMenuButton">
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item text-body" href="/account-details">ACCOUNT DETAILS</a>
           <a class="dropdown-item text-body" href="/orders">MY ORDER</a>
           <a class="dropdown-item text-body" href="/logout">LOG OUT</a>
