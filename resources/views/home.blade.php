@@ -14,17 +14,17 @@
       <a class="nav-link text-body nav-text" href="/about">ABOUT US</a>
     </div>
     <div class="navbar-nav">
-      <a href="https://wa.link/wrsgrl" class="navlink icons remove"><i class="bi bi-telephone-fill"></i><span class="wa-number">+62 858-9031-7097</span></a>
+      <a href="https://wa.link/wrsgrl" class="navlink icons remove"><i class="bi bi-telephone-fill nav-text"></i><span class="nav-text wa-number">+62 858-9031-7097</span></a>
       @if(Session::get('LoggedUser'))
       <div class="dropdown nav-item my-account">
         <button class="bg-transparent btn dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="bi bi-person-circle"></i>
+          <i class="bi bi-person-circle nav-text"></i>
           <span class="nav-text">MY ACCOUNT</span>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item nav-text text-body" href="/account-details">ACCOUNT DETAILS</a>
-          <a class="dropdown-item nav-text text-body" href="/orders">MY ORDER</a>
-          <a class="dropdown-item nav-text text-body" href="/logout">LOG OUT</a>
+          <a class="dropdown-item text-body" href="/account-details">ACCOUNT DETAILS</a>
+          <a class="dropdown-item text-body" href="/orders">MY ORDER</a>
+          <a class="dropdown-item text-body" href="/logout">LOG OUT</a>
         </div>
       </div>
       @else
