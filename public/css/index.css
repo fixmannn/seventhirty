@@ -316,7 +316,7 @@ footer p {
     }
 
     .login-link {
-        margin-right: 20px;
+        margin-right: 50px !important;
     }
 
     .icons {
