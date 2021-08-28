@@ -361,8 +361,7 @@ footer p {
 
     .my-account {
         margin-right: 100px !important;
-        position: absolute;
-        top: 50%;
+        margin-top: 10px;
     }
 
     /* .dropdown-menu {
