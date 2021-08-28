@@ -14,8 +14,8 @@
     <div class="navbar-nav">
       <a href="https://wa.link/wrsgrl" class="navlink text-body icons remove"><i class="bi bi-telephone-fill text-body"></i><span class="wa-number">+62 858-9031-7097</span></a>
       @if(Session::get('LoggedUser'))
-      <div class="dropdown collapse navbar-collapse" id="navbarNavAltMarkup">
-        <button class="bg-transparent btn dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="dropdown" id="navbarNavAltMarkup">
+        <button class="bg-transparent btn dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="bi bi-person-circle "></i>
           <span>MY ACCOUNT</span>
         </button>
