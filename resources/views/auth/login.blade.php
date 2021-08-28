@@ -71,7 +71,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Log In</button>
                 </form>
-                <div class="redirect-link d-flex justify-content-around">
+                <div class="redirect-link d-flex justify-content-between">
                     <a href="/register">Create an Account!</a>
                     <a href="/forgot-password">Forgot Password?</a>
                 </div>

@@ -5,6 +5,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    height: 100%;
 }
 
 .closebtn1 {
@@ -95,10 +96,6 @@ footer h5 {
 footer p {
     margin-top: 30px;
 }
-
-
-
-
 
 
 @media (min-width: 992px) { 
