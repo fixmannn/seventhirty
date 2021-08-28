@@ -6,10 +6,10 @@
   <a class="navbar-brand mr-auto nav-text" href="/">SEVEN THIRTY</a>
   <div class="collapse navbar-collapse ml-auto" id="navbarNavAltMarkup">
     <div class="navbar-nav menu mx-auto">
-      <a class="nav-link text-body" href="/">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-link text-body" href="/shop">Shop</a>
-      <a class="nav-link text-body" href="/gallery">Gallery</a>
-      <a class="nav-link text-body" href="/about">About us</a>
+      <a class="nav-link text-body" href="/">HOME<span class="sr-only">(current)</span></a>
+      <a class="nav-link text-body" href="/shop">SHOP</a>
+      <a class="nav-link text-body" href="/gallery">GALLERY</a>
+      <a class="nav-link text-body" href="/about">ABOUT US</a>
     </div>
     <div class="navbar-nav">
       <a href="https://wa.link/wrsgrl" class="navlink text-body icons remove"><i class="bi bi-telephone-fill text-body"></i><span class="wa-number">+62 858-9031-7097</span></a>
