@@ -25,7 +25,7 @@ body {
     display: inline-block !important;
 }
 
-.icons span:nth-child(1),
+.wa-number,
 .bi-telephone-fill, .bi-person-circle {
     display: none;
 }
