@@ -25,6 +25,7 @@ body {
     display: inline-block !important;
 }
 
+.icons span,
 .bi-telephone-fill, .bi-person-circle {
     display: none;
 }
