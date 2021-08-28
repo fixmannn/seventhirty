@@ -15,14 +15,14 @@
       <a href="https://wa.link/wrsgrl" class="navlink text-body icons remove"><i class="bi bi-telephone-fill text-body"></i><span class="wa-number">+62 858-9031-7097</span></a>
       @if(Session::get('LoggedUser'))
       <div class="dropdown collapse navbar-collapse" id="navbarNavAltMarkup">
-        <button class="bg-transparent btn dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="bg-transparent btn dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle navigation">
           <i class="bi bi-person-circle "></i>
-          <span>My Account</span>
+          <span>MY ACCOUNT</span>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item text-light" href="/account-details">Account Details</a>
-          <a class="dropdown-item text-light" href="/orders">My order</a>
-          <a class="dropdown-item text-light" href="/logout">Log out</a>
+          <a class="dropdown-item text-light" href="/account-details">ACCOUNT DETAILS</a>
+          <a class="dropdown-item text-light" href="/orders">MY ORDER</a>
+          <a class="dropdown-item text-light" href="/logout">LOG OUT</a>
         </div>
       </div>
       @else
