@@ -359,6 +359,10 @@ footer p {
         color: black!important;
     }
 
+    .my-account {
+        margin-right: 100px !important;
+    }
+
     /* .dropdown-menu {
         background-color: rgb(78, 77, 77);
     } */
