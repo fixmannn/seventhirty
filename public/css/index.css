@@ -359,9 +359,9 @@ footer p {
         color: black!important;
     }
 
-    .dropdown-menu {
+    /* .dropdown-menu {
         background-color: rgb(78, 77, 77);
-    }
+    } */
 
     .dropdown-menu .dropdown-item:hover {
         background-color: grey;
