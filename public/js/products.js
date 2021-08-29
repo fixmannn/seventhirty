@@ -66,7 +66,7 @@ radioBtn.forEach(function (size) {
             if (size.value == 'XXL') {
                 xxlPrice.style.display = "block";
                 normalPrice.style.display = "none";
-            } else {
+            } else if (size.value == 'S' || size.value == 'M' || size.value == 'L' || size.value == 'XL') {
                 xxlPrice.style.dispaly = "none";
                 normalPrice.style.display = "block";
             }
