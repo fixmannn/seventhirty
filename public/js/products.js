@@ -93,8 +93,6 @@ const normalPrice = document.querySelector('.normal-price');
 //     normalPrice.style.display = 'block';
 // }
 
-if (sizeTag.value == 'xxl') {
-    console.log('ini xxl');
-} else {
-    console.log('ini normal size');
+if (sizeTag.checked.value == 'xxl') {
+    console.log('ok');
 }
