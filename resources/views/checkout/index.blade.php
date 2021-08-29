@@ -203,7 +203,11 @@
               <?php $subtotal += $details['quantity'] * ($details['price'] - $details['discount_amount']) ?>
               <tr>
                 <th><span>{{$details['name'] . ' - ' . $details['category'] . ' - ' . $details['size']}} ({{ $details['quantity'] }} pcs)</span></th>
+                @if($details['size'] == 'XXL')
+                <td><span class="currency">{{$details['quantity'] * ($details['price'] - $details['discount_amount']) + 5000}} </span></td>
+                @else 
                 <td><span class="currency">{{$details['quantity'] * ($details['price'] - $details['discount_amount'])}} </span></td>
+                @endif
               </tr>
               @endforeach
             </table>
