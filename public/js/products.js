@@ -97,6 +97,4 @@ const normalPrice = document.querySelector('.normal-price');
 //     normalPrice.style.display = 'block';
 // }
 
-if (xxl.checked) {
-    console.log('ok');
-}
+console.log(xxl);
