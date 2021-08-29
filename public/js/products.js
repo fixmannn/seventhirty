@@ -89,10 +89,14 @@ const xxl = document.getElementById('size-xxl');
 const xxlPrice = document.querySelector('.xxl-price');
 const normalPrice = document.querySelector('.normal-price');
 
+// if (xxl.checked) {
+//     xxlPrice.style.display = 'block';
+//     normalPrice.style.display = 'none';
+// } else if (s.checked || m.checked || l.checked || xl.checked) {
+//     xxlPrice.style.display = 'none';
+//     normalPrice.style.display = 'block';
+// }
+
 if (xxl.checked) {
-    xxlPrice.style.display = 'block';
-    normalPrice.style.display = 'none';
-} else if (s.checked || m.checked || l.checked || xl.checked) {
-    xxlPrice.style.display = 'none';
-    normalPrice.style.display = 'block';
+    console.log('ok');
 }
