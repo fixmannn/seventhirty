@@ -202,9 +202,9 @@
               @foreach(session('cart') as $id => $details)
               @php
                 if($details['size'] == 'XXL') {
-                  <?php $subtotal += $details['quantity'] * ($details['price'] - $details['discount_amount']) + 5000 ?>
+                  $subtotal += $details['quantity'] * ($details['price'] - $details['discount_amount']) + 5000;
                 } else {
-                  <?php $subtotal += $details['quantity'] * ($details['price'] - $details['discount_amount']) ?>
+                  $subtotal += $details['quantity'] * ($details['price'] - $details['discount_amount']);
                 }
               @endphp
               <tr>
