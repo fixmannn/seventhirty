@@ -43,7 +43,7 @@ session_start();
             <?php $total += $details['price'] * $details['quantity']  ?>
             @php
               if ($details['size'] == 'XXL') {
-                $discount += $details['quantity'] * $details['discount_amount'] + 5000;
+                $discount += $details['quantity'] * $details['discount_amount'] - 5000;
               } else {
                 $discount += $details['quantity'] * $details['discount_amount'];
               }
