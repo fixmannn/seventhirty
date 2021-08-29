@@ -41,7 +41,13 @@ session_start();
           <tr>
             @foreach(session('cart') as $id => $details)
             <?php $total += $details['price'] * $details['quantity']  ?>
-            <?php $discount += $details['quantity'] * $details['discount_amount'] ?>
+            @php
+              if ($details['size'] == 'XXL') {
+                $discount += $details['quantity'] * $details['discount_amount'] + 5000;
+              } else {
+                $discount += $details['quantity'] * $details['discount_amount'];
+              }
+            @endphp
             <td><img src="{{asset('img/'.$details['image'])}}"> <span class="ml-2">{{$details['name']}} - {{$details['category']}} - {{$details['size']}}</span></td>
             <td class="pc-only">Rp. <span class="currency number">{{$details['price']}}</span>,-</td>
             <td class="text-center">{{$details['quantity']}}</td>
