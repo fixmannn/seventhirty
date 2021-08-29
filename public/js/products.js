@@ -67,7 +67,7 @@ radioBtn.forEach(function (size) {
                 xxlPrice.style.display = "block";
                 normalPrice.style.display = "none";
             } else if (size.value == 'S' || size.value == 'M' || size.value == 'L' || size.value == 'XL') {
-                xxlPrice.style.dispaly = "none";
+                xxlPrice.style.display = "none";
                 normalPrice.style.display = "block";
             }
         });
@@ -81,6 +81,9 @@ radioBtn.forEach(function (size) {
 const priceInner = document.getElementById('number').innerText;
 const price = document.getElementById('number');
 
+const priceInner3 = document.getElementById('number3').innerText;
+const price3 = document.getElementById('number3');
+
 const priceInner2 = document.getElementById('number2').innerText;
 const price2 = document.getElementById('number2');
 
@@ -89,5 +92,6 @@ console.log(typeof (priceInner));
 window.addEventListener('load', function () {
     price2.innerHTML = parseFloat(priceInner2).toLocaleString('id');
     price.innerHTML = parseFloat(priceInner).toLocaleString('id');
+    price3.innerHTML = parseFloat(priceInner3).toLocaleString('id');
 });
 
