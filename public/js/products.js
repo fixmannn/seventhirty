@@ -80,3 +80,14 @@ window.addEventListener('load', function () {
     price2.innerHTML = parseFloat(priceInner2).toLocaleString('id');
     price.innerHTML = parseFloat(priceInner).toLocaleString('id');
 });
+
+const xxlPrice = document.querySelector('.xxl-price');
+const normalPrice = document.querySelector('.normal-price');
+
+if (xxlPrice.checked.value == 'xxl') {
+    xxlPrice.style.display = 'block';
+    normalPrice.style.display = 'none';
+} else {
+    xxlPrice.style.display = 'none';
+    normalPrice.style.display = 'block';
+}

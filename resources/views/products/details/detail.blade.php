@@ -62,17 +62,6 @@
 </div>
 
 
-<script src="{{asset('assets/jquery/jquery-3.6.0.min.js')}}"></script>
-
-<script>
-  if($('input[type=radio]:checked').val('xxl')) {
-    $('.xxl-price').show();
-    $('.normal-price').hide();
-  } else {
-    $('.xxl-price').hide();
-    $('.normal-price').show();
-  }
-</script>
 
 
 
