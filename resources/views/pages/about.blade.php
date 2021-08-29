@@ -11,7 +11,7 @@
 <div class="about">
   <div class="row mt-4 mb-5">
     <div class="col">
-      <div class="container">
+      <div class="container img-container">
         <img src="{{ asset('/img/page-down.png') }}" alt="" class="img-fluid mx-auto d-block">
       </div>
     </div>
