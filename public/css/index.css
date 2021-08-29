@@ -368,10 +368,6 @@ footer p {
         background-color: rgb(78, 77, 77);
     } */
 
-    .dropdown-menu .dropdown-item:hover {
-        background-color: grey;
-    }
-
     .dropdown i {
         color: black;
     }
