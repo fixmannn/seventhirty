@@ -1,15 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts/pages')
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+@section('title', 'Seven Thirty - About')
 
-<body>
+@section('aboutcss')
+<link rel="stylesheet" href="{{asset('css/about.css')}}">
+@endsection
 
-</body>
+@include('layouts/nav')
 
-</html>
+<div class="about">
+  <div class="row mt-4 mb-5">
+    <div class="col">
+      <div class="container">
+        <img src="{{ asset('/img/page-down.png') }}" alt="" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
+
+@include('layouts/footer')
