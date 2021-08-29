@@ -42,7 +42,11 @@ class OrdersController extends Controller
 
         $amount = 0;
         foreach (session('cart') as $detail => $details) {
-            $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
+            if ($details['size'] == 'XXL') {
+                $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount'])) + 5000;
+            } else {
+                $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
+            }
         }
 
         $amount = $amount + $shipping;
