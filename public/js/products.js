@@ -63,7 +63,7 @@ radioBtn.forEach(function (size) {
                 cartBtn.removeAttribute("disabled");
             }
 
-            if (size.value == 'xxl') {
+            if (size.value == 'XXL') {
                 xxlPrice.style.display = "block";
                 normalPrice.style.display = "none";
             } else {
