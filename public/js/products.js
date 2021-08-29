@@ -45,6 +45,8 @@ const message = document.querySelector('.message');
 const available = document.querySelector('.stock-available');
 const notAvailable = document.querySelector('.stock-na');
 const cartBtn = document.querySelector('#cart-btn');
+const xxlPrice = document.querySelector('.xxl-price');
+const normalPrice = document.querySelector('.normal-price');
 
 radioBtn.forEach(function (size) {
     if (size.checked = false) {
@@ -59,6 +61,14 @@ radioBtn.forEach(function (size) {
                 available.style.display = "block";
                 notAvailable.style.display = "none";
                 cartBtn.removeAttribute("disabled");
+            }
+
+            if (size.value == 'xxl') {
+                xxlPrice.style.display = "block";
+                normalPrice.style.display = "none";
+            } else {
+                xxlPrice.style.dispaly = "none";
+                normalPrice.style.display = "block";
             }
         });
     }
@@ -81,18 +91,3 @@ window.addEventListener('load', function () {
     price.innerHTML = parseFloat(priceInner).toLocaleString('id');
 });
 
-const sizeTag = document.querySelector('.size-tag');
-const xxlPrice = document.querySelector('.xxl-price');
-const normalPrice = document.querySelector('.normal-price');
-
-// if (xxl.checked) {
-//     xxlPrice.style.display = 'block';
-//     normalPrice.style.display = 'none';
-// } else if (s.checked || m.checked || l.checked || xl.checked) {
-//     xxlPrice.style.display = 'none';
-//     normalPrice.style.display = 'block';
-// }
-
-if (sizeTag.checked.value == 'xxl') {
-    console.log('ok');
-}
