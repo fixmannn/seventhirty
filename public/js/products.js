@@ -87,7 +87,6 @@ const price3 = document.getElementById('number3');
 const priceInner2 = document.getElementById('number2').innerText;
 const price2 = document.getElementById('number2');
 
-console.log(typeof (priceInner));
 
 window.addEventListener('load', function () {
     price2.innerHTML = parseFloat(priceInner2).toLocaleString('id');
