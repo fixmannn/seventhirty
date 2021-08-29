@@ -6,4 +6,4 @@
   @yield('checkoutcss')
   @yield('paymentcss')
   @yield('orders')
-  @yield('about')
+  @yield('aboutcss')
