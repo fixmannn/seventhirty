@@ -200,7 +200,13 @@
               <?php $subtotal = 0 ?>
               <?php $total = 0 ?>
               @foreach(session('cart') as $id => $details)
-              <?php $subtotal += $details['quantity'] * ($details['price'] - $details['discount_amount']) ?>
+              @php
+                if($details['size'] == 'XXL') {
+                  <?php $subtotal += $details['quantity'] * ($details['price'] - $details['discount_amount']) + 5000 ?>
+                } else {
+                  <?php $subtotal += $details['quantity'] * ($details['price'] - $details['discount_amount']) ?>
+                }
+              @endphp
               <tr>
                 <th><span>{{$details['name'] . ' - ' . $details['category'] . ' - ' . $details['size']}} ({{ $details['quantity'] }} pcs)</span></th>
                 @if($details['size'] == 'XXL')
