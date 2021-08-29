@@ -81,11 +81,7 @@ window.addEventListener('load', function () {
     price.innerHTML = parseFloat(priceInner).toLocaleString('id');
 });
 
-const s = document.getElementById('size-s');
-const m = document.getElementById('size-m');
-const l = document.getElementById('size-l');
-const xl = document.getElementById('size-xl');
-const xxl = document.getElementById('size-xxl');
+const sizeTag = document.querySelector('.size-tag');
 const xxlPrice = document.querySelector('.xxl-price');
 const normalPrice = document.querySelector('.normal-price');
 
@@ -97,6 +93,8 @@ const normalPrice = document.querySelector('.normal-price');
 //     normalPrice.style.display = 'block';
 // }
 
-if (xxl.checked == true) {
-    console.log(xxl);
+if (sizeTag.value == 'xxl') {
+    console.log('ini xxl');
+} else {
+    console.log('ini normal size');
 }
