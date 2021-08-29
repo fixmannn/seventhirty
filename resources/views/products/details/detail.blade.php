@@ -2,7 +2,8 @@
   @foreach($products as $product)
   <h2>{{$product->name}} - {{$product->category}}</h2>
   <h5 class="text-danger"><s>Rp. <span id="number2">{{$product->price}}</span>,-</s></h5>
-  <p class="price">Rp. <span id="number">{{$product->price - $product->discount_amount}}</span>,-</p>
+  <p class="price normal-price">Rp. <span id="number">{{$product->price - $product->discount_amount}}</span>,-</p>
+  <p class="price xxl-price">Rp. <span id="number">{{$product->price - $product->discount_amount + 5000}}</span>,-</p>
   @endforeach
   <form action="{{url('add-to-cart/'.$product->id)}}" method="post">
     @csrf
@@ -59,4 +60,16 @@
     </div>
   </form>
 </div>
+
+<script>
+  if($('input[type=radio]:checked').val('xxl')) {
+    $('.xxl-price').show();
+    $('.normal-price').hide();
+  } else {
+    $('.xxl-price').hide();
+    $('.normal-price').show();
+  }
+</script>
+
+
 

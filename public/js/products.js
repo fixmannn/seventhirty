@@ -80,4 +80,3 @@ window.addEventListener('load', function () {
     price2.innerHTML = parseFloat(priceInner2).toLocaleString('id');
     price.innerHTML = parseFloat(priceInner).toLocaleString('id');
 });
-
