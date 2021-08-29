@@ -81,13 +81,18 @@ window.addEventListener('load', function () {
     price.innerHTML = parseFloat(priceInner).toLocaleString('id');
 });
 
+const s = document.getElementById('size-s');
+const m = document.getElementById('size-m');
+const l = document.getElementById('size-l');
+const xl = document.getElementById('size-xl');
+const xxl = document.getElementById('size-xxl');
 const xxlPrice = document.querySelector('.xxl-price');
 const normalPrice = document.querySelector('.normal-price');
 
-if (xxlPrice.checked.value == 'xxl') {
+if (xxl.checked) {
     xxlPrice.style.display = 'block';
     normalPrice.style.display = 'none';
-} else {
+} else if (s.checked || m.checked || l.checked || xl.checked) {
     xxlPrice.style.display = 'none';
     normalPrice.style.display = 'block';
 }
