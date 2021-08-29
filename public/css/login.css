@@ -3,9 +3,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Mulish', sans-serif !important;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    height: 100%;
+    overflow: hidden;
 }
 
 .closebtn1 {
