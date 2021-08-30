@@ -64,20 +64,22 @@ radioBtn.forEach(function (size) {
                 cartBtn.removeAttribute("disabled");
             }
 
-            if (size.value == 'XXL') {
-                xxlPrice.style.display = "block";
-                normalPrice.style.display = "none";
-            } else if (size.value == 'S' || size.value == 'M' || size.value == 'L' || size.value == 'XL') {
-                xxlPrice.style.display = "none";
-                normalPrice.style.display = "block";
-            }
-
-            if (size.value == 'OVERSIZE') {
-                oversizePrice.style.display = "block";
-                normalPrice.style.display = "none";
-            } else if (size.value == 'S' || size.value == 'M' || size.value == 'L' || size.value == 'XL' || size.value == 'XXL') {
-                oversizePrice.style.display = "none";
-                normalPrice.style.display = "block";
+            if (oversizePrice == undefined) {
+                if (size.value == 'XXL') {
+                    xxlPrice.style.display = "block";
+                    normalPrice.style.display = "none";
+                } else if (size.value == 'S' || size.value == 'M' || size.value == 'L' || size.value == 'XL') {
+                    xxlPrice.style.display = "none";
+                    normalPrice.style.display = "block";
+                }
+            } else {
+                if (size.value == 'OVERSIZE') {
+                    oversizePrice.style.display = "block";
+                    normalPrice.style.display = "none";
+                } else if (size.value == 'S' || size.value == 'M' || size.value == 'L' || size.value == 'XL' || size.value == 'XXL') {
+                    oversizePrice.style.display = "none";
+                    normalPrice.style.display = "block";
+                }
             }
         });
     }
