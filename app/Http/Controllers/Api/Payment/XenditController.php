@@ -28,7 +28,7 @@ class XenditController extends Controller
         $amount = 0;
 
         foreach (session('cart') as $detail => $details) {
-            if($details['product_id'] == 202101 || $details['product_id'] == 202102 || $details['product_id'] == 202103) {
+            if($details['id'] == 202101 || $details['id'] == 202102 || $details['id'] == 202103) {
                 if ($details['size'] == 'XXL') {
                     $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount'])) + 5000;
                 } else {
@@ -103,7 +103,7 @@ class XenditController extends Controller
         $amount = 0;
 
         foreach (session('cart') as $detail => $details) {
-            if($details['product_id'] == 202101 || $details['product_id'] == 202102 || $details['product_id'] == 202103) {
+            if($details['id'] == 202101 || $details['id'] == 202102 || $details['id'] == 202103) {
                 if ($details['size'] == 'XXL') {
                     $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount'])) + 5000;
                 } else {
@@ -185,7 +185,7 @@ class XenditController extends Controller
     {
         $amount = 0;
         foreach (session('cart') as $detail => $details) {
-            if($details['product_id'] == 202101 || $details['product_id'] == 202102 || $details['product_id'] == 202103) {
+            if($details['id'] == 202101 || $details['id'] == 202102 || $details['id'] == 202103) {
                 if ($details['size'] == 'XXL') {
                     $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount'])) + 5000;
                 } else {
@@ -241,7 +241,7 @@ class XenditController extends Controller
         $shipping = session('shipping');
         $amount = 0;
         foreach (session('cart') as $detail => $details) {
-            if($details['product_id'] == 202101 || $details['product_id'] == 202102 || $details['product_id'] == 202103) {
+            if($details['id'] == 202101 || $details['id'] == 202102 || $details['id'] == 202103) {
                 if ($details['size'] == 'XXL') {
                     $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount'])) + 5000;
                 } else {
