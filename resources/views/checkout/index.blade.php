@@ -201,18 +201,34 @@
               <?php $total = 0 ?>
               @foreach(session('cart') as $id => $details)
               @php
-                if($details['size'] == 'XXL') {
-                  $subtotal += $details['quantity'] * ($details['price'] - $details['discount_amount']) + 5000;
+                if ($details['id'] == 202101 || $details['id'] == 202102 || $details['id'] == 202103) {
+                  if ($details['size'] == 'XXL') {
+                    $subtotal += $details['quantity'] * ($details['price'] - $details['discount_amount']) + 5000;
+                  } else {
+                    $subtotal += $details['quantity'] * ($details['price'] - $details['discount_amount']);
+                  }
                 } else {
-                  $subtotal += $details['quantity'] * ($details['price'] - $details['discount_amount']);
+                  if ($details['size'] == 'OVERSIZE') {
+                    $subtotal += $details['quantity'] * $details['price'];
+                  } else {
+                    $subtotal += $details['quantity'] * ($details['price'] - $details['discount_amount']);
+                  }
                 }
               @endphp
               <tr>
                 <th><span>{{$details['name'] . ' - ' . $details['category'] . ' - ' . $details['size']}} ({{ $details['quantity'] }} pcs)</span></th>
-                @if($details['size'] == 'XXL')
-                <td><span class="currency">{{$details['quantity'] * ($details['price'] - $details['discount_amount']) + 5000}} </span></td>
+                @if($details['id'] == 202101 || $details['id'] == 202102 || $details['id'] == 202103)
+                  @if($details['size'] == 'XXL')
+                    <td><span class="currency">{{$details['quantity'] * ($details['price'] - $details['discount_amount']) + 5000}} </span></td>
+                  @else 
+                    <td><span class="currency">{{$details['quantity'] * ($details['price'] - $details['discount_amount'])}} </span></td>
+                  @endif
                 @else 
-                <td><span class="currency">{{$details['quantity'] * ($details['price'] - $details['discount_amount'])}} </span></td>
+                  @if($details['size'] == 'OVERSIZE')
+                    <td><span class="currency">{{$details['quantity'] * $details['price']}} </span></td>
+                  @else 
+                    <td><span class="currency">{{$details['quantity'] * ($details['price'] - $details['discount_amount'])}} </span></td>
+                  @endif
                 @endif
               </tr>
               @endforeach
