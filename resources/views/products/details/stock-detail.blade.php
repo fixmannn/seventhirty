@@ -3,7 +3,7 @@
   <h2>{{$product->name}} - {{$product->category}}</h2>
   <h5 class="text-danger"><s>Rp. <span id="number2">{{$product->price}}</span>,-</s></h5>
   <p class="price normal-price">Rp. <span id="number">{{$product->price - $product->discount_amount}}</span>,-</p>
-  <p class="price3 oversize-price" style="display: none;">Rp. <span id="number3">{{$product->price + 30000}}</span>,-</p>
+  <p class="price3 xxl-price" style="display: none;">Rp. <span id="number3">{{$product->price - $product->discount_amount + 5000}}</span>,-</p>
   @endforeach
   <form action="{{url('add-to-cart/'.$product->id)}}" method="post">
     @csrf
@@ -37,12 +37,6 @@
         <input class="mt-0 radio-button size-tag" type="radio" aria-label="{{$info[3]->quantity}}" value="{{$info[3]->size}}" id="size-xxl" name="size">
         <div class="radio-box">
           <label for="size-xxl" id="" class="size-label">XXL</label>
-        </div>
-      </div>
-      <div class="input-container">
-        <input class="mt-0 radio-button size-tag" type="radio" aria-label="5" value="OVERSIZE" id="oversize" name="size">
-        <div class="radio-box">
-          <label for="oversize" id="" class="size-label">OVERSIZE</label>
         </div>
       </div>
     </div>

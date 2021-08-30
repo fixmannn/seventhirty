@@ -46,6 +46,7 @@ const available = document.querySelector('.stock-available');
 const notAvailable = document.querySelector('.stock-na');
 const cartBtn = document.querySelector('#cart-btn');
 const xxlPrice = document.querySelector('.xxl-price');
+const oversizePrice = document.querySelector('.oversize-price');
 const normalPrice = document.querySelector('.normal-price');
 
 radioBtn.forEach(function (size) {
@@ -68,6 +69,14 @@ radioBtn.forEach(function (size) {
                 normalPrice.style.display = "none";
             } else if (size.value == 'S' || size.value == 'M' || size.value == 'L' || size.value == 'XL') {
                 xxlPrice.style.display = "none";
+                normalPrice.style.display = "block";
+            }
+
+            if (size.value == 'OVERSIZE') {
+                oversizePrice.style.display = "block";
+                normalPrice.style.display = "none";
+            } else if (size.value == 'S' || size.value == 'M' || size.value == 'L' || size.value == 'XL' || size.value == 'XXL') {
+                oversizePrice.style.display = "none";
                 normalPrice.style.display = "block";
             }
         });
