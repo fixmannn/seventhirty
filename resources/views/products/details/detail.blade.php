@@ -3,7 +3,7 @@
   <h2>{{$product->name}} - {{$product->category}}</h2>
   <h5 class="text-danger"><s>Rp. <span id="number2">{{$product->price}}</span>,-</s></h5>
   <p class="price normal-price">Rp. <span id="number">{{$product->price - $product->discount_amount}}</span>,-</p>
-  <p class="price3 oversize-price" style="display: none;">Rp. <span id="number3">{{$product->price + 30000}}</span>,-</p>
+  <p class="price3 oversize-price" style="display: none;">Rp. <span id="number3">{{$product->price}}</span>,-</p>
   @endforeach
   <form action="{{url('add-to-cart/'.$product->id)}}" method="post">
     @csrf
