@@ -30,7 +30,7 @@
             <a href=""><img src="{{asset('img/beerbongs.jpg')}}" alt="" class="img-fluid previewImg img1"></a>
         </div>
 
-        @include('products/details/stock-detail')
+        @include('products/details/detail')
 
     </div>
 

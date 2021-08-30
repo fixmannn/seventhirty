@@ -78,7 +78,7 @@ body {
     font-size: 20px;
 }
 
-.price, .xxl-price {
+.price, .xxl-price, .oversize-price {
     font-weight: 700 !important;
 }
 
@@ -129,6 +129,10 @@ body {
     text-align: center;
     padding: 1em;
     transition: 200ms ease-in;
+}
+
+.oversize-box {
+    width: 500% !important;
 }
 
 .radio-button:checked + .radio-box {

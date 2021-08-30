@@ -41,7 +41,7 @@
       </div>
       <div class="input-container">
         <input class="mt-0 radio-button size-tag" type="radio" aria-label="5" value="OVERSIZE" id="oversize" name="size">
-        <div class="radio-box">
+        <div class="radio-box oversize-box">
           <label for="oversize" id="" class="size-label">OVERSIZE</label>
         </div>
       </div>
