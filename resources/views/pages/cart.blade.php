@@ -41,7 +41,7 @@ session_start();
           <tr>
             @foreach(session('cart') as $id => $details)
             @php
-              if ($details['product_id'] == 202101 || $details['product_id'] == 202102 || $details['product_id'] == 202103) {
+              if ($details['id'] == 202101 || $details['id'] == 202102 || $details['id'] == 202103) {
                 $total += $details['price'] * $details['quantity'];
                 
                 if ($details['size'] == 'XXL') {
@@ -52,14 +52,12 @@ session_start();
               } else {
                 if ($details['size'] == 'OVERSIZE') {
                   $total += ($details['price'] + 30000) * $details['quantity'];
-                  $discount = 0;
+                  $discount += 0;
                 } else {
                   $total += $details['price'] * $details['quantity'];
                   $discount += $details['quantity'] * $details['discount_amount'];
                 }
               }
-
-              
             @endphp
             <td><img src="{{asset('img/'.$details['image'])}}"> <span class="ml-2">{{$details['name']}} - {{$details['category']}} - {{$details['size']}}</span></td>
             <td class="pc-only">Rp. <span class="currency number">{{$details['price']}}</span>,-</td>
