@@ -51,7 +51,7 @@ session_start();
                 }
               } else {
                 if ($details['size'] == 'OVERSIZE') {
-                  $total += ($details['price'] + 30000) * $details['quantity'];
+                  $total += $details['price'] * $details['quantity'];
                   $discount += 0;
                 } else {
                   $total += $details['price'] * $details['quantity'];

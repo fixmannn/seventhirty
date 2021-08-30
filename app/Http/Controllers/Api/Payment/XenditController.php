@@ -36,7 +36,7 @@ class XenditController extends Controller
                 }
             } else {
                 if ($details['size'] == 'OVERSIZE') {
-                    $amount = $amount +  ($details['quantity'] * $details['price']) + 30000;
+                    $amount = $amount +  ($details['quantity'] * $details['price']);
                 } else {
                     $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
                 }
@@ -111,7 +111,7 @@ class XenditController extends Controller
                 }
             } else {
                 if ($details['size'] == 'OVERSIZE') {
-                    $amount = $amount +  ($details['quantity'] * $details['price']) + 30000;
+                    $amount = $amount +  ($details['quantity'] * $details['price']);
                 } else {
                     $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
                 }
@@ -193,7 +193,7 @@ class XenditController extends Controller
                 }
             } else {
                 if ($details['size'] == 'OVERSIZE') {
-                    $amount = $amount +  ($details['quantity'] * $details['price']) + 30000;
+                    $amount = $amount +  ($details['quantity'] * $details['price']);
                 } else {
                     $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
                 }
@@ -249,7 +249,7 @@ class XenditController extends Controller
                 }
             } else {
                 if ($details['size'] == 'OVERSIZE') {
-                    $amount = $amount +  ($details['quantity'] * $details['price']) + 30000;
+                    $amount = $amount +  ($details['quantity'] * $details['price']);
                 } else {
                     $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
                 }
