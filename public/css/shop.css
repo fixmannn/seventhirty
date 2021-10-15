@@ -121,3 +121,9 @@
     max-width: 300px;
   }
 }
+
+@media (min-width: 1920px) {
+  .shop img {
+    max-width: 400px;
+  }
+}
