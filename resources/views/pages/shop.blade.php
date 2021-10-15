@@ -36,9 +36,11 @@
         <div class="col">
             <a href="{{url('products/friendship/202101')}}">
                 <img src="{{asset('img/friendship.jpg')}}" alt="" class="catalog">
+            </a>
+            <div class="container">
                 <h5>Friendship T-shirt</h5>
                 <p>Rp. 90.000,-</p> 
-            </a>
+            </div>
         </div>
         <div class="col">
             <a href="{{url('products/anxiety/202102')}}"><img src="{{asset('img/anxiety.jpg')}}" alt="" class="catalog"></a>
