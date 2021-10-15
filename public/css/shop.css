@@ -22,13 +22,12 @@
   margin-right: -5px;
 }
 .shop img {
-  max-width: 225px;
+  max-width: 150px;
 }
 
 .new-catalog h5 {
   text-align: left;
   margin-top: 20px;
-  margin-left: 15px;
   font-size: 16px;
   color: rgb(68, 68, 68);
 }

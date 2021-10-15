@@ -34,12 +34,14 @@
 <div class="shop">
     <div class="row new-catalog">
         <div class="col">
-            <a href="{{url('products/friendship/202101')}}">
-                <img src="{{asset('img/friendship.jpg')}}" alt="" class="catalog">
-            </a>
-            <div class="container">
-                <h5>Friendship T-shirt</h5>
-                <p>Rp. 90.000,-</p> 
+            <div class="div">
+                <a href="{{url('products/friendship/202101')}}">
+                    <img src="{{asset('img/friendship.jpg')}}" alt="" class="catalog">
+                </a>
+                <div class="caption">
+                    <h5>Friendship T-shirt</h5>
+                    <p>Rp. 90.000,-</p> 
+                </div>
             </div>
         </div>
         <div class="col">
