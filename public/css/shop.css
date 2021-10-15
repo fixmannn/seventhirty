@@ -97,6 +97,11 @@
   .shop img {
     max-width: 225px;
   }
+
+  /* Shop */
+  .shop .row {
+    margin: 40px 180px;
+  }
 }
 
 @media (min-width: 1280px) {
