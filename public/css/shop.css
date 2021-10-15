@@ -89,6 +89,12 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .shop img {
+    max-width: 200px;
+  }
+}
+
 @media (min-width: 1280px) {
   /* Products */
   .products .row {
