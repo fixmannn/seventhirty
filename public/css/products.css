@@ -160,7 +160,7 @@ body {
   text-align: center;
 }
 .related img {
-  max-width: 150px;
+  max-width: 200px;
 }
 
 .related-title {
@@ -218,7 +218,7 @@ body {
 
   /* Products */
   .products-desc {
-    margin: 0 170px;
+    margin: 0 100px;
     display: flex;
   }
 
@@ -263,6 +263,6 @@ body {
 
   /* Related Products */
   .related .row {
-    margin: 0 300px;
+    margin: 0 200px;
   }
 }
