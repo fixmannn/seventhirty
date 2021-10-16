@@ -206,7 +206,12 @@ body {
 
 @media (width: 768px), (height: 1024px) {
   .thumbnail img {
-    width: 200px;
+    width: 180px;
+  }
+
+  .thumbnail {
+    order: 2;
+    margin: 0 auto;
   }
 }
 
