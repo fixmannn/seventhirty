@@ -23,7 +23,7 @@ session_start();
 
   <!-- If cart is not empty -->
   @if(session('cart'))
-  <div class="row">
+  <div class="row cart-content">
     <div class="col-xl-7">
       <div class="cart-table">
 
