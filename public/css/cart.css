@@ -136,6 +136,10 @@
   .cart-content {
     min-height: 1366px;
   }
+
+  .cart-table table {
+    font-size: medium !important;
+  }
 }
 
 @media (min-width: 992px) {
