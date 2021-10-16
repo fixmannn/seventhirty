@@ -126,9 +126,10 @@
   }
 }
 
+/* Ipad Pro */
 @media (width: 1024px), (height: 768px) {
   .order-summary {
-    margin-right: 0 !important;
+    margin: 100px auto !important;
   }
 }
 
