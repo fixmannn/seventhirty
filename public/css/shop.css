@@ -124,13 +124,13 @@
     max-width: 225px;
   }
 
-  .new-catalog h5 {
+  /* .new-catalog h5 {
     text-align: left;
   }
 
   .new-catalog p {
     text-align: left;
-  }
+  } */
 }
 
 @media (min-width: 1400px) {
