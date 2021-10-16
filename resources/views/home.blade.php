@@ -46,7 +46,7 @@
       <img src="{{asset('img/img-header.jpg')}}" class="d-block w-100" alt="Music-Edition">
       <div class="carousel-caption slide-1">
         <h1>Music Edition</h1>
-        <h3>Post Malone - Holywoords Bleeding.</h3>
+        <h3>Post Malone - Hollywoods Bleeding.</h3>
         <button type="button" class="btn btn-light shop-now" onclick="location.href = '/shop'">SHOP NOW!</button>
       </div>
     </div>
