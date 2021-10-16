@@ -189,6 +189,16 @@ footer img {
   margin: 20px 20px;
 }
 
+footer img:hover {
+  animation: zoomin 1s forwards;
+}
+
+@keyframes zoomin {
+  to {
+    width: 40px;
+  }
+}
+
 footer h5 {
   font-weight: 100;
   font-size: 16px;
