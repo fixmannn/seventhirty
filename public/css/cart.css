@@ -129,7 +129,8 @@
 /* Ipad Pro */
 @media (width: 1024px), (height: 768px) {
   .order-summary {
-    margin: 100px auto !important;
+    margin-right: 88px !important;
+    margin-left: 88px !important;
   }
 }
 
