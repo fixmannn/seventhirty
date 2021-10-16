@@ -155,7 +155,7 @@ footer p {
 
   /* Collapsing Login */
   .accordion {
-    height: 800px;
+    max-height: 345px;
     margin: 200px 600px;
   }
 
