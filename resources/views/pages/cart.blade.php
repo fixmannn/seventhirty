@@ -60,9 +60,9 @@ session_start();
               }
             @endphp
             <td><img src="{{asset('img/'.$details['image'])}}"> <span class="ml-2">{{$details['name']}} - {{$details['category']}} - {{$details['size']}}</span></td>
-            <td class="pc-only">Rp. <span class="currency number">{{$details['price']}}</span>,-</td>
+            <td class="pc-only"><span class="currency number">{{$details['price']}}</span></td>
             <td class="text-center">{{$details['quantity']}}</td>
-            <td class="pc-only text-center">Rp. <span class="currency number">{{$details['price']*$details['quantity']}}</span>,-</td>
+            <td class="pc-only text-center"><span class="currency number">{{$details['price']*$details['quantity']}}</span></td>
             <form action="{{url('cart')}}" method="post">
               @method('delete')
               @csrf
