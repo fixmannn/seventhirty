@@ -26,7 +26,7 @@
 }
 
 .new-catalog h5 {
-  text-align: left;
+  text-align: center;
   margin-top: 20px;
   font-size: 14px;
   color: rgb(68, 68, 68);
@@ -34,7 +34,7 @@
 
 .new-catalog p {
   font-weight: 200;
-  text-align: left;
+  text-align: center;
   font-size: 16px;
   margin-top: -5px;
 }
@@ -73,7 +73,7 @@
   }
 }
 
-@media (min-width: 320px) {
+/* @media (min-width: 320px) {
   .new-catalog h5 {
     text-align: center;
   }
@@ -81,7 +81,7 @@
   .new-catalog p {
     text-align: center;
   }
-}
+} */
 
 @media (min-width: 768px) {
   .shop img {
@@ -115,10 +115,10 @@
     margin: 40px 180px;
   }
 
-  .shop h5,
+  /* .shop h5,
   .shop p {
-    margin-left: 55px;
-  }
+    margin-left: auto;
+  } */
 
   .shop img {
     max-width: 225px;
