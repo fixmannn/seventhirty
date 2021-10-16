@@ -160,7 +160,7 @@ body {
   text-align: center;
 }
 .related img {
-  max-width: 225px;
+  max-width: 170px;
 }
 
 .related-title {
@@ -203,6 +203,12 @@ body {
     padding-top: 100px;
     line-height: 100%;
 } */
+
+@media (width: 768px), (height: 1024px) {
+  .thumbnail img {
+    width: 200px;
+  }
+}
 
 @media (min-width: 992px) {
   /* Breadcrumb */
