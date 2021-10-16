@@ -134,7 +134,7 @@
 
 @media (width: 1024px), (height: 1366px) {
   .cart-content {
-    min-height: 1200px;
+    min-height: 1024px;
   }
 
   .cart-table table {
