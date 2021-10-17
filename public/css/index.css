@@ -278,7 +278,7 @@ footer p {
 
 @media (width: 1024px), (height: 768px) {
   .login-link {
-    margin-right: 60px !important;
+    margin-right: 80px !important;
   }
 
   .icons {
@@ -328,7 +328,7 @@ footer p {
   }
 
   .login-link {
-    margin-right: 100px !important;
+    margin-right: 100px;
   }
 
   .icons {
