@@ -51,10 +51,10 @@ body {
 .navbar-nav a {
   text-decoration: none;
 }
-
+/* 
 .dropdown .bi-person-circle {
   margin-right: 10px;
-}
+} */
 
 /* Carousel */
 .slide-1 {
@@ -382,6 +382,7 @@ footer p {
 
   .my-account {
     margin-right: 100px !important;
+    margin-bottom: 2px;
   }
 
   /* .dropdown-menu {
