@@ -385,9 +385,9 @@ footer p {
     margin-bottom: 4px;
   }
 
-  /* .dropdown-menu {
-        background-color: rgb(78, 77, 77);
-    } */
+  .dropdown-menu {
+    margin-left: 28px;
+  }
 
   .dropdown i {
     color: black;
