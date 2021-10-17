@@ -286,7 +286,7 @@ footer p {
   }
 
   .wa-number {
-    display: none;
+    display: none !important;
   }
 }
 
