@@ -56,10 +56,6 @@ body {
   margin-right: 10px;
 }
 
-.my-acc {
-  font-size: 14px;
-}
-
 /* Carousel */
 .slide-1 {
   text-align: right;
@@ -386,7 +382,6 @@ footer p {
 
   .my-account {
     margin-right: 100px !important;
-    margin-top: 7px;
   }
 
   /* .dropdown-menu {
