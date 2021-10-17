@@ -276,9 +276,18 @@ footer p {
 
 /* DESKTOP VERSION */
 
+@media (width: 1024px), (height: 768px) {
+  .login-link {
+    margin-right: 80px !important;
+  }
+
+  .nav-link {
+    margin: 0;
+  }
+}
+
 @media (min-width: 992px) {
   /* Navbar desktop */
-
   .navbar {
     z-index: 1;
   }
