@@ -284,6 +284,10 @@ footer p {
   .icons {
     margin: 0 !important;
   }
+
+  .wa-number {
+    display: none;
+  }
 }
 
 @media (min-width: 992px) {
@@ -328,7 +332,7 @@ footer p {
   }
 
   .login-link {
-    margin-right: 100px;
+    margin-right: 100px !important;
   }
 
   .icons {
