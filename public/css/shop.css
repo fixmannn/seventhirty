@@ -112,7 +112,7 @@
 
   /* Shop */
   .shop .row {
-    margin: 40px 180px;
+    margin: 40px auto;
   }
 
   /* .shop h5,
@@ -120,8 +120,12 @@
     margin-left: auto;
   } */
 
-  .shop img {
+  /* .shop img {
     max-width: 225px;
+  } */
+
+  .shop-img {
+    width: 100%;
   }
 
   /* .new-catalog h5 {
