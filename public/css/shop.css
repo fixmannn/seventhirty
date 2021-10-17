@@ -120,13 +120,13 @@
     margin-left: auto;
   } */
 
-  /* .shop img {
-    max-width: 225px;
-  } */
-
-  .shop-img {
-    width: 100%;
+  .shop img {
+    max-width: 350px;
   }
+
+  /* .shop-img {
+    width: 100%;
+  } */
 
   /* .new-catalog h5 {
     text-align: left;
@@ -137,9 +137,9 @@
   } */
 }
 
-/* @media (min-width: 1400px) {
+@media (min-width: 1400px) {
   .shop img {
-    max-width: 300px;
+    max-width: 350px;
   }
 }
 
@@ -147,4 +147,4 @@
   .shop img {
     max-width: 400px;
   }
-} */
+}
