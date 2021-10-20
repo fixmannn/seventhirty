@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="navbar-nav">
-        <a href="https://wa.link/wrsgrl" class="navlink text-white icons remove"><i class="bi bi-telephone-fill text-white"></i><span>Whatsapp</span></a>
+        <a href="https://wa.link/wrsgrl" class="navlink text-white icons remove"><i class="bi bi-telephone-fill text-white"></i><span>+62 858-9031-7097</span></a>
         <a href="/cart" class="navlink icons text-white"><i class="bi bi-cart text-white"></i></a>
     </div>
 </nav>
