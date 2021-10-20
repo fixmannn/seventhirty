@@ -195,7 +195,7 @@ footer img {
 }
 
 footer img:hover {
-  animation: zoomin 1s forwards;
+  animation: zoomin 0.2s forwards;
 }
 
 @keyframes zoomin {
