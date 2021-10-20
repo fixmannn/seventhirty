@@ -75,19 +75,19 @@
       <a href="/products/blackpink/202111" style="text-decoration: none;"><img src="{{asset('img/blackpink.jpg')}}" alt="" class="catalog">
         <h5>Blackpink Vintage T-shirt</h5>
       </a>
-      <p>Rp. 99.000,-</p>
+      <p>Rp. 109.000,-</p>
     </div>
     <div class="col-xl">
       <a href="products/hayley/202109" style="text-decoration: none;"><img src="{{asset('img/hayley.jpg')}}" alt="" class="catalog">
         <h5>Hayley Williams Vintage T-shirt</h5>
       </a>
-      <p>Rp. 99.000,-</p>
+      <p>Rp. 109.000,-</p>
     </div>
     <div class="col-xl">
       <a href="products/travis/202106" style="text-decoration: none;"><img src="{{asset('img/travis.jpg')}}" alt="" class="catalog">
         <h5>Travis Scott Vintage T-shirt</h5>
       </a>
-      <p>Rp. 99.000,-</p>
+      <p>Rp. 109.000,-</p>
     </div>
   </div>
   <div class="load-more">
