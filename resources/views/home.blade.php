@@ -28,7 +28,7 @@
         </div>
       </div>
       @else
-      <a href="/login" class="nav-link icons login-link"><i class="bi bi-person-circle text-body nav-text"></i><span class="nav-link text-body nav-text ml-0">LOG IN</span></a>
+      <a href="/login" class="nav-link icons"><i class="bi bi-person-circle text-body nav-text"></i><span class="nav-link text-body nav-text ml-0 my-account-home">LOG IN</span></a>
       @endif
     </div>
   </div>
