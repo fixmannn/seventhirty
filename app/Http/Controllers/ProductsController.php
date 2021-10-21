@@ -164,13 +164,13 @@ class ProductsController extends Controller
     ]);
   }
 
-  public function neckdeep(Product $id)
+  public function billie(Product $id)
   {
     $products = Product::find($id);
 
-    $info = ProductInfo::where('product_id', '202120')->get();
+    $info = ProductInfo::where('product_id', '202104')->get();
 
-    return view('products.neckdeep', [
+    return view('products.billie', [
       'products' => $products,
       'info' => $info
     ]);
