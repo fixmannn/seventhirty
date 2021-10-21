@@ -1,7 +1,7 @@
 // Shop 
 // New Arrival Hover
 const catalogs = document.querySelectorAll('.catalog');
-let catPics = ['friendship', 'anxiety', 'forgiving', 'paramore', 'blackpink', 'hayley', 'purpose', 'zayn', 'travis', 'beerbongs', 'dualipa', 'drake', 'dynamite', 'hollywoods', 'lookmom', 'modernity', 'neckdeep', 'starboy'];
+let catPics = ['friendship', 'anxiety', 'forgiving', 'paramore', 'blackpink', 'hayley', 'purpose', 'zayn', 'travis', 'beerbongs', 'dualipa', 'drake', 'dynamite', 'hollywoods', 'lookmom', 'modernity', 'billie', 'starboy'];
 
 
 catalogs.forEach((val, index) => {

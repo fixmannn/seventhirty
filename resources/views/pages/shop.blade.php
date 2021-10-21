@@ -123,8 +123,8 @@
             <p>Rp. 109.000,-</p>
         </div>
         <div class="col">
-            <a href="{{url('products/neckdeep/202120')}}"><img src="{{asset('img/neckdeep.jpg')}}" alt="" class="catalog"></a>
-            <h5>Neckdeep T-shirt</h5>
+            <a href="{{url('products/billie/202104')}}"><img src="{{asset('img/billie.jpg')}}" alt="" class="catalog"></a>
+            <h5>Billie Eilish T-shirt</h5>
             <p>Rp. 109.000,-</p>
         </div>
         <div class="col">
