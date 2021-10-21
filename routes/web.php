@@ -49,7 +49,7 @@ Route::get('/products/hayley/{id}', [ProductsController::class, 'hayley']);
 Route::get('/products/hollywoods/{id}', [ProductsController::class, 'hollywoods']);
 Route::get('/products/lookmom/{id}', [ProductsController::class, 'lookmom']);
 Route::get('/products/modernity/{id}', [ProductsController::class, 'modernity']);
-Route::get('/products/neckdeep/{id}', [ProductsController::class, 'neckdeep']);
+Route::get('/products/billie/{id}', [ProductsController::class, 'billie']);
 Route::get('/products/purpose/{id}', [ProductsController::class, 'purpose']);
 Route::get('/products/starboy/{id}', [ProductsController::class, 'starboy']);
 Route::get('/products/travis/{id}', [ProductsController::class, 'travis']);
