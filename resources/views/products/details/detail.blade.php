@@ -2,40 +2,47 @@
   @foreach($products as $product)
   <h2>{{$product->name}} - {{$product->category}}</h2>
   <h5 class="text-danger"><s>Rp. <span id="number2">{{$product->price}}</span>,-</s></h5>
-  <p class="price">Rp. <span id="number">{{$product->price - $product->discount_amount}}</span>,-</p>
+  <p class="price normal-price">Rp. <span id="number">{{$product->price - $product->discount_amount}}</span>,-</p>
+  <p class="price3 oversize-price" style="display: none;">Rp. <span id="number3">{{$product->price}}</span>,-</p>
   @endforeach
   <form action="{{url('add-to-cart/'.$product->id)}}" method="post">
     @csrf
     <div class="size-group mb-3">
       <h5 class="mr-2">Size :</h5>
       <div class="input-container">
-        <input class="mt-0 radio-button" type="radio" aria-label="0" value="S" id="size-s" name="size">
+        <input class="mt-0 radio-button size-tag" type="radio" aria-label="0" value="S" id="size-s" name="size">
         <div class="radio-box">
           <label for="size-s" id="" class="size-label">S</label>
         </div>
       </div>
       <div class="input-container">
-        <input class="mt-0 radio-button" type="radio" aria-label="{{$info[0]->quantity}}" value="{{$info[0]->size}}" id="size-m" name="size">
+        <input class="mt-0 radio-button size-tag" type="radio" aria-label="{{$info[0]->quantity}}" value="{{$info[0]->size}}" id="size-m" name="size">
         <div class="radio-box">
           <label for="size-m" id="" class="size-label">M</label>
         </div>
       </div>
       <div class="input-container">
-        <input class="mt-0 radio-button" type="radio" aria-label="{{$info[1]->quantity}}" value="{{$info[1]->size}}" id="size-l" name="size">
+        <input class="mt-0 radio-button size-tag" type="radio" aria-label="{{$info[1]->quantity}}" value="{{$info[1]->size}}" id="size-l" name="size">
         <div class="radio-box">
           <label for="size-l" id="" class="size-label">L</label>
         </div>
       </div>
       <div class="input-container">
-        <input class="mt-0 radio-button" type="radio" aria-label="{{$info[2]->quantity}}" value="{{$info[2]->size}}" id="size-xl" name="size">
+        <input class="mt-0 radio-button size-tag" type="radio" aria-label="{{$info[2]->quantity}}" value="{{$info[2]->size}}" id="size-xl" name="size">
         <div class="radio-box">
           <label for="size-xl" id="" class="size-label">XL</label>
         </div>
       </div>
       <div class="input-container">
-        <input class="mt-0 radio-button" type="radio" aria-label="{{$info[3]->quantity}}" value="{{$info[3]->size}}" id="size-xxl" name="size">
+        <input class="mt-0 radio-button size-tag" type="radio" aria-label="{{$info[3]->quantity}}" value="{{$info[3]->size}}" id="size-xxl" name="size">
         <div class="radio-box">
           <label for="size-xxl" id="" class="size-label">XXL</label>
+        </div>
+      </div>
+      <div class="input-container">
+        <input class="mt-0 radio-button size-tag" type="radio" aria-label="5" value="OVERSIZE" id="oversize" name="size">
+        <div class="radio-box oversize-box">
+          <label for="oversize" id="" class="size-label">OVERSIZE</label>
         </div>
       </div>
     </div>
@@ -59,4 +66,8 @@
     </div>
   </form>
 </div>
+
+
+
+
 

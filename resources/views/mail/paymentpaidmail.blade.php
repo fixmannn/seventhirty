@@ -47,7 +47,7 @@
       margin: 0 auto;
       max-width: 450px;
       height: 50px;
-      background-color: rgb(4, 161, 4);
+      background-color: #92b6b1;
       color: white;
       font-weight: bold;
       border-radius: 2px;
@@ -75,20 +75,14 @@
   </style>
 </head>
 @php
-    $expiration = session('expiration');
-    $payment = session('payment');
-    $guest = session('guest');
+  $payment = session('payment_method');
 @endphp
 
 <body>
   <div class="container">
     <img src="https://bit.ly/custpayment" alt="">
     <h2>Order Berhasil Dibayar!</h2>
-    @if(Session::get('guest'))
-    <p class="message">{{ $guest['nama_depan'] }} {{ $guest['nama_belakang'] }}, ordermu sudah berhasil dibayar! Lihat detail nya di bawah ini:</p>
-    @else
-    <p class="message">{{ $details[0]['nama_depan'] }} {{ $details[0]['nama_belakang'] }}, ordermu sudah berhasil dibayar! Lihat detail nya di bawah ini:</p>
-    @endif
+    <p class="message">{{ $order['shipping_name'] }}, ordermu sudah berhasil dibayar! Lihat detail nya di bawah ini:</p>
     <table>
       <tr>
         <th class="header" style="font-weight: bold">Order No. {{ session('order_number') }}</th>
@@ -96,19 +90,15 @@
       </tr> 
       <tr>
         <th>Nama</th>
-        @if(Session::get('guest'))
-        <td>{{ $guest['nama_depan'] }} {{ $guest['nama_belakang'] }}</td>
-        @else
-        <td>{{ $details[0]['nama_depan'] }} {{ $details[0]['nama_belakang'] }}</td>
-        @endif
+        <td>{{ $order['shipping_name'] }}</td>
       </tr>
       <tr>
         <th>Tanggal order</th>
-        <td>{{ $order[0]['updated_at'] }}</td>
+        <td>{{ $order['updated_at'] }}</td>
       </tr> 
       <tr>
         <th>Metode Pembayaran</th>
-        <td>{{ strtoupper($expiration['method']) }}</td>
+        <td>{{ strtoupper($payment) }}</td>
       </tr>
       <tr>
         <th class="header" style="font-weight: bold">Detail Pembayaran</th>
@@ -116,18 +106,18 @@
       </tr> 
       <tr>
         <th>Produk</th>
-        <td>Rp. {{ $order[0]['amount'] - $order[0]['shipping_fee']}},-</td>
+        <td>Rp. {{ $order['amount'] - $order['shipping_fee']}},-</td>
       </tr>
       <tr>
         <th>Ongkos Kirim</th>
-        <td>Rp. {{ $order[0]['shipping_fee']}},-</td>
+        <td>Rp. {{ $order['shipping_fee']}},-</td>
       </tr>
       <tr style="font-weight: bold">
         <th style="font-weight: bold">Total Pembayaran</th>
-        <td>Rp. {{ $order[0]['amount'] }},-</td>
+        <td>Rp. {{ $order['amount'] }},-</td>
       </tr>
     </table>
-    <a href="" style="text-decoration: none;">
+    <a href="{{ url('/order') }}/{{ $order['order_number'] }}" style="text-decoration: none;">
     <div class="button">
       LIHAT ORDER
     </div>

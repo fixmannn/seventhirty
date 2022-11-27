@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Order;
 use App\Models\Product;
 
 class PagesController extends Controller
@@ -15,9 +16,7 @@ class PagesController extends Controller
    */
   public function home()
   {
-    $users = User::all();
-
-    return view('home', compact('users'));
+    return view('home');
   }
 
   public function shop()
@@ -25,10 +24,11 @@ class PagesController extends Controller
     $users = User::all();
     $products = Product::all();
 
-    return view('pages.shop', [
+	return view('pages.shop', [
       'users' => $users,
       'products' => $products
     ]);
+
   }
 
   public function gallery()
@@ -47,14 +47,40 @@ class PagesController extends Controller
 
   public function accountDetails()
   {
-    $users = User::all();
-    return view('pages.account-details', compact('users'));
+    $user = User::where('id', session('LoggedUser'))->first();
+
+    if(session('LoggedUser')) {
+      return view('account.details', compact('user'));
+    } else {
+      return redirect('login');
+    }
+  }
+
+  public function changePassword()
+  {
+    if(session('LoggedUser')){
+      return view('account.change-password');
+    } else {
+      return redirect('login');
+    }
+  }
+
+  public function orders()
+  {
+    if(session('LoggedUser') == 8) {
+      $order = Order::paginate(25);
+      return view('admin.orders', compact('order'));
+    } elseif(!session('LoggedUser')) {
+      return redirect('login');
+    } else {
+      $order = Order::where('user_id', session('LoggedUser'))->get();
+      return view('account.orders', compact('order'));
+    }
   }
 
   public function logout()
   {
     $users = User::all();
-
     return view('pages.logout', compact('users'));
   }
 
@@ -69,4 +95,11 @@ class PagesController extends Controller
 
     return view('layouts.pages', compact('users'));
   }
+
+	public function test()
+	{
+		return 'test aja gan';
+	}	
+
+
 }

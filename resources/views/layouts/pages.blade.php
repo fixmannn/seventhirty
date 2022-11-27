@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+  @extends('layouts/title')
+  @extends('layouts/css')
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,6 +11,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
+<<<<<<< HEAD
   <!-- Internal CSS -->
   @yield('shopcss')
   @yield('gallerycss')
@@ -17,13 +20,22 @@
   @yield('checkoutcss')
   @yield('paymentcss')
   @yield('orders')
+=======
+  {{-- Data Table plugin --}}
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+  
+  @section('orders')
+  <link rel="stylesheet" href="{{asset('css/orders.css')}}">
+  @endsection
+
+>>>>>>> 472b5e8d6367e55feeb10f123381432808f8e625
 
   <link rel="stylesheet" href="{{asset('css/index.css')}}">
 
   <!-- Bootstrap Icon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 
-  <title>@yield('title')</title>
+  @section('title', 'Seven Thirty - My Order')
 </head>
 
 <body>

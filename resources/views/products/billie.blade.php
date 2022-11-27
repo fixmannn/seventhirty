@@ -1,9 +1,3 @@
-<?php
-session_start();
-
-?>
-
-
 @extends('layouts/pages')
 
 @section('title', 'Seven Thirty - Products')
@@ -29,11 +23,11 @@ session_start();
 <div class="products">
     <div class="products-desc">
         <div class="thumbnail">
-            <a href=""><img src="{{asset('img/neckdeep.jpg')}}" alt="" class="thumb1"></a>
-            <a href=""><img src="{{asset('img/neckdeep-zoomed.jpg')}}" alt="" class="thumb2"></a>
+            <a href=""><img src="{{asset('img/billie.jpg')}}" alt="" class="thumb1"></a>
+            <a href=""><img src="{{asset('img/billie-zoomed.jpg')}}" alt="" class="thumb2"></a>
         </div>
         <div class="preview">
-            <a href=""><img src="{{asset('img/neckdeep.jpg')}}" alt="" class="img-fluid previewImg img1"></a>
+            <a href=""><img src="{{asset('img/billie.jpg')}}" alt="" class="img-fluid previewImg img1"></a>
         </div>
         @include('products/details/detail')
     </div>

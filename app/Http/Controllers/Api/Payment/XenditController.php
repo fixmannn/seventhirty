@@ -26,8 +26,21 @@ class XenditController extends Controller
     {
         $shipping = session('shipping');
         $amount = 0;
+
         foreach (session('cart') as $detail => $details) {
-            $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
+            if($details['id'] == 202101 || $details['id'] == 202102 || $details['id'] == 202103) {
+                if ($details['size'] == 'XXL') {
+                    $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount'])) + 5000;
+                } else {
+                    $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
+                }
+            } else {
+                if ($details['size'] == 'OVERSIZE') {
+                    $amount = $amount +  ($details['quantity'] * $details['price']);
+                } else {
+                    $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
+                }
+            }
         }
 
         $amount = $amount + $shipping;
@@ -73,14 +86,36 @@ class XenditController extends Controller
         return $checkVA;
     }
 
+    public function getFVAPayment()
+    {
+        Xendit::setApiKey($this->token);
+        $payment = session('paymentVA');
+        $id = $payment['id'];
 
+        $getFVAPayment = \Xendit\VirtualAccounts::getFVAPayment($id);
+
+        return $getFVAPayment;
+    }
 
     public function createEWallets(Request $request)
     {
         $shipping = session('shipping');
         $amount = 0;
+
         foreach (session('cart') as $detail => $details) {
-            $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
+            if($details['id'] == 202101 || $details['id'] == 202102 || $details['id'] == 202103) {
+                if ($details['size'] == 'XXL') {
+                    $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount'])) + 5000;
+                } else {
+                    $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
+                }
+            } else {
+                if ($details['size'] == 'OVERSIZE') {
+                    $amount = $amount +  ($details['quantity'] * $details['price']);
+                } else {
+                    $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
+                }
+            }
         }
 
         $amount = $amount + $shipping;
@@ -95,7 +130,7 @@ class XenditController extends Controller
             "checkout_method" => "ONE_TIME_PAYMENT",
             "channel_code" => "$request->payment",
             "channel_properties" => [
-                "success_redirect_url" => 'https://seventhirty-id.com/'
+                "success_redirect_url" => 'https://seventhirty-id.com/payment-success'
             ],
         ];
 
@@ -106,7 +141,8 @@ class XenditController extends Controller
             "checkout_method" => "ONE_TIME_PAYMENT",
             "channel_code" => "ID_OVO",
             "channel_properties" => [
-                "mobile_number" => "+" . strval($request->ovo_number)
+                "mobile_number" => "+" . strval($request->ovo_number),
+                "success_redirect_url" => 'https://seventhirty-id.com/payment-success'
             ],
             "voided_at" => Carbon::now()->addDays(1)->toISOString(),
             "refunded_amount" => 0
@@ -149,7 +185,19 @@ class XenditController extends Controller
     {
         $amount = 0;
         foreach (session('cart') as $detail => $details) {
-            $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
+            if($details['id'] == 202101 || $details['id'] == 202102 || $details['id'] == 202103) {
+                if ($details['size'] == 'XXL') {
+                    $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount'])) + 5000;
+                } else {
+                    $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
+                }
+            } else {
+                if ($details['size'] == 'OVERSIZE') {
+                    $amount = $amount +  ($details['quantity'] * $details['price']);
+                } else {
+                    $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
+                }
+            }
         }
 
         Xendit::setApiKey($this->token);
@@ -193,7 +241,19 @@ class XenditController extends Controller
         $shipping = session('shipping');
         $amount = 0;
         foreach (session('cart') as $detail => $details) {
-            $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
+            if($details['id'] == 202101 || $details['id'] == 202102 || $details['id'] == 202103) {
+                if ($details['size'] == 'XXL') {
+                    $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount'])) + 5000;
+                } else {
+                    $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
+                }
+            } else {
+                if ($details['size'] == 'OVERSIZE') {
+                    $amount = $amount +  ($details['quantity'] * $details['price']);
+                } else {
+                    $amount = $amount +  ($details['quantity'] * ($details['price'] - $details['discount_amount']));
+                }
+            }
         }
 
         $order_number = session('order_number');
@@ -205,7 +265,7 @@ class XenditController extends Controller
         curl_setopt($ch, CURLOPT_URL, 'https://api.xendit.co/qr_codes');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, "external_id=" . $order_number . "&type=DYNAMIC&callback_url=https://www.seventhirty-id.com/payment&amount=" . (int)$amount);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, "external_id=" . $order_number . "&type=DYNAMIC&callback_url=https://www.seventhirty-id.com/checkQR&amount=" . (int)$amount);
         curl_setopt($ch, CURLOPT_USERPWD, 'xnd_production_ERRXoEh6KiQLisCaNSrFHTy6kvf0l2Olra3JfXqnvKa8wXWeZXrYXqxUP195w5' . ':' . '');
 
         $headers = array();
@@ -251,5 +311,36 @@ class XenditController extends Controller
         curl_close($ch);
 
         return $result;
+    }
+
+    public function getPayment()
+    {
+        $payment = session('payment');
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://api.xendit.co/qr_codes/payments?external_id=' . $payment['external_id']);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+
+        curl_setopt($ch, CURLOPT_USERPWD, 'xnd_production_ERRXoEh6KiQLisCaNSrFHTy6kvf0l2Olra3JfXqnvKa8wXWeZXrYXqxUP195w5' . ':' . '');
+
+        $result = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
+
+        session()->put('success', $result);
+
+        $array = explode(',', $result);
+
+        foreach($array as $val) {
+            $tmp = explode(':', $val);
+            $status[$tmp[0]] = $tmp[1];
+            $status = str_replace(array('[', '{', '"', '}', ']'), '', $status);
+        }
+
+        session()->put('status', $status);
     }
 }

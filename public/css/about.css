@@ -1,0 +1,9 @@
+@media (min-width: 992px) {
+  .about {
+    min-height: 992px;
+  }
+
+  .img-content {
+    margin-top: 250px;
+  }
+}

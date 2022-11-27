@@ -23,7 +23,7 @@ session_start();
 
   <!-- If cart is not empty -->
   @if(session('cart'))
-  <div class="row">
+  <div class="row cart-content">
     <div class="col-xl-7">
       <div class="cart-table">
 
@@ -40,12 +40,29 @@ session_start();
           <?php $discount = 0 ?>
           <tr>
             @foreach(session('cart') as $id => $details)
-            <?php $total += $details['price'] * $details['quantity']  ?>
-            <?php $discount += $details['quantity'] * $details['discount_amount'] ?>
+            @php
+              if ($details['id'] == 202101 || $details['id'] == 202102 || $details['id'] == 202103) {
+                $total += $details['price'] * $details['quantity'];
+                
+                if ($details['size'] == 'XXL') {
+                  $discount += $details['quantity'] * $details['discount_amount'] - 5000;
+                } else {
+                  $discount += $details['quantity'] * $details['discount_amount'];
+                }
+              } else {
+                if ($details['size'] == 'OVERSIZE') {
+                  $total += $details['price'] * $details['quantity'];
+                  $discount += 0;
+                } else {
+                  $total += $details['price'] * $details['quantity'];
+                  $discount += $details['quantity'] * $details['discount_amount'];
+                }
+              }
+            @endphp
             <td><img src="{{asset('img/'.$details['image'])}}"> <span class="ml-2">{{$details['name']}} - {{$details['category']}} - {{$details['size']}}</span></td>
-            <td class="pc-only">Rp. <span class="currency number">{{$details['price']}}</span>,-</td>
+            <td class="pc-only"><span class="currency number">{{$details['price']}}</span></td>
             <td class="text-center">{{$details['quantity']}}</td>
-            <td class="pc-only text-center">Rp. <span class="currency number">{{$details['price']*$details['quantity']}}</span>,-</td>
+            <td class="pc-only text-center"><span class="currency number">{{$details['price']*$details['quantity']}}</span></td>
             <form action="{{url('cart')}}" method="post">
               @method('delete')
               @csrf
@@ -64,8 +81,7 @@ session_start();
       <div class="order-summary">
         <table>
           <tr class="summary">
-            <th>Order Summary</th>
-            <td></td>
+            <th colspan="2">Order Summary</th>
           </tr>
           <tr>
             <th>Subtotal</th>

@@ -8,6 +8,41 @@ use App\Models\Product;
 
 class ProductsController extends Controller
 {
+  public function friendship(Product $id)
+  {
+    $products = Product::find($id);
+
+    $info = ProductInfo::where('product_id', '202101')->get();
+
+    return view('products.friendship', [
+      'products' => $products,
+      'info' => $info
+    ]);
+  }
+
+  public function anxiety(Product $id)
+  {
+    $products = Product::find($id);
+
+    $info = ProductInfo::where('product_id', '202102')->get();
+
+    return view('products.anxiety', [
+      'products' => $products,
+      'info' => $info
+    ]);
+  }
+
+  public function forgiving(Product $id)
+  {
+    $products = Product::find($id);
+
+    $info = ProductInfo::where('product_id', '202103')->get();
+
+    return view('products.forgiving', [
+      'products' => $products,
+      'info' => $info
+    ]);
+  }
 
   public function paramore(Product $id)
   {
@@ -129,13 +164,13 @@ class ProductsController extends Controller
     ]);
   }
 
-  public function neckdeep(Product $id)
+  public function billie(Product $id)
   {
     $products = Product::find($id);
 
-    $info = ProductInfo::where('product_id', '202120')->get();
+    $info = ProductInfo::where('product_id', '202104')->get();
 
-    return view('products.neckdeep', [
+    return view('products.billie', [
       'products' => $products,
       'info' => $info
     ]);

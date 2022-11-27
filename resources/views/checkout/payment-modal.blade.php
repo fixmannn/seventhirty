@@ -1,6 +1,6 @@
 <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable mb-5">
-    <div class="modal-content">
+    <div class="modal-content" style="max-height: 320px">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Pilih Metode Pembayaran</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -26,7 +26,7 @@
           <li class="list-group-item">
             <input type="radio" id="bni" name="payment" value="BNI" title="va">
             <label for="bni">
-              <img src="{{asset('/img/payment/bni.png')}}" alt="" width="50" class="mr-2">
+              <img src="{{asset('/img/payment/BNI.png')}}" alt="" width="50" class="mr-2">
               Bank BNI Virtual Account
             </label>
           </li>

@@ -71,11 +71,11 @@
     for (let i = 0; i < catalogs.length; i++) {
       for (let c = 0; c < catPics.length; c++) {
         catalogs[i].addEventListener('mouseover', function() {
-          catalogs[i].src = 'http://localhost:8888/730/resources/img/' + catPics[i] + '-zoomed.jpg';
+          catalogs[i].src = 'https://seventhirty-id.com/img/' + catPics[i] + '-zoomed.jpg';
           catalogs[i].classList.add('fadeIn');
         })
         catalogs[i].addEventListener('mouseout', function() {
-          catalogs[i].src = 'http://localhost:8888/730/resources/img/' + catPics[i] + '.jpg';
+          catalogs[i].src = 'https://seventhirty-id.com/img/' + catPics[i] + '.jpg';
           catalogs[i].classList.remove('fadeIn');
         })
       }

@@ -1,173 +1,165 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Mulish', sans-serif !important;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  margin: 0;
+  padding: 0;
+  font-family: "Mulish", sans-serif !important;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
 }
 
 .closebtn1 {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .closebtn2 {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 /* Navbar */
 .container {
-    margin: 10px auto;
+  margin: 10px auto;
 }
 
 .navbar-brand {
-    font-size: 24px !important;
-    font-family: helvetica, sans-serif;
-    font-weight: bold;
+  font-size: 24px !important;
+  font-family: helvetica, sans-serif;
+  font-weight: bold;
 }
 
 .navbar a:hover {
-    color: #ccc;
-    cursor: pointer;
+  color: #ccc;
+  cursor: pointer;
 }
 
 .navbar-light .navbar-toggler-icon {
-    filter: invert(100%);
+  filter: invert(100%);
 }
 
 .icons {
-    display: inline-block;
+  display: inline-block;
 }
 
-.icons span, .bi-person-circle,
+.icons span,
+.bi-person-circle,
 .bi-telephone-fill {
-    display: none;
+  display: none;
 }
 
 .bi-cart {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .navbar-nav a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* Collapsing Login */
 .accordion {
-    margin: 20px 20px;
-    min-height: 500px;
-    vertical-align: middle;
+  margin: 20px 20px;
+  min-height: 540px;
+  vertical-align: middle;
 }
 .accordion .login-btn {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .accordion span {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .accordion button:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
-
 
 /* Footer */
 footer {
-    text-align: center;
-    color: white;
-    background-color: black;
-    width: 100%;
-    height: 180px;
-    padding-top: 30px;
-    margin-top: 50px;
+  text-align: center;
+  color: white;
+  background-color: black;
+  width: 100%;
+  height: 180px;
+  padding-top: 30px;
+  margin-top: 50px;
 }
 
 footer img {
-    width: 20px;
-    margin: 20px 20px;
+  width: 20px;
+  margin: 20px 20px;
 }
 
 footer h5 {
-    font-weight: 100;
-    font-size: 16px;
+  font-weight: 100;
+  font-size: 16px;
 }
 
 footer p {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
+@media (min-width: 992px) {
+  /* Navbar desktop */
+  .navbar-brand {
+    margin-left: 20px;
+  }
 
+  .navbar a {
+    color: white !important;
+    text-transform: uppercase;
+    text-shadow: 0.5px 1px rgb(12, 12, 12);
+    font-size: 16px;
+  }
 
+  .navbar a:hover {
+    color: #ccc !important;
+    cursor: pointer;
+  }
 
+  .navbar a i {
+    color: white !important;
+  }
 
+  .menu {
+    margin: 20px;
+  }
 
-@media (min-width: 992px) { 
-    /* Navbar desktop */
-    .navbar-brand {
-        margin-left: 20px;
-    }
+  .nav-link {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
 
-    .navbar a {
-        color: white !important;
-        text-transform: uppercase;
-        text-shadow: 0.5px 1px rgb(12, 12, 12);
-        font-size: 16px;
-    }
+  .icons {
+    padding: 10px;
+    color: white;
+  }
 
-    .navbar a:hover {
-        color: #ccc !important;
-        cursor: pointer;
-    }
+  .icons .bi {
+    padding: 10px;
+  }
 
-    .navbar a i {
-        color: white !important;
-    }
-
-    .menu {
-        margin: 20px
-    }
-
-    .nav-link {
-        margin-right: 20px;
-        margin-left: 20px;
-    }
-
-    .icons {
-        padding: 10px;
-        color: white;
-    }
-
-    .icons .bi {
-        padding: 10px;
-    }
-
-    .bi-person-circle,
-    .bi-telephone-fill {
+  .bi-person-circle,
+  .bi-telephone-fill {
     display: inline-block !important;
-}
+  }
 
-    .icons span {
-        display: inline-block !important;
-    }
+  .icons span {
+    display: inline-block !important;
+  }
 
-    .scroll-down {
-        position: fixed;
-        background-color: black;
-        top: 0;
-        width: 100%;
-        z-index: 9999;
-    }
+  .scroll-down {
+    position: fixed;
+    background-color: black;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+  }
 
-    /* Collapsing Login */
-    .accordion {
-        height: 800px;
-        margin: 200px 600px;
-    }
+  /* Collapsing Login */
+  .accordion {
+    min-height: 540px;
+    margin: 200px 400px;
+  }
 
-    .card {
-        display: grid;
-    }
-
-
-
+  .card {
+    display: grid;
+  }
 }

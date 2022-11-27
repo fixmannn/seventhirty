@@ -8,6 +8,7 @@ use App\Http\Controllers\CartsController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\PaymentsController;
+use App\Http\Controllers\OrdersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,12 +27,17 @@ require __DIR__ . '/auth.php';
 
 // Pages Controller
 Route::get('/', [PagesController::class, 'home']);
-Route::get('shop', [PagesController::class, 'shop']);
+Route::get('/shop', [PagesController::class, 'shop']);
 Route::get('gallery', [PagesController::class, 'gallery']);
 Route::get('about', [PagesController::class, 'about']);
 Route::get('account-details', [PagesController::class, 'accountDetails']);
+Route::get('change-password', [PagesController::class, 'changePassword']);
+Route::get('orders', [PagesController::class, 'orders']);
 
 // Products Controller 
+Route::get('/products/friendship/{id}', [ProductsController::class, 'friendship']);
+Route::get('/products/anxiety/{id}', [ProductsController::class, 'anxiety']);
+Route::get('/products/forgiving/{id}', [ProductsController::class, 'forgiving']);
 Route::get('/products/paramore/{id}', [ProductsController::class, 'paramore']);
 Route::get('/products/beerbongs/{id}', [ProductsController::class, 'beerbongs']);
 Route::post('/products/beerbongs/{id}', [ProductsController::class, 'beerbongs']);
@@ -43,27 +49,40 @@ Route::get('/products/hayley/{id}', [ProductsController::class, 'hayley']);
 Route::get('/products/hollywoods/{id}', [ProductsController::class, 'hollywoods']);
 Route::get('/products/lookmom/{id}', [ProductsController::class, 'lookmom']);
 Route::get('/products/modernity/{id}', [ProductsController::class, 'modernity']);
-Route::get('/products/neckdeep/{id}', [ProductsController::class, 'neckdeep']);
+Route::get('/products/billie/{id}', [ProductsController::class, 'billie']);
 Route::get('/products/purpose/{id}', [ProductsController::class, 'purpose']);
 Route::get('/products/starboy/{id}', [ProductsController::class, 'starboy']);
 Route::get('/products/travis/{id}', [ProductsController::class, 'travis']);
 Route::get('/products/zayn/{id}', [ProductsController::class, 'zayn']);
 
+// Checkout Routes
 Route::get('checkout', [CheckoutController::class, 'index']);
 Route::get('/province/{id}', [CheckoutController::class, 'getCities']);
 Route::get('/shipping/{id}', [CheckoutController::class, 'shipping']);
-
-
 Route::post('checkout', [UsersController::class, 'show']);
+
+// Payment Routes
 Route::post('payment', [UsersController::class, 'store']);
 Route::patch('payment', [UsersController::class, 'update']);
-
-// Route::patch('payment', [MailController::class, 'sendEmail']);
-
 Route::get('payment', [PaymentsController::class, 'index']);
 Route::get('payment-success', [PaymentsController::class, 'status']);
 
-
+// Cart Routes
 Route::post('add-to-cart/{id}', [CartsController::class, 'addToCart']);
 Route::get('cart', [CartsController::class, 'index']);
 Route::delete('cart', [CartsController::class, 'remove']);
+
+// Account Details Routes
+Route::post('account-details', [UsersController::class, 'edit']);
+Route::post('change-password', [UsersController::class, 'change']);
+
+// Order Routes 
+Route::get('order/{order_number}', [OrdersController::class, 'show']);
+Route::get('admin/order/{order_number}', [OrdersController::class, 'showAdmin']);
+Route::post('admin/order/{order_number}', [OrdersController::class, 'store']);
+
+// Callback Routes
+Route::post('checkFVA', [PaymentsController::class, 'checkFVA']);
+Route::post('checkOVO', [PaymentsController::class, 'checkOVO']);
+Route::post('checkeWallets', [PaymentsController::class, 'checkeWallets']);
+Route::post('checkQR', [PaymentsController::class, 'checkQR']);

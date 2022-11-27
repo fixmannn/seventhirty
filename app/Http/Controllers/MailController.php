@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderMail;
 use App\Mail\PaymentMail;
 use App\Mail\PaymentPaidMail;
+use App\Mail\DeliveryMail;
 
 class MailController extends Controller
 {
@@ -41,18 +42,28 @@ class MailController extends Controller
     }
     public function paymentpaidMail()
     {
-        $details = User::where('id', session('LoggedUser'))->get();
-        $guest = session('guest');
+        $order = Order::where('order_number', session('order_number'))->first();
 
         $email_details = [
             'nama' => "123",
             'body' => "123"
         ];
 
-        if (isset($guest)) {
-            Mail::to($guest['email'])->send(new PaymentPaidMail($email_details));
-        } else {
-            Mail::to($details[0]['email'])->send(new PaymentPaidMail($email_details));
-        }
+        Mail::to($order['shipping_mail'])->send(new PaymentPaidMail($email_details));
+    }
+
+    public function deliveryMail($order_number)
+    {
+        $order = Order::where('order_number', $order_number)->first();
+        $details = User::where('id', $order['user_id'])->first();
+
+        session()->put('order_number', $order_number);
+
+        $email_details = [
+            'nama' => 123,
+            'body' => 123
+        ];
+
+        Mail::to($order['shipping_mail'])->send(new DeliveryMail($email_details));
     }
 }
